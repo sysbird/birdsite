@@ -22,6 +22,7 @@ $text-color: #555;
 $link-color: #06A;
 $accent_color: #000;
 $border-color: #CCC;
+$meta-color: #999;
 $menu-width: 240px;
 
 /*------------------------------
@@ -34,14 +35,15 @@ Font Awesome
   font-weight: normal;
   font-style: normal; }
 
-@mixin font-awesome($param) {
+@mixin font-awesome($param, $padding-left:0, $padding-right:0 ) {
   content: $param;
   display: inline-block;
   font-family: FontAwesome;
   font-style: normal;
   font-weight: normal;
   line-height: 1;
-  padding-right: 0.4em;
+  padding-left: $padding-left;
+  padding-right: $padding-right;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;}
 
@@ -204,8 +206,7 @@ body {
 			font-style: italic;
 
 			&:before {
-			    @include font-awesome("\f19a");
-			    padding-left: 0.2em;
+			    @include font-awesome("\f19a", 0.4em, 0.4em);
 			}
 		}
 	}
@@ -241,7 +242,7 @@ body {
 			    font-size: 30px;
 			    display: block;
 				text-align: center;
-				padding: 8px 0 0 0;
+				padding-top: 8px;
 				color: #999;
 			}
 		}
@@ -298,7 +299,6 @@ body {
 							height: 0.4em;
 							color: $border-color;
 					    	@include font-awesome("\f00c");
-							padding-right: 0.2em;
 					    }
 					}
 				}
@@ -314,10 +314,9 @@ body {
 						position: absolute;
 						top: 0.7em;
 						right: 0;
-						width: 0.4em;
-						height: 0.4em;
+						width: 0.6em;
+						height: 0.8em;
 					   @include font-awesome("\f0da");
-					   padding-left: 5px;
 					}
 				}
 	
@@ -354,11 +353,10 @@ body {
 				position: absolute;
 				top: 0.7em;
 				left: 0.2em;
-				width: 0.4em;
-				height: 0.4em;
+				width: 1em;
+				height: 1em;
 				color: $border-color;
 		    	@include font-awesome("\f00c");
-				padding-right: 0.2em;
 		    }
 		}
 	}
@@ -498,7 +496,6 @@ body {
 	}
 
 	.hentry {
-
 		p {
 		    line-height: 1.6;
 			margin: 0 0 1.6em;
@@ -539,31 +536,31 @@ body {
 
 			.postdate {
 				&:before {
-				    @include font-awesome("\f133");
+				    @include font-awesome("\f133", 0, 0.4em);
 				}
 			}
 
 			.author {
 				&:before {
-				    @include font-awesome("\f007");
+				    @include font-awesome("\f007", 0, 0.4em);
 				}
 			}
 
 			.category {
 				&:before {
-				    @include font-awesome("\f07b");
+				    @include font-awesome("\f07b", 0, 0.4em);
 				}
 			}
 
 			.tag {
 				&:before {
-				    @include font-awesome("\f02b");
+				    @include font-awesome("\f02b", 0, 0.4em);
 				}
 			}
 
 			.comment {
 				&:before {
-				    @include font-awesome("\f075");
+				    @include font-awesome("\f075", 0, 0.4em);
 				}
 			}
 		}
@@ -587,7 +584,6 @@ body {
 		}
 	}
 
-	/* Pagenation */
 	.tablenav {
 		clear: both;
 		padding: 2em 0 1em 20px;
@@ -622,12 +618,27 @@ body {
 			border: none;
 			background: none;
 			font-weight: normal;
+
+			&:hover {
+				text-decoration: underline;
+				background: none;
+			}
 		}
 
-		a.next:hover,
-		a.prev:hover {
-			text-decoration: underline;
-			background: none;
+		a.next {
+		    padding-right: 0;
+
+			&:after {
+			    @include font-awesome("\f054", 0.4em);
+			}
+		}
+
+		a.prev {
+		    padding-left: 0;
+
+			&:before {
+			    @include font-awesome("\f053", 0, 0.4em);
+			}
 		}
 	}
 }
@@ -741,7 +752,7 @@ body {
 							width: 0.5em;
 							height: 1.2em;
 							color: #FFF;
-						    @include font-awesome("\f054");
+						    @include font-awesome("\f054", 0, 0.4em);
 						    font-size: 3em;
 							text-indent: 0;
 						}
@@ -770,7 +781,6 @@ body {
 					 &:before {
 					     @include font-awesome("\f02e");
 					     font-size: 2em;
-					     padding: 0;
 					}
 				}
 			}
@@ -1012,24 +1022,20 @@ video {
 			}
 
 			.postdate {
-				color: #999999;
+				color: $meta-color;
 				font-size: 0.85rem;
 				margin-top: 5px;
 
 				&:before {
-				    font-family: 'Genericons';
-				    padding-right: 2px;
-				    color: $border-color;
-				    font-size: 1rem;
-				    content: '\f303';
+				    @include font-awesome("\f017", 0.2em, 0.2em );
 				}
 			}
 
 			.comment-reply-link {
+				margin-left: 0.4em;
+
 				&:before {
-				    font-family: 'Genericons';
-				    content: '\f412';
-				    padding-left: 5px;
+				    @include font-awesome("\f112", 0, 0.4em );
 				}
 			}
 
@@ -1070,11 +1076,11 @@ video {
 	border: dashed 1px $border-color;
 	padding: 10px 5%;
 	margin: 15px 0;
-	width: 90%;
+	width: 100%;
 
 	em {
 		display: block;
-		padding: 1em 0 0 0;
+		padding: 1em 0 0.4em;
 		font-style: normal;
 	}
 
@@ -1086,7 +1092,7 @@ video {
 	}
 
 	textarea {
-		width: 95%;
+		width: 100%;
 		height: 100px;
 	  	padding:5px;
 		background: #FFF;
@@ -1218,7 +1224,7 @@ form {
 			padding: 0.3em 0;
 
 			&:before {
-			    @include font-awesome("\f0da");
+			    @include font-awesome("\f0da", 0, 0.4em);
 			}
 
 			a {
@@ -1348,13 +1354,6 @@ form {
 
 /* Media queries for responsive design
 --------------------------------------------- */
-/* --- iPad Landscape --- */
-@media screen and (max-width: 1060px) {
-	#content {
-		margin-right: 20px;
-	}
-}
-
 /* --- Smartphones and small Tablet PCs --- */
 @media screen and (max-width: 810px) {
 
@@ -1375,7 +1374,7 @@ form {
 							width: 0.5em;
 							height: 1.2em;
 							color: #FFF;
-						    @include font-awesome("\f054");
+						    @include font-awesome("\f054", 0, 0.4em);
 						    font-size: 3em;
 							text-indent: 0;
 						}
@@ -1387,8 +1386,7 @@ form {
 
 	#footer {
 		.container {
-			width: 96%;
-			margin: 0 auto;
+			padding: 0 10px;
 		}
 
 		ul.row {
@@ -1497,7 +1495,17 @@ form {
 
 		.hentry {
 			margin-left: 0;
-			padding: 20px;
+			padding: 10px;
+
+			.entry-header {
+				 margin-bottom: 10px;
+
+				.entry-title {
+					padding-bottom: 10px;
+				}
+		}
+
+
 		}
 
 		.tablenav {
@@ -1519,7 +1527,6 @@ form {
 		position: absolute;
 		top: 0;
 		left: -($menu-width);
-left: 0;
 
 		.menu {
 			margin-top: 0;
@@ -1533,7 +1540,6 @@ left: 0;
 				width: 2.8em;
 				height: 2.2em;
 				background: $accent_color;
-				background: #000;
 				color: #FFF;
 				text-align: center;
 				@include opacity(0.8);
