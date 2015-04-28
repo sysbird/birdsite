@@ -17,7 +17,7 @@ This theme, like WordPress, is licensed under the GPL.
 @import "compass/reset";
 
 // variable
-$background-color: #EFEFEF;
+$background-color: #F5F5F5;
 $text-color: #555;
 $link-color: #06A;
 $accent_color: #000;
@@ -126,6 +126,7 @@ body {
  	font-size: 0.92em;
 	color: $text-color;
 	border-top: solid 7px $accent_color;
+	word-wrap:break-word;
 	overflow: hidden;
 
 	* {
@@ -143,13 +144,14 @@ body {
 	padding-top: 40px;
 
 	.branding {
-		padding-left: 20px;
+		padding-left: 1.4em;
 		color: $accent_color;
 
 		.site-title {
 			font-size: 2.4rem;
 			font-size: 2.4em\9;  /* IE8 and below */
 			font-weight: bold;
+			line-height: 1.2;
 			margin: 0;
 
 			a {
@@ -164,6 +166,7 @@ body {
 
 	.header-image {
 		display: block;
+		margin-top: 40px;
 
 		img {
 			max-width: 100%;
@@ -200,12 +203,17 @@ body {
 	.site-title {
 		border-top: solid 3px #FFF;
 		padding: 1em 0 0 20px;
+		line-height: 1.4;
+
+		.home {
+			font-weight: bold;
+		}
 
 		.generator {
 			font-family: Georgia, "Bitstream Charter", serif;
 			font-style: italic;
 
-			&:before {
+			&:after {
 			    @include font-awesome("\f19a", 0.4em, 0.4em);
 			}
 		}
@@ -243,7 +251,7 @@ body {
 			    display: block;
 				text-align: center;
 				padding-top: 8px;
-				color: #999;
+				color: $meta-color;
 			}
 		}
 	}
@@ -362,19 +370,11 @@ body {
 	}
 }
 
-/* BirdSITE
--------------------------------------------------------------- */
 /* Posts
 --------------------------------------------- */
 #content{
 
 	padding: 40px 0;
-
-	.hentry {
-		margin-left: 20px;
-		padding: 40px;
-		background: #FFF;
-	}
 
 	h2 {
 		border-bottom: dashed 1px $border-color;
@@ -400,7 +400,7 @@ body {
 
 	small {
 		line-height: 1;
-		color: #999999;
+		color: $meta-color;
 	}
 
 	cite:before {
@@ -408,7 +408,7 @@ body {
 	}
 
 	cite {
-		color: #999999;
+		color: $meta-color;
 		display: block;
 	}
 
@@ -417,6 +417,7 @@ body {
 		width: 100%;
 		border-collapse: collapse;
 		border-spacing: 0;
+		margin-bottom: 1.6em;
 
 		caption {
 			font-size: 1.2rem;
@@ -427,8 +428,8 @@ body {
 		th,
 		td {
 			border: 1px solid $border-color;
-			line-height: 20px;
-			padding: 8px;
+			line-height: 1.4;
+			padding: 0.4em;
 			text-align: left;
 			vertical-align: top;
 		}
@@ -436,19 +437,73 @@ body {
 		th {
 			background: $text-color;
 			color: #FFF;
+			font-weight: bold;
 		}
 	}
 
 	pre {
 		border: dotted 1px $border-color;
-		padding: 10px;
+		padding: 0.8em;
+		margin-bottom: 1.6em;
+		line-height: 1.4;
+	}
+
+	code, kbd, pre, samp {
+	    font-family: monospace,serif;
+	}
+
+	hr {
+	    background-color: $border-color;
+	    border: 0 none;
+	    height: 1px;
+	    margin-bottom: 1.6m;
+	}
+
+	hr {
+	    background-color: $border-color;
+	    border: 0 none;
+	    height: 1px;
+	    margin-bottom: 1.6m;
+	}
+
+	sup, sub {
+	    font-size: 80%;
+	    height: 0;
+	    line-height: 0;
+	    position: relative;
+	    vertical-align: baseline;
+	}
+
+	sub {
+		top: 0.5ex;
+	}
+
+	sup {
+		bottom: 1ex;
+	}
+
+	em {
+		font-style: italic;
+	}
+
+	strong {
+		font-weight: bold;
+	}
+
+	abbr, acronym {
+    	border-bottom: 1px dotted #666;
+    	cursor: help;
 	}
 
 	ul,
 	ol {
 		margin: 0 0 1.6em 1em;
 		padding: 0 0 0 1em;
-		line-height: 1.6;
+		line-height: 1.4;
+
+		li {
+			padding: 0.2em 0;
+		}
 
 		ul,
 		ol {
@@ -456,15 +511,22 @@ body {
 		}
 	}
 
+	ul {
+		list-style: disc;
+		ul {
+			list-style: circle;
+			ul {
+				list-style: square;
+			}
+		}
+	}
+
 	ol {
 		list-style: decimal;
-
 		ol {
 			list-style:upper-alpha;
-
 			ol {
 				list-style:lower-roman;
-
 				ol {
 					list-style:lower-alpha;
 				}
@@ -481,7 +543,7 @@ body {
 		}
 
 		dd {
-			margin-bottom: 1em;
+			margin: 0 1.5em 1.6em;
 			padding: 0;
 		}
 	}
@@ -496,20 +558,19 @@ body {
 	}
 
 	.hentry {
-		p {
-		    line-height: 1.6;
-			margin: 0 0 1.6em;
-		}
+		margin-left: 20px;
+		padding: 40px;
+		background: #FFF;
 
 		.entry-header {
-			margin-bottom: 2em;
+			margin-bottom: 1.6em;
 
 			.entry-title {
 				font-size: 2rem;
 				font-weight: normal;
 				color: $text-color;
 				border-bottom: dotted 1px $border-color;
-				padding-bottom: 1em;
+				padding-bottom: 40px;
 				margin: 0;
 
 				a {
@@ -519,24 +580,31 @@ body {
 		}
 
 		.entry-content {
-			margin-bottom: 2em;
+			margin-bottom: 1.6em;
 			@include clearfix;
 		}
 
 		.entry-meta {
 			clear: both;
-			background: #F5F5F5;
+			background: $background-color;
 			line-height: 1.2;
-			padding: 10px;
-			margin-bottom: 3em;
+			padding: 0.8em;
+			margin-bottom: 1.6em;
 
 			a {
 				color: $text-color;
 			}
 
+			div {
+				margin-bottom: 0.4em;
+				&:before {
+					color: $border-color;
+				}
+			}
+
 			.postdate {
 				&:before {
-				    @include font-awesome("\f133", 0, 0.4em);
+				    @include font-awesome("\f017", 0, 0.4em);
 				}
 			}
 
@@ -578,7 +646,7 @@ body {
 				font-weight: normal;
 
 				&:hover {
-					background: #F5F5F5;
+					background: $background-color;
 				}
 			}
 		}
@@ -605,7 +673,7 @@ body {
 		}
 
 		a.page-numbers:hover {
-			background: #F5F5F5;
+			background: $background-color;
 		}
 
 		span.current {
@@ -720,7 +788,7 @@ body {
 				}
 
 				.entry-header {
-					padding: 1em 1em 0 1em;
+					padding: 0.8em;
 					margin: 0;
 
 					.entry-title {
@@ -728,7 +796,7 @@ body {
 						color: #FFF;
 						font-weight: normal;
 						border-bottom: none;
-						padding-bottom: 0.2em;
+						padding: 0;
 
 						a {
 							color: #FFF;
@@ -789,17 +857,15 @@ body {
 }
 
 .single {
-
 	#content #nav-below {
-		margin: 2em 0 1em;
+		margin-top: 1.6em;
 		line-height: 1.2;
 		@include clearfix;
 
 		.nav-next {
 			a {
 				&:before {
-				    font-family: 'Genericons';
-				    content: '\f430';
+				    @include font-awesome("\f053", 0, 0.4em);
 				}
 			}
 		}
@@ -810,8 +876,7 @@ body {
 
 			a {
 				&:after {
-				    font-family: 'Genericons';
-				    content: '\f429';
+				    @include font-awesome("\f054", 0.4em);
 				}
 			}
 		}
@@ -834,13 +899,13 @@ body {
 -------------------------------------------------------------- */
 #content .hentry img,
 .widget img {
-	max-width: 100%; /* Fluid images for posts, comments, and widgets */
+	max-width: 100%;
 	height: auto;
 }
 
 img[class*="align"],
 img[class*="wp-image-"] {
-	height: auto; /* Make sure images with WordPress-added height and width attributes are scaled correctly */
+	height: auto;
 }
 
 .aligncenter {
@@ -859,65 +924,92 @@ img[class*="wp-image-"] {
 	margin-left: 0.75em;
 }
 
-.alignleft,
-.alignright,
-.aligncenter {
+img.alignleft,
+img.alignright,
+img.aligncenter {
 	margin-bottom: 0.75em;
 }
 
-a:focus img[class*="attachment"],
-a:hover img[class*="attachment"],
-a:focus img[class*="align"],
-a:hover img[class*="align"],
-a:active img[class*="align"],
-a:focus img[class*="wp-image-"],
-a:hover img[class*="wp-image-"],
-a:active img[class*="wp-image-"],
-#content .gallery .gallery-icon a:focus img,
-#content .gallery .gallery-icon a:hover img,
-#content .gallery .gallery-icon a:active img,
-#content .hentry a:hover img {
+a:hover img {
 	@include opacity(0.9);
 }
 
-#content .hentry .wp-caption {
-	background: $background-color;
-	text-align: center;
-	padding: 5px 0;
-	font-size: 0.9rem;
-	color: #999;
-	max-width: 100%;
-	margin-bottom: 0.75em;
-
-	p {
-		margin: 0;
-	}
-}
-
-#content .hentry .gallery-thumb {
-	float: right;
-	display: block;
-	margin: 0 0 10px 10px;
-}
-
-#content .hentry .gallery {
-	margin: 0 auto;
-	clear: both;
-
-	.gallery-item {
-		float: left;
-		text-align: center;
-		margin: 0 0 10px 0;
-		width: 33%;
-	}
-
+#content .hentry {
 	.wp-caption,
 	.gallery-caption {
-		font-size: 0.9rem;
-		line-height: 1.2;
-	    color: #AAA;
-		max-width: 97.5%;
+		font-size: 0.9em;
+		line-height: 1;
+	    color: $meta-color;
+		max-width: 100%;
 		text-align: center;
+	}
+
+	.wp-caption {
+		padding: 5px;
+		background: $border-color;
+		max-width: 100%;
+
+		p {
+			text-align: center;
+			margin: 5px 0 0 0;
+			line-height: 1;
+		}
+	}
+
+	.gallery-caption {
+		margin: 5px 0 0 0;
+	}
+
+	.gallery {
+		margin: 0 auto;
+		clear: both;
+
+		.gallery-item {
+			float: left;
+			padding: 0 5px;
+			margin-bottom: 10px;
+			text-align: center;
+			width: 33%;
+
+			a {
+				display: block;
+			}
+
+			img {
+				vertical-align:bottom;
+			}
+		}
+
+		&.gallery-columns-2 .gallery-item {
+			max-width: 50%;
+		}
+
+		&.gallery-columns-3 .gallery-item {
+			max-width: 33.33%;
+		}
+		&.gallery-columns-4 .gallery-item {
+			max-width: 25%;
+		}
+
+		&.gallery-columns-5 .gallery-item {
+			max-width: 20%;
+		}
+
+		&.gallery-columns-6 .gallery-item {
+			max-width: 16.66%;
+		}
+
+		&.gallery-columns-7 .gallery-item {
+			max-width: 14.28%;
+		}
+
+		&.gallery-columns-8 .gallery-item {
+			max-width: 12.5%;
+		}
+
+		&.gallery-columns-9 .gallery-item {
+			max-width: 11.11%;
+		}
 	}
 }
 
@@ -937,32 +1029,19 @@ video {
 /* Comments
 -------------------------------------------------------------- */
 #content #comments {
-	margin-top: 20px;
-	display: block;
-
-	#comments-title {
-		font-size: 1.3rem;
-		font-weight: bold;
-		margin: 1em 0;
-	}
-
-	#reply-title {
-		font-size: 1.3rem;
-		font-weight: bold;
-		margin: 1em 0;
-	}
+	margin-top: 1.6em;
 
 	.navigation {
 		position: relative;
 		height: 1em;
-		padding-bottom: 10px;
-		margin-bottom: 1em;
+		padding-bottom: 0.8px;
+		margin-bottom: 0.8em;
 
 		.nav-previous a {
 			position: absolute;
 			top: 0;
 			right: 0;
-			padding-left: 1em;
+			padding-left: 0.8em;
 
 			&:after {
 			    font-family: 'Genericons';
@@ -993,8 +1072,8 @@ video {
 		li.comment {
 			border-left: 2px solid $border-color;
 			clear: both;
-			margin-bottom: 1em;
-			padding: 0 0 0 10px;
+			margin-bottom: 0.8em;
+			padding: 0 0 0 0.8em;
 			position: relative;
 			list-style: none;
 			@include clearfix;
@@ -1002,7 +1081,6 @@ video {
 	}
 
 	li {
-
 		&.trackback,
 		&.pingback {
 			.posted {
@@ -1018,13 +1096,11 @@ video {
 		.comment_meta {
 			.author {
 				font-weight: bold;
-				font-size: 1rem;
 			}
 
 			.postdate {
 				color: $meta-color;
 				font-size: 0.85rem;
-				margin-top: 5px;
 
 				&:before {
 				    @include font-awesome("\f017", 0.2em, 0.2em );
@@ -1032,10 +1108,8 @@ video {
 			}
 
 			.comment-reply-link {
-				margin-left: 0.4em;
-
 				&:before {
-				    @include font-awesome("\f112", 0, 0.4em );
+				    @include font-awesome("\f075", 0.4em, 0.4em );
 				}
 			}
 
@@ -1055,10 +1129,7 @@ video {
 
 				&.web {
 					a:after {
-					    font-family: 'Genericons';
-					    content: '\f442';
-					    padding-wight: 5px;
-					    font-size: 1rem;
+					    @include font-awesome("\f08e", 0.4em, 0 );
 					}
 				}
 			}
@@ -1105,7 +1176,7 @@ video {
 
 	.form-allowed-tags {
 		font-size: 0.9rem;
-		color: #999;
+		color: $meta-color;
 	}
 
 	.form-allowed-tags code {
@@ -1127,6 +1198,13 @@ form {
 .search,
 .error404 {
 	#content {
+
+		.hentry {
+			.entry-header {
+				margin-bottom: 0;
+			}
+		}
+
 		ul {
 			margin: 0;
 			padding: 0 0 20px 0;
@@ -1135,6 +1213,7 @@ form {
 			li {
 				border-bottom: dotted 1px $border-color;
 				line-height: 1.2;
+				padding: 0;
 
 				a {
 					display: block;
@@ -1144,7 +1223,7 @@ form {
 
 					&:hover {
 						text-decoration: none;
-						background: #F5F5F5;
+						background: $background-color;
 					}
 				}
 
@@ -1162,17 +1241,13 @@ form {
 				}
 
 				.postdate {
-					color: #999999;
+					color: $meta-color;
 					font-size: 0.85rem;
 					margin-top: 5px;
 					display: block;
 
 					&:before {
-					    font-family: 'Genericons';
-					    padding-right: 2px;
-					    color: $border-color;
-					    font-size: 1rem;
-					    content: '\f303';
+					    @include font-awesome("\f017", 0, 0.4em);
 					}
 				}
 			}
@@ -1309,7 +1384,6 @@ form {
 		}
 	}
 }
-
 
 /* Searcform
 --------------------------------------------- */
@@ -1480,6 +1554,7 @@ form {
 		}
 
 		.header-image {
+			margin-top: 0;
 			margin-bottom: 20px
 		}
 	}
@@ -1503,9 +1578,7 @@ form {
 				.entry-title {
 					padding-bottom: 10px;
 				}
-		}
-
-
+			}
 		}
 
 		.tablenav {
@@ -1514,7 +1587,6 @@ form {
 	}
 
 	.home #content {
-
 		ul.row {
 			li {
 				margin: 0 auto 20px;
