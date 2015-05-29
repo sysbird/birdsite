@@ -232,9 +232,10 @@ body {
       display: block;
       height: 50px;
       width: 50px;
-      opacity: 0.7;
       text-align: center;
-      text-decoration: none; }
+      text-decoration: none;
+      filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=70);
+      opacity: 0.7; }
       #footer #back-top a span {
         text-indent: -119988px;
         overflow: hidden;
@@ -1343,13 +1344,10 @@ form textarea {
         position: absolute;
         top: 0;
         left: 240px;
-        width: 2.8em;
-        height: 2.2em;
-        background: black;
-        color: #FFF;
-        text-align: center;
-        filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=80);
-        opacity: 0.8; }
+        width: 2em;
+        height: 2em;
+        color: black;
+        text-align: center; }
         #menu-wrapper .menu #small-menu:after {
           content: "\f0c9";
           display: inline-block;
@@ -1367,10 +1365,8 @@ form textarea {
         clear: both;
         width: 240px;
         background: black;
-        overflow: hidden;
-        z-index: 9999;
-        filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=80);
-        opacity: 0.8; }
+        overflow-y: scroll;
+        z-index: 2; }
         #menu-wrapper .menu ul#menu-primary-items li {
           clear: both;
           float: none;
@@ -1395,9 +1391,23 @@ form textarea {
               background: none;
               margin-left: 2em;
               width: auto; }
-    #menu-wrapper.current {
-      left: 0; }
-      #menu-wrapper.current .menu #small-menu:after {
+
+  body {
+    overflow: auto;
+    position: relative; }
+    body.open-menu {
+      overflow: hidden; }
+      body.open-menu .overlay {
+        position: absolute;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: #000;
+        filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=70);
+        opacity: 0.7; }
+      body.open-menu #menu-wrapper .menu #small-menu:after {
         content: "\f00d";
         display: inline-block;
         font-family: FontAwesome;
@@ -1408,7 +1418,8 @@ form textarea {
         padding-right: 0;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
-        padding: 0; } }
+        padding: 0;
+        color: #FFF; } }
 @media screen and (min-width: 600px) {
   /* ensure .menu is visible on desktop version */
   ul#menu-primary-items {

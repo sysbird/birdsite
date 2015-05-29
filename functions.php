@@ -215,7 +215,8 @@ function birdsite_header_style() {
 		background-color: <?php echo $footer_color; ?>;
 	}
 
-	h1, h2, h3, h4, h5, h6 {
+	h1, h2, h3, h4, h5, h6,
+	#menu-wrapper .menu #small-menu {
 		color: <?php echo $footer_color; ?>;
 	}
 
@@ -234,8 +235,7 @@ function birdsite_header_style() {
 	}
 
 	@media screen and (max-width: 600px) {
-		#menu-wrapper .menu ul#menu-primary-items,
-		#menu-wrapper .menu #small-menu {
+		#menu-wrapper .menu ul#menu-primary-items {
 			background-color: <?php echo $navigation_color; ?>;
 		}
 	}

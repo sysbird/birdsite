@@ -35,6 +35,8 @@ The template for displaying the footer.
 
 </div><!-- wrapper -->
 
+<div class="overlay"></div>
+
 <?php wp_footer(); ?>
 
 </body>

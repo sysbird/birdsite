@@ -3,11 +3,30 @@
 jQuery( function() {
 
 	// Slide Navigation
+	var birdsite_menu_width = jQuery( '#menu-wrapper' ).width();
 	jQuery( '#small-menu' ).click(function(){
-		jQuery( '#menu-wrapper' ).toggleClass( 'current' );
-		var height = jQuery( 'body .wrapper' ).height();
-		jQuery( 'ul#menu-primary-items' ).height( height );
+		var left = 0;
+		if( jQuery( 'body' ).hasClass( 'open-menu' ) ){
+			left = '-' +  birdsite_menu_width + 'px';
+		}
+		else{
+			jQuery( 'ul#menu-primary-items' ).height( jQuery( window ).height() );
+		}
+
+		jQuery('#menu-wrapper').animate(
+			{ 'left' : left },
+			300, function() {
+				jQuery( 'body' ).toggleClass( 'open-menu' );
+  		});
 	});
+
+	// close Slide Navigation
+ 	jQuery(window).resize(function() {
+		if( jQuery( 'body' ).hasClass( 'open-menu' ) ){
+			jQuery( 'body' ).removeClass( 'open-menu' );
+			jQuery('#menu-wrapper').css( { 'left': '-' +  birdsite_menu_width + 'px' } );
+		}
+ 	});
 
 	// Home ThumbnailHover
 	ThumbnailHover();

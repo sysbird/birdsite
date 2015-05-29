@@ -231,9 +231,9 @@ body {
 			display: block;
 			height: 50px;
 			width: 50px;
-			opacity: 0.7;
 			text-align: center;
 			text-decoration: none;
+			@include opacity(0.7);
     
 			span {
 				@include hide-text;
@@ -1609,12 +1609,10 @@ form {
 				position: absolute;
 				top: 0;
 				left: $menu-width;
-				width: 2.8em;
-				height: 2.2em;
-				background: $accent_color;
-				color: #FFF;
+				width: 2em;
+				height: 2em;
+				color: $accent_color;
 				text-align: center;
-				@include opacity(0.8);
 
 				&:after {
 				    @include font-awesome("\f0c9");
@@ -1627,9 +1625,8 @@ form {
 				clear: both;
 				width: $menu-width;
 				background: $accent_color;
-				overflow: hidden;
-				z-index: 9999;
-				@include opacity(0.8);
+				overflow-y: scroll;
+				z-index: 2;
 
 				li {
 					clear: both;
@@ -1665,13 +1662,34 @@ form {
 			}
 		}
 
-		&.current {
-			left: 0;
-			.menu {
-				#small-menu {
-					&:after {
-					    @include font-awesome("\f00d");
-					    padding: 0;
+	}
+
+	body {
+	    overflow: auto;
+	    position: relative;
+
+		&.open-menu {
+			overflow: hidden;
+
+			.overlay {
+				position: absolute;
+				z-index: 1;
+				top: 0;
+				left: 0;
+				width:100%;
+				height: 100%;
+				background: #000;
+				@include opacity(0.7);
+			}
+
+			#menu-wrapper {
+				.menu {
+					#small-menu {
+						&:after {
+						    @include font-awesome("\f00d");
+						    padding: 0;
+				    		color: #FFF;
+					    }
 					}
 				}
 			}
