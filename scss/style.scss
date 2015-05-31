@@ -29,23 +29,25 @@ $menu-width: 240px;
 Font Awesome
 -----------------------------*/
 @font-face {
-  font-family: 'FontAwesome';
-  src: url("font-awesome/fontawesome-webfont.eot?v=4.1.0");
-  src: url("font-awesome/fontawesome-webfont.eot?#iefix&v=4.1.0") format("embedded-opentype"), url("font-awesome/fontawesome-webfont.woff?v=4.1.0") format("woff"), url("font-awesome/fontawesome-webfont.ttf?v=4.1.0") format("truetype"), url("font-awesome/fontawesome-webfont.svg?v=4.1.0#fontawesomeregular") format("svg");
-  font-weight: normal;
-  font-style: normal; }
+	font-family: 'FontAwesome';
+	src: url("font-awesome/fontawesome-webfont.eot?v=4.1.0");
+	src: url("font-awesome/fontawesome-webfont.eot?#iefix&v=4.1.0") format("embedded-opentype"), url("font-awesome/fontawesome-webfont.woff?v=4.1.0") format("woff"), url("font-awesome/fontawesome-webfont.ttf?v=4.1.0") format("truetype"), url("font-awesome/fontawesome-webfont.svg?v=4.1.0#fontawesomeregular") format("svg");
+	font-weight: normal;
+	font-style: normal;
+}
 
-@mixin font-awesome($param, $padding-left:0, $padding-right:0 ) {
-  content: $param;
-  display: inline-block;
-  font-family: FontAwesome;
-  font-style: normal;
-  font-weight: normal;
-  line-height: 1;
-  padding-left: $padding-left;
-  padding-right: $padding-right;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;}
+@mixin font-awesome( $param, $padding-left:0, $padding-right:0 ) {
+	content: $param;
+	display: inline-block;
+	font-family: FontAwesome;
+	font-style: normal;
+	font-weight: normal;
+	line-height: 1;
+	padding-left: $padding-left;
+	padding-right: $padding-right;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
 
 /* Index
 --------------------------------------------- */
@@ -214,7 +216,7 @@ body {
 			font-style: italic;
 
 			&:after {
-			    @include font-awesome("\f19a", 0.4em, 0.4em);
+			    @include font-awesome( "\f19a", 0.4em, 0.4em );
 			}
 		}
 	}
@@ -226,15 +228,15 @@ body {
 		z-index: 3;
 
 		a {
-			background: #EEEEEE;
+			background: $border-color;
 			border-radius: 100px;
 			display: block;
 			height: 50px;
 			width: 50px;
 			text-align: center;
 			text-decoration: none;
-			@include opacity(0.7);
-    
+			@include opacity( 0.7 );
+
 			span {
 				@include hide-text;
 				display: block;
@@ -242,13 +244,13 @@ body {
 
 			&:hover {
 				text-decoration: none;
-				@include opacity(0.8);
+				@include opacity( 0.8 );
 			}
 
 			&:before {
-			    @include font-awesome("\f077");
-			    font-size: 30px;
-			    display: block;
+				@include font-awesome( "\f077" );
+				font-size: 30px;
+				display: block;
 				text-align: center;
 				padding-top: 8px;
 				color: $meta-color;
@@ -260,7 +262,6 @@ body {
 /* Menu
 -------------------------------------------------------------- */
 #menu-wrapper {
-
 	.menu {
 		width: $menu-width;
 		margin-top: 40px;
@@ -269,14 +270,14 @@ body {
 			display: none; /* hide small menu initially */
 		}
 
-		ul { 
+		ul {
 			margin: 0;
 			padding: 0;
 			*zoom: 1;
 			&:after {
-			    clear: both;
-	   			content: "";
-	    		display: block;
+				clear: both;
+				content: "";
+				display: block;
 			}
 
 			li {
@@ -324,10 +325,10 @@ body {
 						right: 0;
 						width: 0.6em;
 						height: 0.8em;
-					   @include font-awesome("\f0da");
+						@include font-awesome("\f0da");
 					}
 				}
-	
+
 				ul {
 					background: $background-color;
 					border: dotted 1px $accent_color;
@@ -385,7 +386,7 @@ body {
 		border-left: solid 7px $border-color;
 		padding-left: 10px;
 	}
-	
+
 	p {
 		line-height: 1.6;
 		margin: 0 0 1.6em;
@@ -435,9 +436,14 @@ body {
 		}
 
 		th {
-			background: $text-color;
-			color: #FFF;
+			//background: $text-color;
+			//color: #FFF;
+			background: $background-color;
 			font-weight: bold;
+
+
+
+
 		}
 	}
 
@@ -604,31 +610,31 @@ body {
 
 			.postdate {
 				&:before {
-				    @include font-awesome("\f017", 0, 0.4em);
+				    @include font-awesome( "\f017", 0, 0.4em );
 				}
 			}
 
 			.author {
 				&:before {
-				    @include font-awesome("\f007", 0, 0.4em);
+				    @include font-awesome( "\f007", 0, 0.4em );
 				}
 			}
 
 			.category {
 				&:before {
-				    @include font-awesome("\f07b", 0, 0.4em);
+				    @include font-awesome( "\f07b", 0, 0.4em );
 				}
 			}
 
 			.tag {
 				&:before {
-				    @include font-awesome("\f02b", 0, 0.4em);
+				    @include font-awesome( "\f02b", 0, 0.4em );
 				}
 			}
 
 			.comment {
 				&:before {
-				    @include font-awesome("\f075", 0, 0.4em);
+				    @include font-awesome( "\f075", 0, 0.4em );
 				}
 			}
 		}
@@ -697,7 +703,7 @@ body {
 		    padding-right: 0;
 
 			&:after {
-			    @include font-awesome("\f054", 0.4em);
+			    @include font-awesome( "\f054", 0.4em );
 			}
 		}
 
@@ -705,7 +711,7 @@ body {
 		    padding-left: 0;
 
 			&:before {
-			    @include font-awesome("\f053", 0, 0.4em);
+			    @include font-awesome( "\f053", 0, 0.4em );
 			}
 		}
 	}
@@ -745,7 +751,7 @@ body {
 					width: 250px;
 					height: 250px;
 					@include hide-text;
-					@include opacity(0.6);
+					@include opacity( 0.6 );
 				}
 			}
 
@@ -820,8 +826,8 @@ body {
 							width: 0.5em;
 							height: 1.2em;
 							color: #FFF;
-						    @include font-awesome("\f054", 0, 0.4em);
-						    font-size: 3em;
+							@include font-awesome( "\f054", 0, 0.4em );
+							font-size: 3em;
 							text-indent: 0;
 						}
 					}
@@ -830,7 +836,7 @@ body {
 
 			&.has-image {
 				.caption {
-					@include opacity(0);
+					@include opacity( 0 );
 				}
 			}
 
@@ -847,7 +853,7 @@ body {
 					color: $accent_color;
 
 					 &:before {
-					     @include font-awesome("\f02e");
+					     @include font-awesome( "\f02e" );
 					     font-size: 2em;
 					}
 				}
@@ -865,7 +871,7 @@ body {
 		.nav-next {
 			a {
 				&:before {
-				    @include font-awesome("\f053", 0, 0.4em);
+				    @include font-awesome( "\f053", 0, 0.4em );
 				}
 			}
 		}
@@ -876,7 +882,7 @@ body {
 
 			a {
 				&:after {
-				    @include font-awesome("\f054", 0.4em);
+				    @include font-awesome( "\f054", 0.4em );
 				}
 			}
 		}
@@ -931,7 +937,7 @@ img.aligncenter {
 }
 
 a:hover img {
-	@include opacity(0.9);
+	@include opacity( 0.9 );
 }
 
 #content .hentry {
@@ -1085,10 +1091,7 @@ video {
 		&.pingback {
 			.posted {
 				a.web:after {
-				    font-family: 'Genericons';
-				    content: '\f442';
-				    padding-wight: 5px;
-				    font-size: 1rem;
+					@include font-awesome("\f08e", 0.2em, 0.2em );
 				}
 			}
 		}
@@ -1103,13 +1106,13 @@ video {
 				font-size: 0.85rem;
 
 				&:before {
-				    @include font-awesome("\f017", 0.2em, 0.2em );
+					@include font-awesome( "\f017", 0.2em, 0.2em );
 				}
 			}
 
 			.comment-reply-link {
 				&:before {
-				    @include font-awesome("\f075", 0.4em, 0.4em );
+					@include font-awesome( "\f075", 0.4em, 0.4em );
 				}
 			}
 
@@ -1129,7 +1132,7 @@ video {
 
 				&.web {
 					a:after {
-					    @include font-awesome("\f08e", 0.4em, 0 );
+						@include font-awesome( "\f08e", 0.4em, 0 );
 					}
 				}
 			}
@@ -1185,7 +1188,7 @@ video {
 }
 
 form {
-	input, 
+	input,
 	select,
 	textarea {
 		max-width: 95%;
@@ -1247,7 +1250,7 @@ form {
 					display: block;
 
 					&:before {
-					    @include font-awesome("\f017", 0, 0.4em);
+						@include font-awesome( "\f017", 0, 0.4em );
 					}
 				}
 			}
@@ -1299,7 +1302,7 @@ form {
 			padding: 0.3em 0;
 
 			&:before {
-			    @include font-awesome("\f0da", 0, 0.4em);
+				@include font-awesome( "\f0da", 0, 0.4em );
 			}
 
 			a {
@@ -1417,12 +1420,12 @@ form {
 		width: 20%;
 		height: 30px;
 		border-radius: 0 4px 4px 0;
-   		margin: 0;
+		margin: 0;
 		background: $border-color;
 		color: #FFF;
-	    -webkit-appearance: button;
-	    @include font-awesome("\f005");
-	    font-size: 1.2em;
+		-webkit-appearance: button;
+		@include font-awesome( "\f005" );
+		font-size: 1.2em;
 	}
 }
 
@@ -1448,8 +1451,8 @@ form {
 							width: 0.5em;
 							height: 1.2em;
 							color: #FFF;
-						    @include font-awesome("\f054", 0, 0.4em);
-						    font-size: 3em;
+							@include font-awesome( "\f054", 0, 0.4em );
+							font-size: 3em;
 							text-indent: 0;
 						}
 					}
@@ -1530,7 +1533,6 @@ form {
 
 /* --- Smartphones and small Tablet PCs --- */
 @media screen and (max-width: 600px) {
-
 	.wrapper {
 	 	font-size: 1em;
 	}
@@ -1555,7 +1557,6 @@ form {
 
 		.header-image {
 			margin-top: 0;
-			margin-bottom: 20px
 		}
 	}
 
@@ -1586,10 +1587,20 @@ form {
 		}
 	}
 
-	.home #content {
-		ul.row {
-			li {
-				margin: 0 auto 20px;
+	.home {
+		#header {
+			margin-bottom: 20px;
+
+			&.no-image {
+				margin-bottom: 0;
+			}
+		}
+
+		#content {
+			ul.row {
+				li {
+					margin: 0 auto 20px;
+				}
 			}
 		}
 	}
@@ -1615,9 +1626,8 @@ form {
 				text-align: center;
 
 				&:after {
-				    @include font-awesome("\f0c9");
-				    font-size: 2em;
-				    padding: 0;
+					@include font-awesome( "\f0c9" );
+					font-size: 2em;
 				}
 			}
 
@@ -1626,7 +1636,7 @@ form {
 				width: $menu-width;
 				background: $accent_color;
 				overflow-y: scroll;
-				z-index: 2;
+				z-index: 3;
 
 				li {
 					clear: both;
@@ -1640,6 +1650,12 @@ form {
 						color: #FFF;
 						white-space: normal;
 						padding: 0.4em 0.4em 0.4em 1.6em;
+					}
+
+					&.menu-item-has-children {
+						>a:after {
+							@include font-awesome("");
+						}
 					}
 
 					ul {
@@ -1679,17 +1695,17 @@ form {
 				width:100%;
 				height: 100%;
 				background: #000;
-				@include opacity(0.7);
+				@include opacity( 0.7 );
 			}
 
 			#menu-wrapper {
 				.menu {
 					#small-menu {
 						&:after {
-						    @include font-awesome("\f00d");
-						    padding: 0;
-				    		color: #FFF;
-					    }
+							@include font-awesome( "\f00d" );
+							padding: 0;
+							color: #FFF;
+						}
 					}
 				}
 			}
