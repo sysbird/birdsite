@@ -8,7 +8,8 @@ Author URI: https://profiles.wordpress.org/sysbird/
 Version: 1.06
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Tags: white, two-columns, right-sidebar, flexible-width, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-image-header, featured-images, full-width-template, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready, photoblogging
+Tags: white, two-columns, left-sidebar, responsive-layout, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-image-header, featured-images, full-width-template, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready, photoblogging
+Text Domain: birdsite
 
 This theme, like WordPress, is licensed under the GPL.
 */
@@ -637,6 +638,12 @@ body {
 				    @include font-awesome( "\f075", 0, 0.4em );
 				}
 			}
+
+			.parent-post-link {
+				&:before {
+				    @include font-awesome( "\f1c5", 0, 0.4em );
+				}
+			}
 		}
 
 		.page-link {
@@ -845,16 +852,18 @@ body {
 
 				i {
 					position: absolute;
-					top: -5px;
-					right: 5px;
-					width: 2em;
-					height: 2em;
-					padding: 0;
-					color: $accent_color;
+					top: -3px;
+					right: -15px;
+					font-size: 12px;
+					background: $accent-color;
+					color: #fff;
+					text-align: center;
+					width: 50px;
+					padding: 3px;
+					@include rotate(45deg);
 
 					 &:before {
-					     @include font-awesome( "\f02e" );
-					     font-size: 2em;
+					     @include font-awesome("\f005");
 					}
 				}
 			}
@@ -862,6 +871,8 @@ body {
 	}
 }
 
+/* Single
+-------------------------------------------------------------------- */
 .single {
 	#content #nav-below {
 		margin-top: 1.6em;
@@ -888,15 +899,22 @@ body {
 		}
 	}
 }
-.attachment.single {
+
+/* Archive
+-------------------------------------------------------------------- */
+.attachment {
 
 	#content {
-		.entry-content .attachment {
-			text-align: center;
-		}
+		.hentry {
 
-		.hentry .wp-caption {
-			background: none;
+			.entry-attachment {
+				text-align: center;
+				margin-bottom: 1.6em;
+
+				.wp-caption {
+					background: none;
+				}
+			}
 		}
 	}
 }
@@ -1287,7 +1305,7 @@ form {
 		margin: 0 0 10px 0;
 		padding: 0 0 5px 0;
 		border-bottom: solid 3px $border-color;
-		color: #FFF;
+		color: $border-color;
 	}
 
 	ul {
@@ -1351,11 +1369,10 @@ form {
 					padding: 0.2em 0.4em;
 					margin: 0 auto;
 					background: #FFF;
-					color: $accent_color;
+					color: $link_color;
 
 					&:hover {
-						background: $link-color;
-						color: #FFF;
+						background: $border-color;
 						text-decoration: none;
 					}
 				}
@@ -1545,6 +1562,7 @@ form {
 		width: 100%;
 		float: none;
 		padding: 0;
+		position: static;
 
 		.branding {
 			padding: 2.2em 0;
@@ -1610,6 +1628,7 @@ form {
 		position: absolute;
 		top: 0;
 		left: -($menu-width);
+		z-index: 3;
 
 		.menu {
 			margin-top: 0;
@@ -1618,7 +1637,7 @@ form {
 				cursor: pointer;
 				display: block;
 				position: absolute;
-				top: 0;
+				top: 7px;
 				left: $menu-width;
 				width: 2em;
 				height: 2em;
@@ -1681,15 +1700,14 @@ form {
 	}
 
 	body {
-	    overflow: auto;
-	    position: relative;
+		position: relative;
 
 		&.open-menu {
 			overflow: hidden;
 
 			.overlay {
 				position: absolute;
-				z-index: 1;
+				z-index: 2;
 				top: 0;
 				left: 0;
 				width:100%;

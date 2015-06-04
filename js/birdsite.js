@@ -2,31 +2,43 @@
 // init
 jQuery( function() {
 
-	// Slide Navigation
+	// slide Navigation
 	var birdsite_menu_width = jQuery( '#menu-wrapper' ).width();
 	jQuery( '#small-menu' ).click(function(){
 		var left = 0;
 		if( jQuery( 'body' ).hasClass( 'open-menu' ) ){
+			// colse Navigation
 			left = '-' +  birdsite_menu_width + 'px';
 		}
 		else{
+			// open Navigation
 			jQuery( 'ul#menu-primary-items' ).height( jQuery( window ).height() );
+			jQuery( 'body' ).addClass( 'open-menu' );
 		}
 
 		jQuery('#menu-wrapper').animate(
 			{ 'left' : left },
 			300, function() {
-				jQuery( 'body' ).toggleClass( 'open-menu' );
-  		});
+				if(0 != left){
+					// close Navigation
+					jQuery( 'body' ).removeClass( 'open-menu' );
+				}
+		});
 	});
 
-	// close Slide Navigation
  	jQuery(window).resize(function() {
+		// close Navigation
 		if( jQuery( 'body' ).hasClass( 'open-menu' ) ){
 			jQuery( 'body' ).removeClass( 'open-menu' );
 			jQuery('#menu-wrapper').css( { 'left': '-' +  birdsite_menu_width + 'px' } );
 		}
  	});
+
+	jQuery( '.overlay' ).click(function(){
+		// close Navigation
+		jQuery( '#small-menu' ).click();
+ 	});
+
 
 	// Home ThumbnailHover
 	ThumbnailHover();
