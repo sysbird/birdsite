@@ -667,7 +667,7 @@ body {
 
 	.tablenav {
 		clear: both;
-		padding: 2em 0 1em 20px;
+		padding: 20px 0 20px 20px;
 		color: $link-color;
 
 		a.page-numbers,
@@ -1601,6 +1601,7 @@ form {
 		}
 
 		.tablenav {
+			padding: 20px 10px;
 			text-align: center;
 		}
 	}

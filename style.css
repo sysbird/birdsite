@@ -599,7 +599,7 @@ body {
           background: whitesmoke; }
   #content .tablenav {
     clear: both;
-    padding: 2em 0 1em 20px;
+    padding: 20px 0 20px 20px;
     color: #0066aa; }
     #content .tablenav a.page-numbers,
     #content .tablenav span.current {
@@ -1353,6 +1353,7 @@ form textarea {
         #content .hentry .entry-header .entry-title {
           padding-bottom: 10px; }
     #content .tablenav {
+      padding: 20px 10px;
       text-align: center; }
 
   .home #header {
