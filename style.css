@@ -1,4 +1,4 @@
-@charset "utf-8";
+@charset "UTF-8";
 /*
 Theme Name: BirdSITE
 Theme URI: http://www.sysbird.jp/birdsite/theme/
@@ -57,7 +57,7 @@ q, blockquote {
 a img {
   border: none; }
 
-article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
   display: block; }
 
 /*------------------------------
@@ -69,13 +69,12 @@ Font Awesome
   src: url("font-awesome/fontawesome-webfont.eot?#iefix&v=4.1.0") format("embedded-opentype"), url("font-awesome/fontawesome-webfont.woff?v=4.1.0") format("woff"), url("font-awesome/fontawesome-webfont.ttf?v=4.1.0") format("truetype"), url("font-awesome/fontawesome-webfont.svg?v=4.1.0#fontawesomeregular") format("svg");
   font-weight: normal;
   font-style: normal; }
-
 /* Index
 --------------------------------------------- */
 h1, h2, h3, h4, h5, h6 {
   margin: 0.7em 0;
   line-height: 1.2;
-  color: black; }
+  color: #000; }
 
 h1 {
   font-size: 2.4rem; }
@@ -98,7 +97,7 @@ h6 {
 /* Link
 --------------------------------------------- */
 a {
-  color: #0066aa;
+  color: #06A;
   text-decoration: none; }
   a:hover {
     text-decoration: underline; }
@@ -140,15 +139,15 @@ body {
 /* Body
 -------------------------------------------------------------- */
 body {
-  background-color: whitesmoke; }
+  background-color: #F5F5F5; }
 
 /* Wrapper
 -------------------------------------------------------------- */
 .wrapper {
   font-family: 'Lucida Grande','Verdana','Hiragino Kaku Gothic ProN',Meiryo, sans-serif;
   font-size: 0.92em;
-  color: #555555;
-  border-top: solid 7px black;
+  color: #555;
+  border-top: solid 7px #000;
   word-wrap: break-word;
   overflow: hidden; }
   .wrapper * {
@@ -164,7 +163,7 @@ body {
   padding-top: 40px; }
   #header .branding {
     padding-left: 1.4em;
-    color: black; }
+    color: #000; }
     #header .branding .site-title {
       font-size: 2.4rem;
       font-size: 2.4em\9;
@@ -173,7 +172,7 @@ body {
       line-height: 1.2;
       margin: 0; }
       #header .branding .site-title a {
-        color: black; }
+        color: #000; }
     #header .branding .site-description {
       font-size: 1rem; }
   #header .header-image {
@@ -186,7 +185,7 @@ body {
 /* Footer
 -------------------------------------------------------------- */
 #footer {
-  background: black;
+  background: #000;
   padding: 1em 0;
   color: #FFF; }
   #footer ul.row {
@@ -199,7 +198,9 @@ body {
       float: left;
       min-height: 1px;
       margin: 0 0 20px 20px;
-      width: 330px; }
+      width: 330px;
+      margin: 0 0 20px 3%;
+      width: 30%; }
   #footer a {
     color: #FFF; }
   #footer .site-title {
@@ -212,7 +213,7 @@ body {
       font-family: Georgia, "Bitstream Charter", serif;
       font-style: italic; }
       #footer .site-title .generator:after {
-        content: "\f19a";
+        content: "";
         display: inline-block;
         font-family: FontAwesome;
         font-style: normal;
@@ -228,7 +229,7 @@ body {
     right: 20px;
     z-index: 3; }
     #footer #back-top a {
-      background: #cccccc;
+      background: #CCC;
       border-radius: 100px;
       display: block;
       height: 50px;
@@ -241,13 +242,14 @@ body {
         text-indent: -119988px;
         overflow: hidden;
         text-align: left;
+        text-transform: capitalize;
         display: block; }
       #footer #back-top a:hover {
         text-decoration: none;
         filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=80);
         opacity: 0.8; }
       #footer #back-top a:before {
-        content: "\f077";
+        content: "";
         display: inline-block;
         font-family: FontAwesome;
         font-style: normal;
@@ -261,7 +263,7 @@ body {
         display: block;
         text-align: center;
         padding-top: 8px;
-        color: #999999; }
+        color: #999; }
 
 /* Menu
 -------------------------------------------------------------- */
@@ -288,10 +290,10 @@ body {
         display: block;
         /* show dropdown on hover */ }
       #menu-wrapper .menu ul li a {
-        border-top: dotted 1px black;
+        border-top: dotted 1px #000;
         padding: 0.6em 1em 0.6em 1.4em;
         display: block;
-        color: black;
+        color: #000;
         text-decoration: none;
         line-height: 1.2;
         *white-space: nowrap;
@@ -302,8 +304,8 @@ body {
           left: 0.2em;
           width: 0.4em;
           height: 0.4em;
-          color: #cccccc;
-          content: "\f00c";
+          color: #CCC;
+          content: "";
           display: inline-block;
           font-family: FontAwesome;
           font-style: normal;
@@ -321,7 +323,7 @@ body {
         right: 0;
         width: 0.6em;
         height: 0.8em;
-        content: "\f0da";
+        content: "";
         display: inline-block;
         font-family: FontAwesome;
         font-style: normal;
@@ -332,8 +334,8 @@ body {
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale; }
       #menu-wrapper .menu ul li ul {
-        background: whitesmoke;
-        border: dotted 1px black;
+        background: #F5F5F5;
+        border: dotted 1px #000;
         display: none;
         /* hide dropdown */
         width: 240px;
@@ -356,8 +358,8 @@ body {
     left: 0.2em;
     width: 1em;
     height: 1em;
-    color: #cccccc;
-    content: "\f00c";
+    color: #CCC;
+    content: "";
     display: inline-block;
     font-family: FontAwesome;
     font-style: normal;
@@ -373,10 +375,10 @@ body {
 #content {
   padding: 40px 0; }
   #content h2 {
-    border-bottom: dashed 1px #cccccc;
+    border-bottom: dashed 1px #CCC;
     padding-bottom: 0.4em; }
   #content h3 {
-    border-left: solid 7px #cccccc;
+    border-left: solid 7px #CCC;
     padding-left: 10px; }
   #content p {
     line-height: 1.6;
@@ -384,15 +386,15 @@ body {
   #content blockquote {
     margin-left: 1em;
     padding-left: 1em;
-    border-left: 5px solid #cccccc;
+    border-left: 5px solid #CCC;
     font-style: italic; }
   #content small {
     line-height: 1;
-    color: #999999; }
+    color: #999; }
   #content cite:before {
     content: "-"; }
   #content cite {
-    color: #999999;
+    color: #999;
     display: block; }
   #content table {
     max-width: 100%;
@@ -406,28 +408,28 @@ body {
       padding: 0.5em 0; }
     #content table th,
     #content table td {
-      border: 1px solid #cccccc;
+      border: 1px solid #CCC;
       line-height: 1.4;
       padding: 0.4em;
       text-align: left;
       vertical-align: top; }
     #content table th {
-      background: whitesmoke;
+      background: #F5F5F5;
       font-weight: bold; }
   #content pre {
-    border: dotted 1px #cccccc;
+    border: dotted 1px #CCC;
     padding: 0.8em;
     margin-bottom: 1.6em;
     line-height: 1.4; }
   #content code, #content kbd, #content pre, #content samp {
     font-family: monospace,serif; }
   #content hr {
-    background-color: #cccccc;
+    background-color: #CCC;
     border: 0 none;
     height: 1px;
     margin-bottom: 1.6m; }
   #content hr {
-    background-color: #cccccc;
+    background-color: #CCC;
     border: 0 none;
     height: 1px;
     margin-bottom: 1.6m; }
@@ -497,30 +499,30 @@ body {
       #content .hentry .entry-header .entry-title {
         font-size: 2rem;
         font-weight: normal;
-        color: #555555;
-        border-bottom: dotted 1px #cccccc;
+        color: #555;
+        border-bottom: dotted 1px #CCC;
         padding-bottom: 40px;
         margin: 0; }
         #content .hentry .entry-header .entry-title a {
-          color: #555555; }
+          color: #555; }
     #content .hentry .entry-content {
       margin-bottom: 1.6em;
       overflow: hidden;
       *zoom: 1; }
     #content .hentry .entry-meta {
       clear: both;
-      background: whitesmoke;
+      background: #F5F5F5;
       line-height: 1.2;
       padding: 0.8em;
       margin-bottom: 1.6em; }
       #content .hentry .entry-meta a {
-        color: #555555; }
+        color: #555; }
       #content .hentry .entry-meta div {
         margin-bottom: 0.4em; }
         #content .hentry .entry-meta div:before {
-          color: #cccccc; }
+          color: #CCC; }
       #content .hentry .entry-meta .postdate:before {
-        content: "\f017";
+        content: "";
         display: inline-block;
         font-family: FontAwesome;
         font-style: normal;
@@ -531,7 +533,7 @@ body {
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale; }
       #content .hentry .entry-meta .author:before {
-        content: "\f007";
+        content: "";
         display: inline-block;
         font-family: FontAwesome;
         font-style: normal;
@@ -542,7 +544,7 @@ body {
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale; }
       #content .hentry .entry-meta .category:before {
-        content: "\f07b";
+        content: "";
         display: inline-block;
         font-family: FontAwesome;
         font-style: normal;
@@ -553,7 +555,7 @@ body {
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale; }
       #content .hentry .entry-meta .tag:before {
-        content: "\f02b";
+        content: "";
         display: inline-block;
         font-family: FontAwesome;
         font-style: normal;
@@ -564,7 +566,7 @@ body {
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale; }
       #content .hentry .entry-meta .comment:before {
-        content: "\f075";
+        content: "";
         display: inline-block;
         font-family: FontAwesome;
         font-style: normal;
@@ -575,7 +577,7 @@ body {
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale; }
       #content .hentry .entry-meta .parent-post-link:before {
-        content: "\f1c5";
+        content: "";
         display: inline-block;
         font-family: FontAwesome;
         font-style: normal;
@@ -589,34 +591,34 @@ body {
       clear: both;
       margin: 2em 0;
       font-weight: bold;
-      color: #0066aa; }
+      color: #06A; }
       #content .hentry .page-link a {
         padding: 0.5em 0.8em;
         text-decoration: none;
-        border: solid 1px #0066aa;
+        border: solid 1px #06A;
         font-weight: normal; }
         #content .hentry .page-link a:hover {
-          background: whitesmoke; }
+          background: #F5F5F5; }
   #content .tablenav {
     clear: both;
-    padding: 20px 0 20px 20px;
-    color: #0066aa; }
+    padding: 20px 0 0 0;
+    color: #06A; }
     #content .tablenav a.page-numbers,
     #content .tablenav span.current {
       padding: 0.5em 0.8em;
       text-decoration: none;
       margin: 5px 0;
       font-weight: bold;
-      border: solid 1px #0066aa;
+      border: solid 1px #06A;
       display: inline-block; }
     #content .tablenav a.page-numbers {
-      color: #0066aa;
+      color: #06A;
       background: #FFF; }
     #content .tablenav a.page-numbers:hover {
-      background: whitesmoke; }
+      background: #F5F5F5; }
     #content .tablenav span.current {
       color: #FFF;
-      background: #0066aa; }
+      background: #06A; }
     #content .tablenav a.next,
     #content .tablenav a.prev {
       border: none;
@@ -629,7 +631,7 @@ body {
     #content .tablenav a.next {
       padding-right: 0; }
       #content .tablenav a.next:after {
-        content: "\f054";
+        content: "";
         display: inline-block;
         font-family: FontAwesome;
         font-style: normal;
@@ -642,7 +644,7 @@ body {
     #content .tablenav a.prev {
       padding-left: 0; }
       #content .tablenav a.prev:before {
-        content: "\f053";
+        content: "";
         display: inline-block;
         font-family: FontAwesome;
         font-style: normal;
@@ -687,6 +689,7 @@ body {
         text-indent: -119988px;
         overflow: hidden;
         text-align: left;
+        text-transform: capitalize;
         filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=60);
         opacity: 0.6; }
     .home #content ul.row li .thumbnail {
@@ -708,7 +711,7 @@ body {
       position: absolute;
       color: #FFF;
       background-color: rgba(0, 0, 0, 0.5);
-      background-color: #000\9;
+      background-color: #000 \9;
       /* IE8 and below */
       top: 0;
       left: 0;
@@ -742,7 +745,7 @@ body {
           width: 0.5em;
           height: 1.2em;
           color: #FFF;
-          content: "\f054";
+          content: "";
           display: inline-block;
           font-family: FontAwesome;
           font-style: normal;
@@ -764,18 +767,17 @@ body {
         top: -3px;
         right: -15px;
         font-size: 12px;
-        background: black;
+        background: #000;
         color: #fff;
         text-align: center;
         width: 50px;
         padding: 3px;
-        -webkit-transform: rotate(45deg);
         -moz-transform: rotate(45deg);
         -ms-transform: rotate(45deg);
-        -o-transform: rotate(45deg);
+        -webkit-transform: rotate(45deg);
         transform: rotate(45deg); }
         .home #content ul.row li.sticky i:before {
-          content: "\f005";
+          content: "";
           display: inline-block;
           font-family: FontAwesome;
           font-style: normal;
@@ -785,6 +787,8 @@ body {
           padding-right: 0;
           -webkit-font-smoothing: antialiased;
           -moz-osx-font-smoothing: grayscale; }
+.home #content .tablenav {
+  padding-left: 20px; }
 
 /* Single
 -------------------------------------------------------------------- */
@@ -794,7 +798,7 @@ body {
   overflow: hidden;
   *zoom: 1; }
   .single #content #nav-below .nav-next a:before {
-    content: "\f053";
+    content: "";
     display: inline-block;
     font-family: FontAwesome;
     font-style: normal;
@@ -808,7 +812,7 @@ body {
     display: block;
     float: right; }
     .single #content #nav-below .nav-previous a:after {
-      content: "\f054";
+      content: "";
       display: inline-block;
       font-family: FontAwesome;
       font-style: normal;
@@ -864,12 +868,10 @@ a:hover img {
 #content .hentry .gallery-caption {
   font-size: 0.9em;
   line-height: 1;
-  color: #999999;
+  color: #999;
   max-width: 100%;
   text-align: center; }
 #content .hentry .wp-caption {
-  padding: 5px;
-  background: #cccccc;
   max-width: 100%; }
   #content .hentry .wp-caption p {
     text-align: center;
@@ -926,24 +928,39 @@ video {
   #content #comments .navigation {
     position: relative;
     height: 1em;
-    padding-bottom: 0.8px;
     margin-bottom: 0.8em; }
+    #content #comments .navigation.bottom {
+      margin-bottom: 1.6em; }
     #content #comments .navigation .nav-previous a {
       position: absolute;
       top: 0;
-      right: 0;
-      padding-left: 0.8em; }
+      right: 0; }
       #content #comments .navigation .nav-previous a:after {
-        font-family: 'Genericons';
-        content: '\f429'; }
+        content: "";
+        display: inline-block;
+        font-family: FontAwesome;
+        font-style: normal;
+        font-weight: normal;
+        line-height: 1;
+        padding-left: 0.4em;
+        padding-right: 0;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale; }
     #content #comments .navigation .nav-next a {
       position: absolute;
       top: 0;
-      left: 0;
-      padding-right: 1em; }
+      left: 0; }
       #content #comments .navigation .nav-next a:before {
-        font-family: 'Genericons';
-        content: '\f430'; }
+        content: "";
+        display: inline-block;
+        font-family: FontAwesome;
+        font-style: normal;
+        font-weight: normal;
+        line-height: 1;
+        padding-left: 0;
+        padding-right: 0.4em;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale; }
   #content #comments ol.commentlist {
     list-style: none;
     margin: 0;
@@ -951,7 +968,7 @@ video {
     #content #comments ol.commentlist li.trackback,
     #content #comments ol.commentlist li.pingback,
     #content #comments ol.commentlist li.comment {
-      border-left: 2px solid #cccccc;
+      border-left: 2px solid #CCC;
       clear: both;
       margin-bottom: 0.8em;
       padding: 0 0 0 0.8em;
@@ -960,7 +977,7 @@ video {
       overflow: hidden;
       *zoom: 1; }
   #content #comments li.trackback .posted a.web:after, #content #comments li.pingback .posted a.web:after {
-    content: "\f08e";
+    content: "";
     display: inline-block;
     font-family: FontAwesome;
     font-style: normal;
@@ -973,10 +990,10 @@ video {
   #content #comments li .comment_meta .author {
     font-weight: bold; }
   #content #comments li .comment_meta .postdate {
-    color: #999999;
+    color: #999;
     font-size: 0.85rem; }
     #content #comments li .comment_meta .postdate:before {
-      content: "\f017";
+      content: "";
       display: inline-block;
       font-family: FontAwesome;
       font-style: normal;
@@ -987,7 +1004,7 @@ video {
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale; }
   #content #comments li .comment_meta .comment-reply-link:before {
-    content: "\f075";
+    content: "";
     display: inline-block;
     font-family: FontAwesome;
     font-style: normal;
@@ -1007,7 +1024,7 @@ video {
     #content #comments li .comment_text p {
       line-height: 1.4; }
       #content #comments li .comment_text p.web a:after {
-        content: "\f08e";
+        content: "";
         display: inline-block;
         font-family: FontAwesome;
         font-style: normal;
@@ -1018,12 +1035,12 @@ video {
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale; }
   #content #comments li.bypostauthor .comment_meta .author {
-    color: black; }
+    color: #000; }
 
 /* Forms
 -------------------------------------------------------------- */
 #comments #commentform {
-  border: dashed 1px #cccccc;
+  border: dashed 1px #CCC;
   padding: 10px 5%;
   margin: 15px 0;
   width: 100%; }
@@ -1035,18 +1052,18 @@ video {
     width: 300px;
     padding: 5px;
     background: #FFF;
-    border: solid 1px #cccccc; }
+    border: solid 1px #CCC; }
   #comments #commentform textarea {
     width: 100%;
     height: 100px;
     padding: 5px;
     background: #FFF;
-    border: solid 1px #cccccc; }
+    border: solid 1px #CCC; }
   #comments #commentform input#submit {
     padding: 5px 10px; }
   #comments #commentform .form-allowed-tags {
     font-size: 0.9rem;
-    color: #999999; }
+    color: #999; }
   #comments #commentform .form-allowed-tags code {
     display: block; }
 
@@ -1070,7 +1087,7 @@ form textarea {
   .archive #content ul li,
   .search #content ul li,
   .error404 #content ul li {
-    border-bottom: dotted 1px #cccccc;
+    border-bottom: dotted 1px #CCC;
     line-height: 1.2;
     padding: 0; }
     .archive #content ul li a,
@@ -1078,14 +1095,14 @@ form textarea {
     .error404 #content ul li a {
       display: block;
       padding: 5px 0;
-      color: #555555;
+      color: #555;
       overflow: hidden;
       *zoom: 1; }
       .archive #content ul li a:hover,
       .search #content ul li a:hover,
       .error404 #content ul li a:hover {
         text-decoration: none;
-        background: whitesmoke; }
+        background: #F5F5F5; }
     .archive #content ul li p,
     .search #content ul li p,
     .error404 #content ul li p {
@@ -1102,14 +1119,14 @@ form textarea {
     .archive #content ul li .postdate,
     .search #content ul li .postdate,
     .error404 #content ul li .postdate {
-      color: #999999;
+      color: #999;
       font-size: 0.85rem;
       margin-top: 5px;
       display: block; }
       .archive #content ul li .postdate:before,
       .search #content ul li .postdate:before,
       .error404 #content ul li .postdate:before {
-        content: "\f017";
+        content: "";
         display: inline-block;
         font-family: FontAwesome;
         font-style: normal;
@@ -1119,10 +1136,6 @@ form textarea {
         padding-right: 0.4em;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale; }
-.archive #content .tablenav,
-.search #content .tablenav,
-.error404 #content .tablenav {
-  padding-left: 0; }
 
 /* Widget
 -------------------------------------------------------------- */
@@ -1140,26 +1153,28 @@ form textarea {
     font-weight: normal;
     margin: 0 0 10px 0;
     padding: 0 0 5px 0;
-    border-bottom: solid 3px #cccccc;
-    color: #cccccc; }
+    border-bottom: solid 3px #CCC;
+    color: #CCC; }
   .widget ul {
     list-style: none;
     padding: 0;
     margin-left: 0;
+    line-height: 1.4;
     overflow: hidden; }
     .widget ul li {
       margin: -1px 0 0 0;
       border-top: dotted 1px #FFF;
-      padding: 0.3em 0; }
+      padding: 0.4em 0 0.4em 0.8em;
+      text-indent: -0.4em; }
       .widget ul li:before {
-        content: "\f0da";
+        content: "";
         display: inline-block;
         font-family: FontAwesome;
         font-style: normal;
         font-weight: normal;
         line-height: 1;
         padding-left: 0;
-        padding-right: 0.4em;
+        padding-right: 0.2em;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale; }
       .widget ul li a {
@@ -1183,7 +1198,7 @@ form textarea {
     .widget #wp-calendar tbody th,
     .widget #wp-calendar tbody td {
       text-align: center;
-      border-top: 1px solid #cccccc;
+      border-top: 1px solid #CCC;
       padding: 8px; }
       .widget #wp-calendar tbody th a,
       .widget #wp-calendar tbody td a {
@@ -1192,16 +1207,16 @@ form textarea {
         padding: 0.2em 0.4em;
         margin: 0 auto;
         background: #FFF;
-        color: #0066aa; }
+        color: #06A; }
         .widget #wp-calendar tbody th a:hover,
         .widget #wp-calendar tbody td a:hover {
-          background: #cccccc;
+          background: #CCC;
           text-decoration: none; }
     .widget #wp-calendar thead th {
       padding: 8px;
       text-align: center; }
     .widget #wp-calendar tfoot {
-      border-top: 1px solid #cccccc; }
+      border-top: 1px solid #CCC; }
       .widget #wp-calendar tfoot a {
         font-size: 1.2em; }
       .widget #wp-calendar tfoot #next {
@@ -1237,10 +1252,10 @@ form textarea {
     height: 30px;
     border-radius: 0 4px 4px 0;
     margin: 0;
-    background: #cccccc;
+    background: #CCC;
     color: #FFF;
     -webkit-appearance: button;
-    content: "\f005";
+    content: "";
     display: inline-block;
     font-family: FontAwesome;
     font-style: normal;
@@ -1267,7 +1282,7 @@ form textarea {
         width: 0.5em;
         height: 1.2em;
         color: #FFF;
-        content: "\f054";
+        content: "";
         display: inline-block;
         font-family: FontAwesome;
         font-style: normal;
@@ -1296,9 +1311,6 @@ form textarea {
     .widget ul li {
       border-top: none;
       display: inline; }
-      .widget ul li a {
-        padding: 0.5em 0.5em 0.5em 0;
-        display: inline-block; }
       .widget ul li ul {
         margin-left: 2em;
         padding-top: 0; }
@@ -1353,7 +1365,7 @@ form textarea {
         #content .hentry .entry-header .entry-title {
           padding-bottom: 10px; }
     #content .tablenav {
-      padding: 20px 10px;
+      padding: 0 10px 10px;
       text-align: center; }
 
   .home #header {
@@ -1362,6 +1374,11 @@ form textarea {
       margin-bottom: 0; }
   .home #content ul.row li {
     margin: 0 auto 20px; }
+  .home #content .tablenav {
+    padding-bottom: 20px; }
+
+  .single #content #nav-below {
+    margin-bottom: 1.6em; }
 
   /* small menu */
   #menu-wrapper {
@@ -1379,10 +1396,10 @@ form textarea {
         left: 240px;
         width: 2em;
         height: 2em;
-        color: black;
+        color: #000;
         text-align: center; }
         #menu-wrapper .menu #small-menu:after {
-          content: "\f0c9";
+          content: "";
           display: inline-block;
           font-family: FontAwesome;
           font-style: normal;
@@ -1396,7 +1413,7 @@ form textarea {
       #menu-wrapper .menu ul#menu-primary-items {
         clear: both;
         width: 240px;
-        background: black;
+        background: #000;
         overflow-y: scroll;
         z-index: 3; }
         #menu-wrapper .menu ul#menu-primary-items li {
@@ -1450,7 +1467,7 @@ form textarea {
         filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=70);
         opacity: 0.7; }
       body.open-menu #menu-wrapper .menu #small-menu:after {
-        content: "\f00d";
+        content: "";
         display: inline-block;
         font-family: FontAwesome;
         font-style: normal;

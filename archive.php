@@ -40,7 +40,7 @@ get_header(); ?>
 		<?php endwhile; ?>
 		</ul>
 
-		<div class="tablenav"><?php birdsite_the_pagenation(); ?></div>
+		<?php birdsite_the_pagenation(); ?>
 	<?php else: ?>
 		<p><?php _e( 'Sorry, no posts matched your criteria.', 'birdsite' ); ?></p>
 	<?php endif; ?>

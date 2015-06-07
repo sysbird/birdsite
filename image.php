@@ -85,9 +85,8 @@ get_header(); ?>
 		<nav id="nav-below">
 			<span class="nav-previous"><?php next_image_link( false, __( 'Next Image' , 'birdsite' )); ?></span>
 			<span class="nav-next"><?php previous_image_link( false, __( 'Previous Image' , 'birdsite' ) ); ?></span>
-	</nav>
-
-</article>
+		</nav>
+	</article>
 <?php endwhile; // end of the loop. ?>
 
 <?php get_footer(); ?>

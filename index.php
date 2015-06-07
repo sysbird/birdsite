@@ -9,7 +9,6 @@ get_header(); ?>
 		<?php get_template_part( 'content', get_post_format() ); ?>
 	<?php endwhile; ?>
 </ul>
-<div class="tablenav"><?php birdsite_the_pagenation(); ?></div>
-
+<?php birdsite_the_pagenation(); ?>
 
 <?php get_footer(); ?>

@@ -18,6 +18,7 @@ get_header(); ?>
 		<?php endwhile; ?>
 		</ul>
 
+		<?php birdsite_the_pagenation(); ?>
 	<?php else: ?>
 		<p><?php printf(__('Sorry, no posts matched &#8216;%s&#8217;', 'birdsite'), esc_html($s) ); ?>
 	<?php endif; ?>

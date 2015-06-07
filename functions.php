@@ -6,7 +6,7 @@ BirdSITE functions and definitions.
 // Set the content width based on the theme's design and stylesheet.
 function birdsite_content_width() {
 	global $content_width;
-	$content_width = 630;
+	$content_width = 720;
 }
 add_action( 'template_redirect', 'birdsite_content_width' );
 
@@ -42,7 +42,7 @@ function birdsite_widgets_init() {
 		'after_widget'		=> '</div>',
 		'before_title'		=> '<h3>',
 		'after_title'		=> '</h3>',
-		) );0
+		) );
 }
 add_action( 'widgets_init', 'birdsite_widgets_init' );
 
@@ -97,6 +97,7 @@ function birdsite_the_pagenation() {
 	if ( empty( $paged ) ) $paged = 1;
 
 	if ( 1 < $birdsite_pages ) {
+		echo '	<div class="tablenav">' ."\n";
 		echo paginate_links( array(
 			'base'		=> str_replace( $birdsite_big, '%#%', get_pagenum_link( $birdsite_big ) ),
 			'format'		=> '?paged=%#%',
@@ -106,6 +107,7 @@ function birdsite_the_pagenation() {
 			'prev_text'	=> __( 'Previous', 'birdsite' ),
 			'next_text'	=> __( 'Next', 'birdsite' )
 			) );
+		echo '</div>' ."\n";;
 	}
 }
 
