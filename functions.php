@@ -59,14 +59,14 @@ function birdsite_custom_comments( $comment, $args, $depth ) {
 		$birstips_url		= get_comment_author_url();
 		$birstips_author	= get_comment_author();
 	 ?>
-		<div class="posted"><strong><?php _e( 'Pingback', 'birdsite' ); ?> : </strong><a href="<?php echo $birstips_url; ?>" target="_blank" class="web"><?php echo $birstips_author ?></a><?php edit_comment_link( __('(Edit)', 'birdsite'), ' ' ); ?></div>
+		<div class="posted"><strong><?php _e( 'Pingback', 'birdsite' ); ?> : </strong><a href="<?php echo $birstips_url; ?>" target="_blank" class="web"><?php echo $birstips_author ?></a><?php edit_comment_link( __( '(Edit)', 'birdsite' ), ' ' ); ?></div>
 
 	<?php else: ?>
 
 		<div class="comment_meta">
 			<?php echo get_avatar( $comment, 40 ); ?>
 			<span class="author"><?php comment_author(); ?></span>
-			<span class="postdate"><?php echo get_comment_time(get_option('date_format') .' ' .get_option('time_format')); ?></span><?php comment_reply_link( array_merge( $args, array( 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) ); ?>
+			<span class="postdate"><?php echo get_comment_time(get_option( 'date_format ') .' ' .get_option( 'time_format' ) ); ?></span><?php comment_reply_link( array_merge( $args, array( 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) ); ?>
 		</div>
 		<?php if ( $comment->comment_approved == '0' ) : ?>
 			<em><?php _e( 'Your comment is awaiting moderation.', 'birdsite' ); ?></em><br>
@@ -115,7 +115,7 @@ function birdsite_the_pagenation() {
 // Copyright Year
 function birdsite_get_copyright_year() {
 
-	$birdsite_copyright_year = date("Y");
+	$birdsite_copyright_year = date( "Y" );
 
 	$birdsite_first_year = $birdsite_copyright_year;
 	$args = array(
@@ -345,7 +345,7 @@ function birdsite_setup() {
 	 * we also set up the default background color.
 	 */
 	add_theme_support( 'custom-background', array(
-		'default-color' => 'f9f9ef',
+		'default-color' => 'F5F5F5',
 	) );
 
 	// This theme uses wp_nav_menu() in one location.
@@ -356,21 +356,21 @@ function birdsite_setup() {
 	// Add support for custom headers.
 	$custom_header_support = array(
 		// Text color and image (empty to use none).
-		'default-text-color'     => '000',
-		'default-image'          => '',
+		'default-text-color'	=> '000',
+		'default-image'			=> '',
 
 		// Set height and width, with a maximum value for the width.
-		'height'                 => 300,
-		'width'                  => 600,
-		'max-width'              => 600,
+		'height'	=> 300,
+		'width'		=> 600,
+		'max-width'	=> 600,
 
 		// Random image rotation off by default.
-		'random-default'         => true,
+		'random-default'	=> true,
 
 		// Callbacks for styling the header and the admin preview.
-		'wp-head-callback' => 'birdsite_header_style',
-		'admin-head-callback' => 'birdsite_admin_header_style',
-		'admin-preview-callback' => 'birdsite_admin_header_image'
+		'wp-head-callback'			=> 'birdsite_header_style',
+//		'admin-head-callback'		=> 'birdsite_admin_header_style',
+//		'admin-preview-callback'	=> 'birdsite_admin_header_image'
 	);
 
 	register_default_headers( array(
@@ -436,34 +436,40 @@ function birdsite_scripts() {
 		wp_enqueue_script( 'comment-reply' );
 	}
 
-	wp_enqueue_script('jquery');
 	wp_enqueue_script( 'birdsite', get_template_directory_uri() .'/js/birdsite.js', 'jquery', '1.06' );
 	wp_enqueue_style( 'birdsite', get_stylesheet_uri() );
 
 	if ( strtoupper( get_locale() ) == 'JA' ) {
-		wp_enqueue_style( 'birdsite_ja', get_template_directory_uri().'/css/ja.css' );
+		wp_enqueue_style( 'birdsite_ja', get_template_directory_uri() .'/css/ja.css' );
 	}
 }
 add_action( 'wp_enqueue_scripts', 'birdsite_scripts' );
 
 //////////////////////////////////////////////////////
-// Theme Customizer
-function birdsite_customize($wp_customize) {
+// Enqueue Scripts for admin
+function birdsite_admin_scripts( $hook_suffix ) {
 
-	$wp_customize->add_section( 'birdsite_customize', array(
-		'title'=> __( 'Theme Options', 'birdsite' ),
-		'priority' => 999,
-	) );
+	if ( 'appearance_page_custom-header' != $hook_suffix )
+		return;
+
+	if ( strtoupper( get_locale() ) == 'JA' ) {
+		wp_enqueue_style( 'birdsite_ja', get_template_directory_uri().'/css/ja.css' );
+	}
+}
+add_action( 'admin_enqueue_scripts', 'birdsite_admin_scripts' );
+
+//////////////////////////////////////////////////////
+// Theme Customizer
+function birdsite_customize( $wp_customize ) {
 
 	// Text Color
 	$wp_customize->add_setting( 'birdsite_text_color', array(
 		'default' => '#555',
 		'sanitize_callback' => 'maybe_hash_hex_color',
 	) );
-
 	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'birdsite_text_color', array(
 		'label' => __( 'Text Color', 'birdsite' ),
-		'section'=> 'birdsite_customize',
+		'section'=> 'colors',
 		'settings' => 'birdsite_text_color',
 	) ) );
 
@@ -472,10 +478,9 @@ function birdsite_customize($wp_customize) {
 		'default' => '#06A',
 		'sanitize_callback' => 'maybe_hash_hex_color',
 	) );
-
 	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'birdsite_link_color', array(
 		'label' => __( 'Link Color', 'birdsite' ),
-		'section'=> 'birdsite_customize',
+		'section'=> 'colors',
 		'settings' => 'birdsite_link_color',
 	) ) );
 
@@ -484,10 +489,9 @@ function birdsite_customize($wp_customize) {
 		'default' => '#000',
 		'sanitize_callback' => 'maybe_hash_hex_color',
 	) );
-
 	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'birdsite_footer_color', array(
 		'label' => __( 'Header, Footer Color', 'birdsite' ),
-		'section'=> 'birdsite_customize',
+		'section'=> 'colors',
 		'settings' => 'birdsite_footer_color',
 	) ) );
 
@@ -496,22 +500,26 @@ function birdsite_customize($wp_customize) {
 		'default' => '#555',
 		'sanitize_callback' => 'maybe_hash_hex_color',
 	) );
-
 	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'birdsite_navigation_color', array(
 		'label' => __( 'Navigation Text Color', 'birdsite' ),
-		'section'=> 'birdsite_customize',
+		'section'=> 'colors',
 		'settings' => 'birdsite_navigation_color',
 	) ) );
+
+	// Footer Section
+	$wp_customize->add_section( 'birdsite_footer', array(
+		'title'		=> __( 'Footer', 'birdsite' ),
+		'priority'	=> 999,
+	) );
 
 	// Display Copyright
 	$wp_customize->add_setting( 'birdsite_copyright', array(
 		'default'  => true,
 		'sanitize_callback' => 'birdsite_sanitize_checkbox',
 	) );
-
 	$wp_customize->add_control( 'birdsite_copyright', array(
 		'label'		=> __( 'Display Copyright', 'birdsite' ),
-		'section'  => 'birdsite_customize',
+		'section'  => 'birdsite_footer',
 		'type'     => 'checkbox',
 		'settings' => 'birdsite_copyright',
 	) );
@@ -521,15 +529,25 @@ function birdsite_customize($wp_customize) {
 		'default'  => true,
 		'sanitize_callback' => 'birdsite_sanitize_checkbox',
 	) );
-
 	$wp_customize->add_control( 'birdsite_credit', array(
 		'label'		=> __( 'Display Credit', 'birdsite' ),
-		'section'  => 'birdsite_customize',
+		'section'  => 'birdsite_footer',
 		'type'     => 'checkbox',
 		'settings' => 'birdsite_credit',
 	) );
 }
 add_action( 'customize_register', 'birdsite_customize' );
+
+//////////////////////////////////////////////////////
+// Santize a checkbox
+function birdsite_sanitize_checkbox( $input ) {
+
+	if ( $input == true ) {
+		return true;
+	} else {
+		return false;
+	}
+}
 
 //////////////////////////////////////////////////////
 // Removing the default gallery style
@@ -543,13 +561,3 @@ function birdsite_gallery_atts( $out, $pairs, $atts ) {
 add_filter( 'shortcode_atts_gallery', 'birdsite_gallery_atts', 10, 3 );
 add_filter( 'use_default_gallery_style', '__return_false' );
 
-//////////////////////////////////////////////////////
-// Santize a checkbox
-function birdsite_sanitize_checkbox( $input ) {
-
-	if ( $input == true ) {
-		return true;
-	} else {
-		return false;
-	}
-}
