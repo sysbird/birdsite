@@ -1,15 +1,15 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: BirdSITE 1.05 ja\n"
+"Project-Id-Version: BirdSITE 1.06 ja\n"
 "Report-Msgid-Bugs-To: http://www.sysbird.jp/wptips\n"
 "POT-Creation-Date: 2013-08-02 00:00+0300\n"
-"PO-Revision-Date: 2013-09-29 13:05+0900\n"
+"PO-Revision-Date: 2015-06-10 18:31+0900\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: GlotPress/0.1\n"
-"Last-Translator: sysbird <sysbird@gmail.com>\n"
+"X-Generator: Poedit 1.5.7\n"
+"Last-Translator: TORIYAMA Yuko <sysbirdj@gmail.com>\n"
 "Language-Team: sysbird <sysbird@gmail.com>\n"
 "Language: ja\n"
 
@@ -18,65 +18,67 @@ msgid "Error 404 - Not Found"
 msgstr "エラー404 - ページが見つかりませんでした"
 
 #: 404.php:15
-msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help."
+msgid ""
+"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
+"searching can help."
 msgstr "お探しのページが見つかりませんでした。検索してみてください。"
 
-#: archive.php:13
+#: archive.php:12
 msgid "Category Archives: %s"
 msgstr "「%s」カテゴリーの一覧"
 
-#: archive.php:16
+#: archive.php:15
 msgid "Tag Archives: %s"
 msgstr "「%s」に関する一覧"
 
-#: archive.php:19
+#: archive.php:18
 msgid "Daily Archives: %s"
 msgstr "%s の一覧"
 
-#: archive.php:22
+#: archive.php:21
 msgid "Monthly Archives: %s"
 msgstr "%s の一覧"
 
-#: archive.php:22
+#: archive.php:21
 msgid "F, Y"
 msgstr "Y年n月"
 
-#: archive.php:25
+#: archive.php:24
 msgid "Yearly Archives: %s"
 msgstr "%s の一覧"
 
-#: archive.php:25
+#: archive.php:24
 msgid "Y"
 msgstr "Y年"
 
-#: archive.php:28
+#: archive.php:27
 msgid "Author Archives: %s"
 msgstr "%s による投稿"
 
-#: archive.php:31
+#: archive.php:30
 msgid "Blog Archives"
 msgstr "アーカイブ"
 
-#: archive.php:44
+#: archive.php:45
 msgid "Sorry, no posts matched your criteria."
 msgstr "投稿が見つかりません。"
 
 #: comments.php:8
-msgid "This post is password protected. Enter the password to view any comments."
-msgstr "パスワード保護されています。コメントを見るにはパスワードを入力してください。"
+msgid ""
+"This post is password protected. Enter the password to view any comments."
+msgstr ""
+"パスワード保護されています。コメントを見るにはパスワードを入力してください。"
 
 #: comments.php:17
 msgid "One Comment"
 msgid_plural "%1$s Comments"
 msgstr[0] "%1$s件のコメント"
 
-#: comments.php:24
-#: comments.php:35
+#: comments.php:24 comments.php:35
 msgid "Older Comments"
 msgstr "古いコメント"
 
-#: comments.php:25
-#: comments.php:36
+#: comments.php:25 comments.php:36
 msgid "Newer Comments"
 msgstr "新しいコメント"
 
@@ -84,9 +86,7 @@ msgstr "新しいコメント"
 msgid "Name"
 msgstr "お名前"
 
-#: comments.php:43
-#: comments.php:44
-#: comments.php:50
+#: comments.php:43 comments.php:44 comments.php:50
 msgid "(*required)"
 msgstr "(*必須)"
 
@@ -102,13 +102,11 @@ msgstr "ウェブサイト"
 msgid "Comment"
 msgstr "コメント"
 
-#: content.php:11
-#: content.php:33
+#: content.php:15 content.php:33
 msgid "more"
 msgstr "続きを見る"
 
-#: content.php:21
-#: content.php:25
+#: content.php:21 content.php:25
 msgid "Permalink to %s"
 msgstr "%sへのリンク"
 
@@ -128,31 +126,35 @@ msgstr "%件のコメント"
 msgid "Comments Closed"
 msgstr "コメントは受け付けていません"
 
-#: content.php:44
-#: image.php:50
+#: content.php:47 image.php:68
 msgid "Pages:"
 msgstr "ページ:"
 
-#: footer.php:19
+#: footer.php:22
+msgid "Copyright &copy; %s All Rights Reserved."
+msgstr "Copyright &copy; %s All Rights Reserved."
+
+#: footer.php:27
 msgid "Proudly powered by WordPress"
 msgstr "Proudly powered by WordPress"
+
+#: footer.php:2
+msgid "BirdSITE theme by %sSysbird%s"
+msgstr "BirdSITE theme by %sSysbird%s"
 
 #: footer.php:21
 msgid "Go Top"
 msgstr "Topへ"
 
-#: functions.php:18
-#: functions.php:20
+#: functions.php:18 functions.php:20
 msgid "Widget Area for footer left"
 msgstr "ウィジェットエリアフッター(左)"
 
-#: functions.php:28
-#: functions.php:30
+#: functions.php:28 functions.php:30
 msgid "Widget Area for footer center"
 msgstr "ウィジェットエリアフッター(中央)"
 
-#: functions.php:38
-#: functions.php:40
+#: functions.php:38 functions.php:40
 msgid "Widget Area for footer right"
 msgstr "ウィジェットエリアフッター(右)"
 
@@ -211,4 +213,3 @@ msgstr "「%s」 の検索結果"
 #: search.php:22
 msgid "Sorry, no posts matched &#8216;%s&#8217;"
 msgstr "「%s」 は見つかりませんでした。"
-
