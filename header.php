@@ -24,7 +24,19 @@ The Header for our theme.
 <?php
 	// The header image
 	$birdsite_header_image = get_header_image();
-	$birdsite_header_image? $birdsite_image_tag = '' : $birdsite_image_tag = 'class="no-image"';
+	$birdsite_header_image? $birdsite_image_tag = '' : $birdsite_image_tag = 'no-image"';
+
+	// The header text
+	if ( 'blank' == get_header_textcolor() ) {
+		if( $birdsite_image_tag ){
+			$birdsite_image_tag .= ' ';
+		}
+		$birdsite_image_tag .= 'no-title';
+	}
+
+	if( $birdsite_image_tag ){
+		 $birdsite_image_tag = 'class="' . $birdsite_image_tag .'"';
+	}
 ?>
 
 	<header id="header" <?php echo $birdsite_image_tag; ?>>

@@ -149,12 +149,13 @@ body {
 	.branding {
 		padding-left: 1.4em;
 		color: $accent_color;
+		margin-bottom: 40px;
 
 		.site-title {
 			font-size: 2.4rem;
 			font-size: 2.4em\9;  /* IE8 and below */
 			font-weight: bold;
-			line-height: 1.2;
+			line-height: 1;
 			margin: 0;
 
 			a {
@@ -163,17 +164,32 @@ body {
 		}
 
 		.site-description {
+			margin-top: 1rem;
 			font-size: 1rem;
+			line-height: 1.4;
 		}
 	}
 
 	.header-image {
 		display: block;
-		margin-top: 40px;
+		margin-bottom: 40px;
 
 		img {
 			max-width: 100%;
 			vertical-align:bottom
+		}
+	}
+
+	&.no-title {
+		.branding {
+			margin-bottom: 0;
+
+			.site-title,
+			.site-description {
+				position: absolute !important;
+				clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+				clip: rect(1px, 1px, 1px, 1px);
+			}
 		}
 	}
 }
@@ -182,24 +198,20 @@ body {
 -------------------------------------------------------------- */
 #footer {
 	background: $accent_color;
-	padding: 1em 0;
+	padding: 40px 0;
 	color: #FFF;
 
 	ul.row {
 		padding: 0;
-		margin: 0;
+		margin: 0 0 20px 0;
 		list-style: none outside none;
 		@include clearfix;
 
 		&>li {
 			float: left;
 			min-height: 1px;
-			margin: 0 0 20px 20px;
-			width: 330px;
-
-			margin: 0 0 20px 3%;
+			margin: 0 0 0 3%;
 			width: 30%;
-
 		}
 	}
 
@@ -209,8 +221,8 @@ body {
 
 	.site-title {
 		border-top: solid 3px #FFF;
-		padding: 1em 0 0 20px;
-		line-height: 1.4;
+		padding: 40px 0 0 20px;
+		line-height: 1.6;
 
 		.home {
 			font-weight: bold;
@@ -269,7 +281,6 @@ body {
 #menu-wrapper {
 	.menu {
 		width: $menu-width;
-		margin-top: 40px;
 
 		#small-menu {
 			display: none; /* hide small menu initially */
@@ -646,18 +657,30 @@ body {
 
 		.page-link {
 			clear: both;
-			margin: 2em 0;
-			font-weight: bold;
+			margin: 1.6em 0;
 			color: $link-color;
 
-			a {
-				padding: 0.5em 0.8em;
+			span {
+				background: $link-color;
+				color: #FFF;
+				padding: 0.4em 0.6em;
+				margin: 0.1em 0 0.1em 0;
 				text-decoration:none;
-				border: solid 1px $link-color;
 				font-weight: normal;
+				text-align: center;
+				border: solid 1px $link-color;
+				display: inline-block;
+				line-height: 1;
+			}
 
-				&:hover {
-					background: $background-color;
+			a {
+				span {
+					color: $link-color;
+					background: #FFF;
+
+					&:hover {
+						background: $background-color;
+					}
 				}
 			}
 		}
@@ -665,43 +688,42 @@ body {
 
 	.tablenav {
 		clear: both;
-		padding: 20px 0 0 0;
 		color: $link-color;
+		padding: 20px 0 0;
+		@include clearfix;
 
 		a.page-numbers,
-		span.current {
-			padding: 0.5em 0.8em;
-			text-decoration:none;
-			margin: 5px 0;
-			font-weight: bold;
-			border:solid 1px $link-color;
+		.current {
 			display: inline-block;
-		}
-
-		a.page-numbers {
-			color: $link-color;
 			background: #FFF;
+			color: $link-color;
+			border:solid 1px $link-color;
+			text-decoration:none;
+			text-align: center;
+			padding: 0.4em 0.6em;
+			margin: 0.1em 0.1em 0.1em 0;
+
+			&.prev,
+			&.next {
+				background: none;
+				border: none;
+			}
 		}
 
 		a.page-numbers:hover {
 			background: $background-color;
+
+			&.prev,
+			&.next {
+				background: none;
+				text-decoration: underline;
+			}
 		}
 
-		span.current {
+		.current {
 			color: #FFF;
 			background: $link-color;
-		}
-
-		a.next,
-		a.prev {
-			border: none;
-			background: none;
-			font-weight: normal;
-
-			&:hover {
-				text-decoration: underline;
-				background: none;
-			}
+			border:solid 1px $link-color;
 		}
 
 		a.next {
@@ -1158,6 +1180,19 @@ video {
 		&.bypostauthor .comment_meta .author {
 			color: $accent_color;
 		}
+
+		&.awaiting  {
+			.author,
+			.comment_text,
+			.comment_text a {
+				color: $meta_color;
+			}
+
+			.attention {
+				display: block;
+				color: #C00;
+			}
+		}
 	}
 }
 
@@ -1364,7 +1399,7 @@ form {
 					padding: 0.2em 0.4em;
 					margin: 0 auto;
 					background: #FFF;
-					color: $link_color;
+					color: $accent_color;
 
 					&:hover {
 						background: $border-color;
@@ -1473,11 +1508,13 @@ form {
 	}
 
 	#footer {
+		padding: 20px 0;
 		.container {
 			padding: 0 10px;
 		}
 
 		ul.row {
+			margin: 0 0 10px 0;
 
 			&>li {
 				float: none;
@@ -1487,7 +1524,7 @@ form {
 		}
 
 		.site-title {
-			padding: 1em 0;
+			padding: 10px 0 0 0;
 			text-align: center;
 		}
 	}
@@ -1554,7 +1591,8 @@ form {
 		position: static;
 
 		.branding {
-			padding: 2.2em 0;
+			padding: 2.4em 0;
+			margin-bottom: 0;
 			text-align: center;
 
 			.site-description {
@@ -1563,13 +1601,19 @@ form {
 		}
 
 		.header-image {
-			margin-top: 0;
+			margin-bottom: 0;
 		}
-	}
 
-	#header.no-image {
-		min-height: 2.2em;
-		padding: 0;
+		&.no-image {
+			min-height: 2.2em;
+			padding: 0;
+		}
+
+		&.no-title {
+			.branding {
+				padding: 0;
+			}
+		}
 	}
 
 	#content {
@@ -1638,16 +1682,20 @@ form {
 				cursor: pointer;
 				display: block;
 				position: absolute;
-				top: 7px;
-				left: $menu-width;
-				width: 2em;
-				height: 2em;
+				top: 12px;
+				left: $menu-width + 5px;
+				width: 2.2em;
+				height: 2.2em;
 				color: $accent_color;
 				text-align: center;
+				border: solid 1px $accent_color;
+				border-radius: 4px;
+				padding: 0.2em;
 
 				&:after {
 					@include font-awesome( "\f0c9" );
 					font-size: 2em;
+					margin-top: -2px;
 				}
 			}
 
@@ -1720,6 +1768,8 @@ form {
 			#menu-wrapper {
 				.menu {
 					#small-menu {
+						border-color: #FFF;
+
 						&:after {
 							@include font-awesome( "\f00d" );
 							padding: 0;

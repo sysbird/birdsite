@@ -52,8 +52,13 @@ function birdsite_custom_comments( $comment, $args, $depth ) {
 
 	$GLOBALS['comment'] = $comment;
 
+	$birdsite_comment_awaiting = '';
+	if ( $comment->comment_approved == '0' ) {
+		$birdsite_comment_awaiting = 'awaiting';
+	}
+
 ?>
-	<li <?php comment_class(); ?> id="comment-<?php comment_ID(); ?>">
+	<li <?php comment_class( $birdsite_comment_awaiting ); ?> id="comment-<?php comment_ID(); ?>">
 
 	<?php if( 'pingback' == $comment->comment_type || 'trackback' == $comment->comment_type ):
 		$birstips_url		= get_comment_author_url();
@@ -69,7 +74,7 @@ function birdsite_custom_comments( $comment, $args, $depth ) {
 			<span class="postdate"><?php echo get_comment_time(get_option( 'date_format ') .' ' .get_option( 'time_format' ) ); ?></span><?php comment_reply_link( array_merge( $args, array( 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) ); ?>
 		</div>
 		<?php if ( $comment->comment_approved == '0' ) : ?>
-			<em><?php _e( 'Your comment is awaiting moderation.', 'birdsite' ); ?></em><br>
+			<em class="attention"><?php _e( 'Your comment is awaiting moderation.', 'birdsite' ); ?></em><br>
 		<?php endif; ?>
 
 		<div class="comment_text">
@@ -151,21 +156,8 @@ function birdsite_header_style() {
 	$footer_color = esc_attr( get_theme_mod( 'birdsite_footer_color', '#000' ) );
 	$navigation_color = esc_attr( get_theme_mod( 'birdsite_navigation_color', '#555') );
 
-	if ( 'blank' == get_header_textcolor() ) { ?>
-		#header .site-title,
-		#header .site-description {
-			position: absolute !important;
-			clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
-			clip: rect(1px, 1px, 1px, 1px);
-			}
-		#header .branding {
-			padding: 0;
-			}
-
-		#header.no-image .branding {
-			margin-bottom: 0;
-		}
-
+	if ( 'blank' == get_header_textcolor() ) {
+		?>
 		#header.no-image #menu-wrapper .menu {
 			margin-top: 0;
 		}
@@ -190,20 +182,22 @@ function birdsite_header_style() {
 	}
 
 	a,
-	#content .hentry .page-link,
 	#content .tablenav,
-	#content .tablenav a.page-numbers {
+	#content .tablenav a.page-numbers,
+	#content .hentry .page-link,
+	#content .hentry .page-link a span {
 		color: <?php echo $link_color; ?>;
 	}
 
-	#content .hentry .page-link a,
 	#content .tablenav a.page-numbers,
-	#content .tablenav .current {
+	#content .tablenav span.current,
+	#content .hentry .page-link span {
 		border-color: <?php echo $link_color; ?>;
 	}
 
-	#content .tablenav .current {
-		background-color: <?php echo $link_color; ?>;
+	#content .tablenav span.current,
+	#content .hentry .page-link span {
+		background: <?php echo $link_color; ?>;
 	}
 
 	.wrapper,
@@ -217,17 +211,20 @@ function birdsite_header_style() {
 	}
 
 	h1, h2, h3, h4, h5, h6,
-	#menu-wrapper .menu #small-menu {
+	.widget #wp-calendar tbody th a,
+	.widget #wp-calendar tbody td a {
 		color: <?php echo $footer_color; ?>;
 	}
 
 	#menu-wrapper .menu,
-	#menu-wrapper .menu ul li a {
+	#menu-wrapper .menu ul li a,
+	#menu-wrapper .menu #small-menu {
 	    color: <?php echo $navigation_color; ?>;
 	}
 
 	#menu-wrapper .menu ul li ul,
-	#menu-wrapper .menu ul li {
+	#menu-wrapper .menu ul li,
+	#menu-wrapper .menu #small-menu {
 		border-color: <?php echo $navigation_color; ?>;
 	}
 
