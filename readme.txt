@@ -20,6 +20,7 @@ Link Color: set at Colors section.
 Header, Footer Background Color: set at Colors section.
 Display Copyright: set at Footer section.
 Display Credit: set at Foote section.
+Recommend Blog pages show at most 9 posts at Reading Settings.
 
 
 == License ==
@@ -54,6 +55,7 @@ http://www.sysbird.jp/wptips/contact/
 == Changelog ==
 v1.06
 * fix WordPress Version 4.2.
+* add support title-tag.
 * replace the web font at Font Awesome.
 * replace the html5shiv.js of non-compressed version.
 * change style for sticky post.

@@ -15,201 +15,223 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: 404.php:10
+#: 404.php:14
 msgid "Error 404 - Not Found"
 msgstr ""
 
-#: 404.php:15
+#: 404.php:18
 msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help."
 msgstr ""
 
-#: archive.php:13
+#: archive.php:16
 msgid "Category Archives: %s"
 msgstr ""
 
-#: archive.php:16
+#: archive.php:19
 msgid "Tag Archives: %s"
 msgstr ""
 
-#: archive.php:19
+#: archive.php:22
 msgid "Daily Archives: %s"
 msgstr ""
 
-#: archive.php:22
+#: archive.php:25
 msgid "Monthly Archives: %s"
 msgstr ""
 
-#: archive.php:22
+#: archive.php:25
 msgid "F, Y"
 msgstr ""
 
-#: archive.php:25
+#: archive.php:28
 msgid "Yearly Archives: %s"
 msgstr ""
 
-#: archive.php:25
+#: archive.php:28
 msgid "Y"
 msgstr ""
 
-#: archive.php:28
+#: archive.php:31
 msgid "Author Archives: %s"
 msgstr ""
 
-#: archive.php:31
+#: archive.php:34
 msgid "Blog Archives"
 msgstr ""
 
-#: archive.php:44
+#: archive.php:49
 msgid "Sorry, no posts matched your criteria."
 msgstr ""
 
-#: comments.php:8
+#: comments.php:12
 msgid "This post is password protected. Enter the password to view any comments."
 msgstr ""
 
-#: comments.php:17
+#: comments.php:21
 msgid "One Comment"
-msgid_plural "%1$s Comments"
-msgstr[0] "%1$såèÇÃÉRÉÅÉìÉg"
+msgid_plural ""
+msgstr[0] ""
 
-#: comments.php:24
-#: comments.php:35
+#: comments.php:28 comments.php:39
 msgid "Older Comments"
 msgstr ""
 
-#: comments.php:25
-#: comments.php:36
+#: comments.php:29 comments.php:40
 msgid "Newer Comments"
 msgstr ""
 
-#: comments.php:43
+#: comments.php:47
 msgid "Name"
 msgstr ""
 
-#: comments.php:43
-#: comments.php:44
-#: comments.php:50
+#: comments.php:47 comments.php:48 comments.php:54
 msgid "(*required)"
 msgstr ""
 
-#: comments.php:44
+#: comments.php:48
 msgid "Email (will not be published)"
 msgstr ""
 
-#: comments.php:45
+#: comments.php:48
 msgid "Website"
 msgstr ""
 
-#: comments.php:50
+#: comments.php:53
 msgid "Comment"
 msgstr ""
 
-#: content.php:11
-#: content.php:33
+#: content.php:19 content.php:37
 msgid "more"
 msgstr ""
 
-#: content.php:21
-#: content.php:25
+#: content.php:25 content.php:29
 msgid "Permalink to %s"
 msgstr ""
 
-#: content.php:30
+#: content.php:34
 msgid "No Comments"
 msgstr ""
 
-#: content.php:30
+#: content.php:34
 msgid "1 Comment"
 msgstr ""
 
-#: content.php:30
+#: content.php:34
 msgid "% Comments"
 msgstr ""
 
-#: content.php:30
+#: content.php:34
 msgid "Comments Closed"
 msgstr ""
 
-#: content.php:44
-#: image.php:50
+#: content.php:52 image.php:72
 msgid "Pages:"
 msgstr ""
 
-#: footer.php:19
+#: footer.php:26
+msgid "Copyright &copy; %s All Rights Reserved."
+msgstr ""
+
+#: footer.php:31
 msgid "Proudly powered by WordPress"
 msgstr ""
 
-#: footer.php:21
+#: footer.php:32
+msgid "BirdSITE theme by %sSysbird%s"
+msgstr ""
+
+#: footer.php:37
 msgid "Go Top"
 msgstr ""
 
-#: functions.php:18
-#: functions.php:20
+#: functions.php:22 functions.php:24
 msgid "Widget Area for footer left"
 msgstr ""
 
-#: functions.php:28
-#: functions.php:30
+#: functions.php:32 functions.php:34
 msgid "Widget Area for footer center"
 msgstr ""
 
-#: functions.php:38
-#: functions.php:40
+#: functions.php:42 functions.php:44
 msgid "Widget Area for footer right"
 msgstr ""
 
-#: functions.php:63
+#: functions.php:71
 msgid "Pingback"
 msgstr ""
 
-#: function.php:63
+#: function.php:71
 msgid "(Edit)"
 msgstr ""
 
-#: functions.php:73
+#: functions.php:81
 msgid "Your comment is awaiting moderation."
 msgstr ""
 
-#: functions.php:332
+#: functions.php:116
+msgid "Previous"
+msgstr ""
+
+#: functions.php:117
+msgid "Next"
+msgstr ""
+
+#: functions.php:283
 msgid "Navigation Menu"
 msgstr ""
 
-#: functions.php:371
+#: functions.php:347
 msgid "Page %s"
 msgstr ""
 
-#: functions.php:397
-msgid "Theme Options"
-msgstr ""
-
-#: functions.php:407
+#: functions.php:387
 msgid "Text Color"
 msgstr ""
 
-#: functions.php:417
+#: functions.php:399
 msgid "Link Color"
 msgstr ""
 
-#: functions.php:429
+#: functions.php:411
 msgid "Header, Footer Color"
 msgstr ""
 
-#: functions.php:440
+#: functions.php:423
 msgid "Navigation Text Color"
 msgstr ""
 
-#: image.php:54
+#: functions.php:430
+msgid "Footer"
+msgstr ""
+
+#: functions.php:441
+msgid "Display Copyright"
+msgstr ""
+
+#: functions.php:454
+msgid "Display Credit"
+msgstr ""
+
+#: image.php:90
 msgid "Next Image"
 msgstr ""
 
-#: image.php:55
+#: image.php:91
 msgid "Previous Image"
 msgstr ""
 
-#: search.php:10
+#: search.php:14
 msgid "Search Results: %s"
 msgstr ""
 
-#: search.php:22
+#: search.php:27
 msgid "Sorry, no posts matched &#8216;%s&#8217;"
+msgstr ""
+
+#: searchform.php:12
+msgid "Search..."
+msgstr ""
+
+#. Description of the plugin/theme
+msgid "BirdSITE is a photoblogging theme. The theme has grid layout and uses CSS3 media queries for its responsive layout and is therefore optimized for tablet pcs and smart phones. Features include the Theme Customize. You can choose the text color, link color, header line and footer background color and navigation color."
 msgstr ""

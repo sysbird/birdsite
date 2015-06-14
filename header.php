@@ -1,13 +1,21 @@
 <?php
-/*
-The Header for our theme.
-*/
+/**
+ * The template for displaying the header
+ *
+ * @package WordPress
+ * @subpackage BirdSITE
+ * @since BirdSITE 1.0
+ */
 ?><!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
 <meta charset="<?php bloginfo( 'charset' ); ?>" >
 <meta name="viewport" content="width=device-width" >
-<title><?php wp_title('|', true, 'right'); ?></title>
+<?php
+if ( ! function_exists( '_wp_render_title_tag' ) ) {
+	add_action( 'wp_head', 'birdsite_slug_render_title' );
+}
+?>
 <link rel="profile" href="http://gmpg.org/xfn/11" >
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" >
 <!--[if lt IE 9]>
@@ -24,7 +32,7 @@ The Header for our theme.
 <?php
 	// The header image
 	$birdsite_header_image = get_header_image();
-	$birdsite_header_image? $birdsite_image_tag = '' : $birdsite_image_tag = 'no-image"';
+	$birdsite_header_image? $birdsite_image_tag = '' : $birdsite_image_tag = 'no-image';
 
 	// The header text
 	if ( 'blank' == get_header_textcolor() ) {
@@ -53,7 +61,12 @@ The Header for our theme.
 		<?php endif; ?>
 
 		<nav id="menu-wrapper" <?php echo $birdsite_image_tag; ?>>
-			<?php wp_nav_menu( array( 'theme_location' => 'primary', 'container_class' => 'menu', 'menu_class' => '', 'menu_id' => 'menu-primary-items', 'items_wrap' => '<div id="small-menu"></div><ul id="%1$s" class="%2$s">%3$s</ul>', 'fallback_cb' => '' ) ); ?>
+			<?php wp_nav_menu( array( 'theme_location'	=> 'primary',
+							'container_class'	=> 'menu',
+							'menu_class'		=> '',
+							'menu_id'		=> 'menu-primary-items',
+							'items_wrap'		=> '<div id="small-menu"></div><ul id="%1$s" class="%2$s">%3$s</ul>',
+							'fallback_cb'		=> '' ) ); ?>
 		</nav>
 	</header>
 

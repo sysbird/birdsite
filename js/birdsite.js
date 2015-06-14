@@ -12,7 +12,7 @@ jQuery( function() {
 		}
 		else{
 			// open Navigation
-			jQuery( 'ul#menu-primary-items' ).height( jQuery( window ).height() );
+//			jQuery('ul#menu-primary-items').height(jQuery('body .wrapper').height());
 			jQuery( 'body' ).addClass( 'open-menu' );
 		}
 

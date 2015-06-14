@@ -1,7 +1,11 @@
 <?php
-/*
-The main template file.
-*/
+/**
+ * The main template file
+ *
+ * @package WordPress
+ * @subpackage BirdSITE
+ * @since BirdSITE 1.0
+ */
 get_header(); ?>
 
 <ul id="thumbnails" class="row">

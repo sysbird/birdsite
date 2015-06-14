@@ -1,7 +1,11 @@
 <?php
-/*
-The template for displaying the footer.
-*/
+/**
+ * The template for displaying the footer
+ *
+ * @package WordPress
+ * @subpackage BirdSITE
+ * @since BirdSITE 1.0
+ */
 ?>
 		</div> <!-- /content -->
 		</div><!-- /main -->
@@ -16,7 +20,7 @@ The template for displaying the footer.
 				<li><?php dynamic_sidebar( 'widget-area-footer-right' ); ?></li>
 			</ul>
 
-			<div class="site-title"><span class="home"><a href="<?php echo esc_url(home_url( '/' )) ; ?>"><?php bloginfo( 'name' ); ?></a></span>
+			<div class="site-title"><span class="home"><a href="<?php echo esc_url( home_url( '/' ) ) ; ?>"><?php bloginfo( 'name' ); ?></a></span>
 
 				<?php if( get_theme_mod( 'birdsite_copyright', true ) ): ?>
 					<?php printf(__( 'Copyright &copy; %s All Rights Reserved.', 'birdsite' ), birdsite_get_copyright_year() ); ?>

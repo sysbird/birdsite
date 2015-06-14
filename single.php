@@ -1,7 +1,11 @@
 <?php
-/*
-The Template for displaying all single posts.
-*/
+/**
+ * The template for displaying all single posts and attachments
+ *
+ * @package WordPress
+ * @subpackage BirdSITE
+ * @since BirdSITE 1.0
+ */
 get_header(); ?>
 
 <?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
@@ -12,8 +16,8 @@ get_header(); ?>
 		<?php comments_template( '', true ); ?>
 
 		<nav id="nav-below">
-			<span class="nav-next"><?php next_post_link('%link', '%title'); ?></span>
-			<span class="nav-previous"><?php previous_post_link('%link', '%title'); ?></span>
+			<span class="nav-next"><?php next_post_link( '%link', '%title' ); ?></span>
+			<span class="nav-previous"><?php previous_post_link( '%link', '%title' ); ?></span>
 		</nav>
 
 	</article>

@@ -3,213 +3,233 @@ msgstr ""
 "Project-Id-Version: BirdSITE 1.06 ja\n"
 "Report-Msgid-Bugs-To: http://www.sysbird.jp/wptips\n"
 "POT-Creation-Date: 2013-08-02 00:00+0300\n"
-"PO-Revision-Date: 2015-06-10 18:31+0900\n"
+"PO-Revision-Date: 2015-06-13 00:00+0900\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Poedit 1.5.7\n"
+"X-Generator: Poedit 1.8.1\n"
 "Last-Translator: TORIYAMA Yuko <sysbirdj@gmail.com>\n"
 "Language-Team: sysbird <sysbird@gmail.com>\n"
 "Language: ja\n"
 
-#: 404.php:10
+#: 404.php:14
 msgid "Error 404 - Not Found"
 msgstr "エラー404 - ページが見つかりませんでした"
 
-#: 404.php:15
-msgid ""
-"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
-"searching can help."
+#: 404.php:18
+msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help."
 msgstr "お探しのページが見つかりませんでした。検索してみてください。"
 
-#: archive.php:12
+#: archive.php:16
 msgid "Category Archives: %s"
 msgstr "「%s」カテゴリーの一覧"
 
-#: archive.php:15
+#: archive.php:19
 msgid "Tag Archives: %s"
 msgstr "「%s」に関する一覧"
 
-#: archive.php:18
+#: archive.php:22
 msgid "Daily Archives: %s"
 msgstr "%s の一覧"
 
-#: archive.php:21
+#: archive.php:25
 msgid "Monthly Archives: %s"
 msgstr "%s の一覧"
 
-#: archive.php:21
+#: archive.php:25
 msgid "F, Y"
 msgstr "Y年n月"
 
-#: archive.php:24
+#: archive.php:28
 msgid "Yearly Archives: %s"
 msgstr "%s の一覧"
 
-#: archive.php:24
+#: archive.php:28
 msgid "Y"
 msgstr "Y年"
 
-#: archive.php:27
+#: archive.php:31
 msgid "Author Archives: %s"
 msgstr "%s による投稿"
 
-#: archive.php:30
+#: archive.php:34
 msgid "Blog Archives"
 msgstr "アーカイブ"
 
-#: archive.php:45
+#: archive.php:49
 msgid "Sorry, no posts matched your criteria."
 msgstr "投稿が見つかりません。"
 
-#: comments.php:8
-msgid ""
-"This post is password protected. Enter the password to view any comments."
-msgstr ""
-"パスワード保護されています。コメントを見るにはパスワードを入力してください。"
+#: comments.php:12
+msgid "This post is password protected. Enter the password to view any comments."
+msgstr "パスワード保護されています。コメントを見るにはパスワードを入力してください。"
 
-#: comments.php:17
+#: comments.php:21
 msgid "One Comment"
 msgid_plural "%1$s Comments"
 msgstr[0] "%1$s件のコメント"
 
-#: comments.php:24 comments.php:35
+#: comments.php:28 comments.php:39
 msgid "Older Comments"
 msgstr "古いコメント"
 
-#: comments.php:25 comments.php:36
+#: comments.php:29 comments.php:40
 msgid "Newer Comments"
 msgstr "新しいコメント"
 
-#: comments.php:43
+#: comments.php:47
 msgid "Name"
 msgstr "お名前"
 
-#: comments.php:43 comments.php:44 comments.php:50
+#: comments.php:47 comments.php:48 comments.php:54
 msgid "(*required)"
 msgstr "(*必須)"
 
-#: comments.php:44
+#: comments.php:48
 msgid "Email (will not be published)"
 msgstr "メールアドレス (公開されません)"
 
-#: comments.php:45
+#: comments.php:48
 msgid "Website"
 msgstr "ウェブサイト"
 
-#: comments.php:50
+#: comments.php:53
 msgid "Comment"
 msgstr "コメント"
 
-#: content.php:15 content.php:33
+#: content.php:19 content.php:37
 msgid "more"
 msgstr "続きを見る"
 
-#: content.php:21 content.php:25
+#: content.php:25 content.php:29
 msgid "Permalink to %s"
 msgstr "%sへのリンク"
 
-#: content.php:30
+#: content.php:34
 msgid "No Comments"
 msgstr "コメントをどうぞ"
 
-#: content.php:30
+#: content.php:34
 msgid "1 Comment"
 msgstr "1件のコメント"
 
-#: content.php:30
+#: content.php:34
 msgid "% Comments"
 msgstr "%件のコメント"
 
-#: content.php:30
+#: content.php:34
 msgid "Comments Closed"
 msgstr "コメントは受け付けていません"
 
-#: content.php:47 image.php:68
+#: content.php:52 image.php:72
 msgid "Pages:"
 msgstr "ページ:"
 
-#: footer.php:22
+#: footer.php:26
 msgid "Copyright &copy; %s All Rights Reserved."
 msgstr "Copyright &copy; %s All Rights Reserved."
 
-#: footer.php:27
+#: footer.php:31
 msgid "Proudly powered by WordPress"
 msgstr "Proudly powered by WordPress"
 
-#: footer.php:2
+#: footer.php:32
 msgid "BirdSITE theme by %sSysbird%s"
 msgstr "BirdSITE theme by %sSysbird%s"
 
-#: footer.php:21
+#: footer.php:37
 msgid "Go Top"
 msgstr "Topへ"
 
-#: functions.php:18 functions.php:20
+#: functions.php:22 functions.php:24
 msgid "Widget Area for footer left"
 msgstr "ウィジェットエリアフッター(左)"
 
-#: functions.php:28 functions.php:30
+#: functions.php:32 functions.php:34
 msgid "Widget Area for footer center"
 msgstr "ウィジェットエリアフッター(中央)"
 
-#: functions.php:38 functions.php:40
+#: functions.php:42 functions.php:44
 msgid "Widget Area for footer right"
 msgstr "ウィジェットエリアフッター(右)"
 
-#: functions.php:63
+#: functions.php:71
 msgid "Pingback"
 msgstr "ピンバック"
 
-#: function.php:63
+#: function.php:71
 msgid "(Edit)"
 msgstr "(編集)"
 
-#: functions.php:73
+#: functions.php:81
 msgid "Your comment is awaiting moderation."
 msgstr "あなたのコメントは管理者の承認待ちです。"
 
-#: functions.php:332
+#: functions.php:116
+msgid "Previous"
+msgstr "前へ"
+
+#: functions.php:117
+msgid "Next"
+msgstr "次へ"
+
+#: functions.php:283
 msgid "Navigation Menu"
 msgstr "ナビゲーションメニュー"
 
-#: functions.php:371
+#: functions.php:347
 msgid "Page %s"
 msgstr "%sページ目"
 
-#: functions.php:397
-msgid "Theme Options"
-msgstr "テーマ設定"
-
-#: functions.php:407
+#: functions.php:387
 msgid "Text Color"
 msgstr "文字色"
 
-#: functions.php:417
+#: functions.php:399
 msgid "Link Color"
 msgstr "リンク色"
 
-#: functions.php:429
+#: functions.php:411
 msgid "Header, Footer Color"
 msgstr "ヘッダライン、フッター背景色"
 
-#: functions.php:440
+#: functions.php:423
 msgid "Navigation Text Color"
 msgstr "ナビゲーション文字色"
 
-#: image.php:54
+#: functions.php:430
+msgid "Footer"
+msgstr "フッター"
+
+#: functions.php:441
+msgid "Display Copyright"
+msgstr "コピーライトを表示"
+
+#: functions.php:454
+msgid "Display Credit"
+msgstr "クレジットを表示"
+
+#: image.php:90
 msgid "Next Image"
 msgstr "次の画像へ"
 
-#: image.php:55
+#: image.php:91
 msgid "Previous Image"
 msgstr "前の画像へ"
 
-#: search.php:10
+#: search.php:14
 msgid "Search Results: %s"
 msgstr "「%s」 の検索結果"
 
-#: search.php:22
+#: search.php:27
 msgid "Sorry, no posts matched &#8216;%s&#8217;"
 msgstr "「%s」 は見つかりませんでした。"
+
+#: searchform.php:12
+msgid "Search..."
+msgstr "検索..."
+
+#. Description of the plugin/theme
+msgid "BirdSITE is a photoblogging theme. The theme has grid layout and uses CSS3 media queries for its responsive layout and is therefore optimized for tablet pcs and smart phones. Features include the Theme Customize. You can choose the text color, link color, header line and footer background color and navigation color."
+msgstr "BirdSITEはフォトログのためのテーマです。レスポンシブWebデザインですので、PCのほかタブレット、スマートフォンで見ることができます。テーマカスタマイズではテキストの色、リンクの色、ヘッダーライン色とフッター背景色、ナビゲ－ション色を選択することができます。"

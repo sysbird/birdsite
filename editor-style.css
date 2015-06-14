@@ -1,9 +1,10 @@
-/*
-Theme Name: BirdTIPS
-*/
-/*
-Used to style the TinyMCE editor.
-*/
+/**
+ * Used to style the TinyMCE editor.
+ *
+ * @package WordPress
+ * @subpackage BirdSITE
+ * @since BirdSITE 1.0
+ */
 html .mceContentBody {
 	max-width:630px;
 	}
@@ -192,8 +193,8 @@ table td {
 	vertical-align: top; }
 
 table th {
-	  background: #555555;
-	  color: #FFF; }
+	  background: #F5F5F5;
+	  font-weight: bold; }
 
 img[class*="wp-image-"] {
 	height: auto;
@@ -241,10 +242,11 @@ img.aligncenter {
 .wp-caption {
     background: none repeat scroll 0 0 #F5F5F5;
     color: #999999;
-    font-size: 0.8em;
+    font-size: 0.9em;
     max-width: 100%;
-    padding-top: 5px;
+    padding: 5px;
     text-align: center;
+    border: none;
 	}
 
 .wp-caption img {
@@ -259,7 +261,7 @@ img.aligncenter {
 
 .wp-caption .wp-caption-text,
 .wp-caption-dd {
-    color: #999999;
+	color: #999999;
 	margin: 0 0 0.6em 0 !important;
 	padding: 0 0 5px 0;
 	position: relative;
@@ -268,4 +270,4 @@ img.aligncenter {
 .wp-smiley {
 	margin:0;
 	}
-	
+

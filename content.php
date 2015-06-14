@@ -1,7 +1,11 @@
 <?php
-/*
-The default template for displaying content. Used for both single and index/page/archive/search.
-*/
+/**
+ * The default template for displaying content
+ *
+ * @package WordPress
+ * @subpackage BirdSITE
+ * @since BirdSITE 1.0
+ */
 ?>
 
 <?php if ( is_home() ) : /* Display Excerpts for Home */ ?>
@@ -46,7 +50,7 @@ The default template for displaying content. Used for both single and index/page
 		<?php the_content(); ?>
 		<?php wp_link_pages( array(
 			'before'		=> '<div class="page-link">' . __( 'Pages:', 'birdsite' ),
-			'after'			=> '</div>',
+			'after'		=> '</div>',
 			'link_before'	=> '<span>',
 			'link_after'	=> '</span>'
 			) ); ?>

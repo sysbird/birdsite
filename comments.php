@@ -1,7 +1,11 @@
 <?php
-/*
-The template for displaying Comments.
-*/
+/**
+ * The template for displaying comments
+ *
+ * @package WordPress
+ * @subpackage BirdSITE
+ * @since BirdSITE 1.0
+ */
 ?>
 <div id="comments">
 <?php if ( post_password_required() ) : ?>
@@ -15,7 +19,7 @@ The template for displaying Comments.
 	<h2 id="comments-title">
 		<?php
 		printf( _n( 'One Comment', '%1$s Comments', get_comments_number(), 'birdsite' ),
-		number_format_i18n( get_comments_number() ));
+		number_format_i18n( get_comments_number() ) );
 		?>
 	</h2>
 
@@ -45,12 +49,11 @@ The template for displaying Comments.
 'url' => '<label for="url"><em>' . __( 'Website', 'birdsite' ) .'</em><input id="url" name="url" type="text" value="' . esc_attr( $commenter['comment_author_url'] ) . '" size="30" ></label>',
 ); ?>
 
-<?php $myform = array(
-'fields' => apply_filters( 'comment_form_default_fields', $myfields ),
-'comment_field' => '<label for="comment"><em>' . __( 'Comment', 'birdsite' ) . ($req ? ' ' .__( '(*required)', 'birdsite' ) : '') .'</em>' . '<textarea id="comment" name="comment" cols="45" rows="8" aria-required="true"></textarea></label>',
-'comment_notes_before' => '',
+<?php $myform = array('fields'			=> apply_filters( 'comment_form_default_fields', $myfields ),
+			'comment_field'		=> '<label for="comment"><em>' . __( 'Comment', 'birdsite' ) . ($req ? ' ' .__( '(*required)', 'birdsite' ) : '') .'</em>' . '<textarea id="comment" name="comment" cols="45" rows="8" aria-required="true"></textarea></label>',
+			'comment_notes_before'	=> '',
 ); ?>
 
-<?php comment_form($myform); ?>
+<?php comment_form( $myform ); ?>
 
 </div>

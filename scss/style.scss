@@ -8,7 +8,7 @@ Author URI: https://profiles.wordpress.org/sysbird/
 Version: 1.06
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Tags: white, two-columns, left-sidebar, responsive-layout, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-image-header, featured-images, full-width-template, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready, photoblogging
+Tags: white, two-columns, left-sidebar, responsive-layout, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-image-header, featured-images, full-width-template, sticky-post, theme-options, threaded-comments, translation-ready, photoblogging
 Text Domain: birdsite
 
 This theme, like WordPress, is licensed under the GPL.
@@ -22,6 +22,7 @@ $background-color: #F5F5F5;
 $text-color: #555;
 $link-color: #06A;
 $accent_color: #000;
+$navigation_color: #555;
 $border-color: #CCC;
 $meta-color: #999;
 $menu-width: 240px;
@@ -79,10 +80,10 @@ a {
 /* Structure
 --------------------------------------------- */
 body {
-    margin:0;
-    padding:0;
-    border:0;
-    width:100%;
+	margin:0;
+	padding:0;
+	border:0;
+	width:100%;
 }
 
 .container {
@@ -147,9 +148,10 @@ body {
 	padding-top: 40px;
 
 	.branding {
+		font-family: Georgia,"Bitstream Charter",serif;
 		padding-left: 1.4em;
 		color: $accent_color;
-		margin-bottom: 40px;
+		margin-bottom: 20px;
 
 		.site-title {
 			font-size: 2.4rem;
@@ -172,7 +174,7 @@ body {
 
 	.header-image {
 		display: block;
-		margin-bottom: 40px;
+		margin-bottom: 20px;
 
 		img {
 			max-width: 100%;
@@ -307,24 +309,17 @@ body {
 				}
 
 				a {
-					border-top: dotted 1px $accent_color;
-					padding: 0.6em 1em 0.6em 1.4em;
+					border-top: dotted 1px $navigation_color;
+					padding: 0.6em 1em;
 					display: block;
-					color: $accent_color;
+					width: $menu-width - 2;
+					color: $navigation_color;
 					text-decoration: none;
 					line-height: 1.2;
 					*white-space: nowrap; /* IE7 and below */
 
 					&:hover {
-						&:before {
-							position: absolute;
-							top: 0.7em;
-							left: 0.2em;
-							width: 0.4em;
-							height: 0.4em;
-							color: $border-color;
-					    	@include font-awesome("\f00c");
-					    }
+						background: #FFF;
 					}
 				}
 
@@ -347,7 +342,7 @@ body {
 
 				ul {
 					background: $background-color;
-					border: dotted 1px $accent_color;
+					border: dotted 1px $navigation_color;
 					display: none; /* hide dropdown */
 					width: $menu-width;
 					position: absolute;
@@ -372,17 +367,9 @@ body {
 			}
 		}
 
-		.current_page_item > a,
-		.current_page_ancestor > a {
-			&:before {
-				position: absolute;
-				top: 0.7em;
-				left: 0.2em;
-				width: 1em;
-				height: 1em;
-				color: $border-color;
-		    	@include font-awesome("\f00c");
-		    }
+		.current-menu-item > a,
+		.current-menu-ancestor > a {
+			font-weight: bold;
 		}
 	}
 }
@@ -507,8 +494,8 @@ body {
 	}
 
 	abbr, acronym {
-    	border-bottom: 1px dotted #666;
-    	cursor: help;
+		border-bottom: 1px dotted #666;
+		cursor: help;
 	}
 
 	ul,
@@ -987,13 +974,15 @@ a:hover img {
 	.gallery-caption {
 		font-size: 0.9em;
 		line-height: 1;
-	    color: $meta-color;
+		color: $meta-color;
 		max-width: 100%;
 		text-align: center;
 	}
 
 	.wp-caption {
 		max-width: 100%;
+		background-color: $background-color;
+		padding: 5px;
 
 		p {
 			text-align: center;
@@ -1332,8 +1321,8 @@ form {
 		font-weight: normal;
 		margin: 0 0 10px 0;
 		padding: 0 0 5px 0;
-		border-bottom: solid 3px $border-color;
-		color: $border-color;
+		border-bottom: solid 3px #FFF;
+		color: #FFF;
 	}
 
 	ul {
@@ -1382,8 +1371,9 @@ form {
 		border-spacing: 0;
 
 		caption {
-			font-size: 1.2em;
-			font-weight: bold;
+			font-size: 1.4rem;
+			font-weight: normal;
+			margin-bottom: 10px;
 		}
 
 		tbody {
@@ -1396,7 +1386,7 @@ form {
 				a {
 					font-weight: bold;
 					display: block;
-					padding: 0.2em 0.4em;
+					padding: 2px 0;
 					margin: 0 auto;
 					background: #FFF;
 					color: $accent_color;
@@ -1656,6 +1646,7 @@ form {
 			}
 
 			.tablenav {
+				padding-left:  10px;
 				padding-bottom: 20px
 			}
 		}
@@ -1682,28 +1673,28 @@ form {
 				cursor: pointer;
 				display: block;
 				position: absolute;
-				top: 12px;
-				left: $menu-width + 5px;
-				width: 2.2em;
-				height: 2.2em;
-				color: $accent_color;
+				top: 0;
+				left: $menu-width;
+				width: 2.8em;
+				height: 2.8em;
+				background-color: $navigation_color;
+				color: #FFF;
 				text-align: center;
-				border: solid 1px $accent_color;
-				border-radius: 4px;
-				padding: 0.2em;
+				border-bottom-right-radius : 8px;
+				padding: 0.4em;
 
 				&:after {
 					@include font-awesome( "\f0c9" );
 					font-size: 2em;
-					margin-top: -2px;
 				}
 			}
 
 			ul#menu-primary-items {
 				clear: both;
 				width: $menu-width;
-				background: $accent_color;
-				overflow-y: scroll;
+				background: $navigation_color;
+				border-bottom-right-radius : 8px;
+				padding: 0 5px 5px;
 				z-index: 3;
 
 				li {
@@ -1717,7 +1708,13 @@ form {
 						border-top: dotted 1px #FFF;
 						color: #FFF;
 						white-space: normal;
-						padding: 0.4em 0.4em 0.4em 1.6em;
+						padding: 0.4em;
+						width: auto;
+
+						&:hover {
+							background: none;
+							color: $border-color;
+						}
 					}
 
 					&.menu-item-has-children {
@@ -1743,16 +1740,20 @@ form {
 						}
 					}
 				}
+
+				.current-menu-item > a,
+				.current-menu-ancestor > a {
+					color: $border-color;
+				}
 			}
 		}
-
 	}
 
 	body {
 		position: relative;
 
 		&.open-menu {
-			overflow: hidden;
+			//overflow: hidden;
 
 			.overlay {
 				position: absolute;
@@ -1768,12 +1769,8 @@ form {
 			#menu-wrapper {
 				.menu {
 					#small-menu {
-						border-color: #FFF;
-
 						&:after {
 							@include font-awesome( "\f00d" );
-							padding: 0;
-							color: #FFF;
 						}
 					}
 				}

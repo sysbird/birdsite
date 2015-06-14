@@ -1,7 +1,11 @@
 <?php
-/*
-The template for displaying image attachments.
-*/
+/**
+ * The template for displaying image attachments
+ *
+ * @package WordPress
+ * @subpackage BirdSITE
+ * @since BirdSITE 1.0
+ */
 get_header(); ?>
 
 <?php while ( have_posts() ) : the_post(); ?>
@@ -18,17 +22,17 @@ get_header(); ?>
 <?php
 
 	$post                = get_post();
-	$attachment_size     = apply_filters( 'birdfield', array( 930, 930 ) );
+	$attachment_size     = apply_filters( 'birdsite', 'large' );
 	$next_attachment_url = wp_get_attachment_url();
 	$attachment_ids = get_posts( array(
-		'post_parent'    => $post->post_parent,
-		'fields'         => 'ids',
-		'numberposts'    => -1,
-		'post_status'    => 'inherit',
-		'post_type'      => 'attachment',
-		'post_mime_type' => 'image',
-		'order'          => 'ASC',
-		'orderby'        => 'menu_order ID',
+		'post_parent'		=> $post->post_parent,
+		'fields'			=> 'ids',
+		'numberposts'		=> -1,
+		'post_status'		=> 'inherit',
+		'post_type'		=> 'attachment',
+		'post_mime_type'	=> 'image',
+		'order'			=> 'ASC',
+		'orderby' 		=> 'menu_order ID',
 	) );
 
 	if ( count( $attachment_ids ) > 1 ) {
@@ -66,7 +70,7 @@ get_header(); ?>
 			<?php the_content(); ?>
 			<?php wp_link_pages( array(
 				'before'		=> '<div class="page-links">' . __( 'Pages:', 'birdsite' ),
-				'after'			=> '</div>',
+				'after'		=> '</div>',
 				'link_before'	=> '<span>',
 				'link_after'	=> '</span>'
 				) ); ?>
