@@ -48,13 +48,17 @@ Source:  http://fortawesome.github.io/Font-Awesome/
 
 == Author ==
 The theme built by TORIYAMA Yuko at Sysbird.
-You can contact me at inquiry form.
-http://www.sysbird.jp/wptips/contact/
+http://www.sysbird.jp/
 
 
 == Changelog ==
+v1.07
+* change Author URI
+* fix a parameter at add_theme_support( 'custom-header' )
+* fix  a bug at wp_title filter.
+
 v1.06
-* fix WordPress Version 4.2.
+* fix WordPress Version 4.2
 * add support title-tag.
 * replace the web font at Font Awesome.
 * replace the html5shiv.js of non-compressed version.

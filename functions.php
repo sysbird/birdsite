@@ -287,7 +287,7 @@ function birdsite_setup() {
 	add_theme_support( 'title-tag' );
 
 	// Add support for custom headers.
-	add_theme_support( 'custom-header', apply_filters( 'twentyfourteen_custom_header_args', array(
+	add_theme_support( 'custom-header', array(
 		'default-text-color'		=> '000',
 		'default-image'			=> '',
 		'height'				=> 300,
@@ -295,7 +295,7 @@ function birdsite_setup() {
 		'max-width'			=> 600,
 		'random-default'		=> true,
 		'wp-head-callback'		=> 'birdsite_header_style',
-	) ) );
+	) );
 
 	register_default_headers( array(
 			'blue'		=> array(
@@ -346,7 +346,7 @@ function birdsite_title( $title ) {
 	if ( $paged >= 2 || $page >= 2 )
 		$title .= ' | ' . sprintf( __( 'Page %s', 'birdsite' ), max( $paged, $page ) );
 
-	return $title ."old";
+	return $title;
 }
 add_filter( 'wp_title', 'birdsite_title' );
 
@@ -364,7 +364,7 @@ function birdsite_scripts() {
 		wp_enqueue_script( 'comment-reply' );
 	}
 
-	wp_enqueue_script( 'birdsite', get_template_directory_uri() .'/js/birdsite.js', array( 'jquery' ), '1.06' );
+	wp_enqueue_script( 'birdsite', get_template_directory_uri() .'/js/birdsite.js', array( 'jquery' ), '1.07' );
 	wp_enqueue_style( 'birdsite', get_stylesheet_uri() );
 
 	if ( strtoupper( get_locale() ) == 'JA' ) {
