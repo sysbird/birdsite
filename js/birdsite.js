@@ -12,7 +12,6 @@ jQuery( function() {
 		}
 		else{
 			// open Navigation
-//			jQuery('ul#menu-primary-items').height(jQuery('body .wrapper').height());
 			jQuery( 'body' ).addClass( 'open-menu' );
 		}
 
@@ -40,45 +39,21 @@ jQuery( function() {
  	});
 
 
-	// Home ThumbnailHover
-	ThumbnailHover();
-
 	// back to pagetop
-    var totop = jQuery( '#back-top' );
-    totop.hide();
-    jQuery( window ).scroll(function(){
-        if( jQuery( this ).scrollTop() > 800 ) totop.fadeIn(); else totop.fadeOut();
-    });
-    totop.click( function () {
-        jQuery( 'body, html' ).animate( { scrollTop: 0 }, 500 ); return false;
-    });
+	var totop = jQuery( '#back-top' );
+	totop.hide();
+	jQuery( window ).scroll(function(){
+		if( jQuery( this ).scrollTop() > 800 ) totop.fadeIn(); else totop.fadeOut();
+	});
+	totop.click( function () {
+		jQuery( 'body, html' ).animate( { scrollTop: 0 }, 500 ); return false;
+	});
 
 	// Center Thumbnail Position
 	jQuery(window).load(function() {
 		centerThumbnail();
 	});
 });
-
-////////////////////////////////////////
-// ThumbnailHover
-function ThumbnailHover () {
-
-	jQuery( '#thumbnails li.has-image' ).hover( function(){
-		var caption = jQuery( this ).find( '.caption' );
-			caption.stop( true, true ).animate(
-				{ opacity: 1 },
-				{ queue: false,
-					duration: '300'.fadeout
-				});
-	}, function() {
-		var caption = jQuery(this).closest( 'li' ).find( '.caption' );
-		caption.stop(true, true).animate(
-			{ opacity: '0' },
-			{ queue: false,
-				duration: '50'.fadein
-			});
-	});
-}
 
 ////////////////////////////////////////
 // Center Thumbnail Position

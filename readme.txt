@@ -48,6 +48,24 @@ Source:  http://fortawesome.github.io/Font-Awesome/
 
 == Author ==
 The theme built by TORIYAMA Yuko at Sysbird.
+<<<<<<< HEAD
+http://www.sysbird.jp
+
+
+== Changelog ==
+v1.08
+* stop the correspondence for IE8 and below.
+* delete wp_list_comments callback.
+* change comment form to the default style.
+* change style for sticky post.
+* add theme option choose display item at home.
+
+== Changelog ==
+v1.07
+* change Author URI
+* fix a parameter at add_theme_support( 'custom-header' )
+* fix a bug at wp_title filter.
+=======
 http://www.sysbird.jp/
 
 
@@ -56,6 +74,7 @@ v1.07
 * change Author URI
 * fix a parameter at add_theme_support( 'custom-header' )
 * fix  a bug at wp_title filter.
+>>>>>>> 71ef27025b09414a62853628977cde938d0dda93
 
 v1.06
 * fix WordPress Version 4.2

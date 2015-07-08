@@ -19,81 +19,36 @@ add_action( 'template_redirect', 'birdsite_content_width' );
 function birdsite_widgets_init() {
 
 	register_sidebar( array (
-		'name'			=> __( 'Widget Area for footer left', 'birdsite' ),
-		'id'			=> 'widget-area-footer-left',
+		'name'				=> __( 'Widget Area for footer left', 'birdsite' ),
+		'id'				=> 'widget-area-footer-left',
 		'description'		=> __( 'Widget Area for footer left', 'birdsite' ),
-		'before_widget'	=> '<div class="widget">',
+		'before_widget'		=> '<div class="widget">',
 		'after_widget'		=> '</div>',
 		'before_title'		=> '<h3>',
 		'after_title'		=> '</h3>',
 		) );
 
 	register_sidebar( array (
-		'name'			=> __( 'Widget Area for footer center', 'birdsite' ),
-		'id'			=> 'widget-area-footer-center',
+		'name'				=> __( 'Widget Area for footer center', 'birdsite' ),
+		'id'				=> 'widget-area-footer-center',
 		'description'		=> __( 'Widget Area for footer center', 'birdsite' ),
-		'before_widget'	=> '<div class="widget">',
+		'before_widget'		=> '<div class="widget">',
 		'after_widget'		=> '</div>',
 		'before_title'		=> '<h3>',
 		'after_title'		=> '</h3>',
 		) );
 
 	register_sidebar( array (
-		'name'			=> __( 'Widget Area for footer right', 'birdsite' ),
-		'id'			=> 'widget-area-footer-right',
+		'name'				=> __( 'Widget Area for footer right', 'birdsite' ),
+		'id'				=> 'widget-area-footer-right',
 		'description'		=> __( 'Widget Area for footer right', 'birdsite' ),
-		'before_widget'	=> '<div class="widget">',
+		'before_widget'		=> '<div class="widget">',
 		'after_widget'		=> '</div>',
 		'before_title'		=> '<h3>',
 		'after_title'		=> '</h3>',
 		) );
 }
 add_action( 'widgets_init', 'birdsite_widgets_init' );
-
-//////////////////////////////////////////
-// SinglePage Comment callback
-function birdsite_custom_comments( $comment, $args, $depth ) {
-
-	$GLOBALS['comment'] = $comment;
-
-	$birdsite_comment_awaiting = '';
-	if ( $comment->comment_approved == '0' ) {
-		$birdsite_comment_awaiting = 'awaiting';
-	}
-
-?>
-	<li <?php comment_class( $birdsite_comment_awaiting ); ?> id="comment-<?php comment_ID(); ?>">
-
-	<?php if( 'pingback' == $comment->comment_type || 'trackback' == $comment->comment_type ):
-		$birstips_url		= get_comment_author_url();
-		$birstips_author	= get_comment_author();
-	 ?>
-		<div class="posted"><strong><?php _e( 'Pingback', 'birdsite' ); ?> : </strong><a href="<?php echo $birstips_url; ?>" target="_blank" class="web"><?php echo $birstips_author ?></a><?php edit_comment_link( __( '(Edit)', 'birdsite' ), ' ' ); ?></div>
-
-	<?php else: ?>
-
-		<div class="comment_meta">
-			<?php echo get_avatar( $comment, 40 ); ?>
-			<span class="author"><?php comment_author(); ?></span>
-			<span class="postdate"><?php echo get_comment_time(get_option( 'date_format ') .' ' .get_option( 'time_format' ) ); ?></span><?php comment_reply_link( array_merge( $args, array( 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) ); ?>
-		</div>
-		<?php if ( $comment->comment_approved == '0' ) : ?>
-			<em class="attention"><?php _e( 'Your comment is awaiting moderation.', 'birdsite' ); ?></em><br>
-		<?php endif; ?>
-
-		<div class="comment_text">
-			<?php comment_text(); ?>
-
-			<?php $birdsite_web = get_comment_author_url(); ?>
-			<?php if( !empty( $birdsite_web ) ): ?>
-				<p class="web"><a href="<?php echo $birdsite_web; ?>" target="_blank"><?php echo $birdsite_web; ?></a></p>
-			<?php endif; ?>
-		</div>
-
-	<?php endif; ?>
-<?php
-	// no "</li>" conform WORDPRESS
-}
 
 //////////////////////////////////////////////////////
 // Pagenation
@@ -108,13 +63,13 @@ function birdsite_the_pagenation() {
 	if ( 1 < $birdsite_pages ) {
 		echo '	<div class="tablenav">' ."\n";
 		echo paginate_links( array(
-			'base'		=> str_replace( $birdsite_big, '%#%', get_pagenum_link( $birdsite_big ) ),
+			'base'			=> str_replace( $birdsite_big, '%#%', get_pagenum_link( $birdsite_big ) ),
 			'format'		=> '?paged=%#%',
-			'current'	=> max( 1, get_query_var( 'paged' ) ),
-			'total'		=> $wp_query -> max_num_pages,
-			'mid_size'	=> 3,
-			'prev_text'	=> __( 'Previous', 'birdsite' ),
-			'next_text'	=> __( 'Next', 'birdsite' )
+			'current'		=> max( 1, get_query_var( 'paged' ) ),
+			'total'			=> $wp_query -> max_num_pages,
+			'mid_size'		=> 3,
+			'prev_text'		=> __( 'Previous', 'birdsite' ),
+			'next_text'		=> __( 'Next', 'birdsite' )
 			) );
 		echo '</div>' ."\n";;
 	}
@@ -129,8 +84,8 @@ function birdsite_get_copyright_year() {
 	$birdsite_first_year = $birdsite_copyright_year;
 	$args = array(
 		'numberposts'	=> 1,
-		'orderby'	=> 'post_date',
-		'order'		=> 'ASC',
+		'orderby'		=> 'post_date',
+		'order'			=> 'ASC',
 	);
 	$posts = get_posts( $args );
 
@@ -291,30 +246,30 @@ function birdsite_setup() {
 		'default-text-color'		=> '000',
 		'default-image'			=> '',
 		'height'				=> 300,
-		'width'				=> 600,
-		'max-width'			=> 600,
+		'width'					=> 600,
+		'max-width'				=> 600,
 		'random-default'		=> true,
 		'wp-head-callback'		=> 'birdsite_header_style',
 	) );
 
 	register_default_headers( array(
-			'blue'		=> array(
-			'url'		=> '%s/images/headers/blue.jpg',
+			'blue'			=> array(
+			'url'			=> '%s/images/headers/blue.jpg',
 			'thumbnail_url'	=> '%s/images/headers/blue-thumbnail.jpg',
 			'description'	=> 'blue'
 		),
 		'yellow' => array(
-			'url'		=> '%s/images/headers/yellow.jpg',
+			'url'			=> '%s/images/headers/yellow.jpg',
 			'thumbnail_url'	=> '%s/images/headers/yellow-thumbnail.jpg',
 			'description'	=> 'yellow'
 		),
 		'pink' => array(
-			'url'		=> '%s/images/headers/pink.jpg',
+			'url'			=> '%s/images/headers/pink.jpg',
 			'thumbnail_url'	=> '%s/images/headers/pink-thumbnail.jpg',
 			'description'	=> 'pink'
 		),
 		'navy' => array(
-			'url'		=> '%s/images/headers/navy.jpg',
+			'url'			=> '%s/images/headers/navy.jpg',
 			'thumbnail_url'	=> '%s/images/headers/navy-thumbnail.jpg',
 			'description'	=> 'navy'
 		),
@@ -324,7 +279,7 @@ function birdsite_setup() {
 			'description'	=> 'red'
 		),
 		'green' => array(
-			'url'		=> '%s/images/headers/green.jpg',
+			'url'			=> '%s/images/headers/green.jpg',
 			'thumbnail_url'	=> '%s/images/headers/green-thumbnail.jpg',
 			'description'	=> 'green'
 		),
@@ -364,7 +319,11 @@ function birdsite_scripts() {
 		wp_enqueue_script( 'comment-reply' );
 	}
 
+<<<<<<< HEAD
+	wp_enqueue_script( 'birdsite', get_template_directory_uri() .'/js/birdsite.js', array( 'jquery' ), '1.08' );
+=======
 	wp_enqueue_script( 'birdsite', get_template_directory_uri() .'/js/birdsite.js', array( 'jquery' ), '1.07' );
+>>>>>>> 71ef27025b09414a62853628977cde938d0dda93
 	wp_enqueue_style( 'birdsite', get_stylesheet_uri() );
 
 	if ( strtoupper( get_locale() ) == 'JA' ) {
@@ -379,7 +338,7 @@ function birdsite_customize( $wp_customize ) {
 
 	// Text Color
 	$wp_customize->add_setting( 'birdsite_text_color', array(
-		'default'		=> '#555',
+		'default'			=> '#555',
 		'sanitize_callback'	=> 'maybe_hash_hex_color',
 	) );
 
@@ -391,7 +350,7 @@ function birdsite_customize( $wp_customize ) {
 
 	// Link Color
 	$wp_customize->add_setting( 'birdsite_link_color', array(
-		'default'		=> '#06A',
+		'default'			=> '#06A',
 		'sanitize_callback'	=> 'maybe_hash_hex_color',
 	) );
 
@@ -403,7 +362,7 @@ function birdsite_customize( $wp_customize ) {
 
 	// Header, Footer Color
 	$wp_customize->add_setting( 'birdsite_footer_color', array(
-		'default'		=> '#000',
+		'default'			=> '#000',
 		'sanitize_callback'	=> 'maybe_hash_hex_color',
 	) );
 
@@ -425,6 +384,77 @@ function birdsite_customize( $wp_customize ) {
 		'settings'	=> 'birdsite_navigation_color',
 	) ) );
 
+	// Home Section
+	$wp_customize->add_section( 'birdsite_home', array(
+		'title'		=> __( 'Home', 'birdsite' ),
+		'priority'	=> 999,
+	) );
+
+	// Display Date
+	$wp_customize->add_setting( 'birdsite_home_postdate', array(
+		'default'			=> true,
+		'sanitize_callback'	=> 'birdsite_sanitize_checkbox',
+	) );
+
+	$wp_customize->add_control( 'birdsite_home_postdate', array(
+		'label'		=> __( 'Display Postate', 'birdsite' ),
+		'section'	=> 'birdsite_home',
+		'type'		=> 'checkbox',
+		'settings'	=> 'birdsite_home_postdate',
+	) );
+
+	// Display Author
+	$wp_customize->add_setting( 'birdsite_home_author', array(
+		'default'			=> true,
+		'sanitize_callback'	=> 'birdsite_sanitize_checkbox',
+	) );
+
+	$wp_customize->add_control( 'birdsite_home_author', array(
+		'label'		=> __( 'Display Author', 'birdsite' ),
+		'section'	=> 'birdsite_home',
+		'type'		=> 'checkbox',
+		'settings'	=> 'birdsite_home_author',
+	) );
+
+	// Display Category
+	$wp_customize->add_setting( 'birdsite_home_category', array(
+		'default'			=> true,
+		'sanitize_callback'	=> 'birdsite_sanitize_checkbox',
+	) );
+
+	$wp_customize->add_control( 'birdsite_home_category', array(
+		'label'		=> __( 'Display Category', 'birdsite' ),
+		'section'	=> 'birdsite_home',
+		'type'		=> 'checkbox',
+		'settings'	=> 'birdsite_home_category',
+	) );
+
+	// Display Tags
+	$wp_customize->add_setting( 'birdsite_home_tags', array(
+		'default'			=> true,
+		'sanitize_callback'	=> 'birdsite_sanitize_checkbox',
+	) );
+
+	$wp_customize->add_control( 'birdsite_home_tags', array(
+		'label'		=> __( 'Display Tags', 'birdsite' ),
+		'section'	=> 'birdsite_home',
+		'type'		=> 'checkbox',
+		'settings'	=> 'birdsite_home_tags',
+	) );
+
+	// Display Comment Number
+	$wp_customize->add_setting( 'birdsite_home_comment_number', array(
+		'default'			=> true,
+		'sanitize_callback'	=> 'birdsite_sanitize_checkbox',
+	) );
+
+	$wp_customize->add_control( 'birdsite_home_comment_number', array(
+		'label'		=> __( 'Display Comment Number', 'birdsite' ),
+		'section'	=> 'birdsite_home',
+		'type'		=> 'checkbox',
+		'settings'	=> 'birdsite_home_comment_number',
+	) );
+
 	// Footer Section
 	$wp_customize->add_section( 'birdsite_footer', array(
 		'title'		=> __( 'Footer', 'birdsite' ),
@@ -433,7 +463,7 @@ function birdsite_customize( $wp_customize ) {
 
 	// Display Copyright
 	$wp_customize->add_setting( 'birdsite_copyright', array(
-		'default'		=> true,
+		'default'			=> true,
 		'sanitize_callback'	=> 'birdsite_sanitize_checkbox',
 	) );
 
@@ -446,7 +476,7 @@ function birdsite_customize( $wp_customize ) {
 
 	// Display Credit
 	$wp_customize->add_setting( 'birdsite_credit', array(
-		'default'		=> true,
+		'default'			=> true,
 		'sanitize_callback'	=> 'birdsite_sanitize_checkbox',
 	) );
 

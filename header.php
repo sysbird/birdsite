@@ -19,8 +19,7 @@ if ( ! function_exists( '_wp_render_title_tag' ) ) {
 <link rel="profile" href="http://gmpg.org/xfn/11" >
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" >
 <!--[if lt IE 9]>
-<script src="<?php echo get_template_directory_uri(); ?>/js/html5shiv.js" type="text/javascript"></script>
-<script src="<?php echo get_template_directory_uri(); ?>/js/respond.js" type="text/javascript"></script>
+<script src="<?php echo esc_url( get_template_directory_uri() ); ?>/js/html5.js" type="text/javascript"></script>
 <![endif]-->
 <?php wp_head(); ?>
 </head>
@@ -64,7 +63,7 @@ if ( ! function_exists( '_wp_render_title_tag' ) ) {
 			<?php wp_nav_menu( array( 'theme_location'	=> 'primary',
 							'container_class'	=> 'menu',
 							'menu_class'		=> '',
-							'menu_id'		=> 'menu-primary-items',
+							'menu_id'			=> 'menu-primary-items',
 							'items_wrap'		=> '<div id="small-menu"></div><ul id="%1$s" class="%2$s">%3$s</ul>',
 							'fallback_cb'		=> '' ) ); ?>
 		</nav>

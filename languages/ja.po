@@ -1,14 +1,21 @@
 msgid ""
 msgstr ""
+<<<<<<< HEAD
+"Project-Id-Version: BirdSITE 1.08 ja\n"
+"Report-Msgid-Bugs-To: http://www.sysbird.jp/wptips\n"
+"POT-Creation-Date: 2013-08-02 00:00+0300\n"
+"PO-Revision-Date: 2015-07-08 16:01+0900\n"
+=======
 "Project-Id-Version: BirdSITE 1.07 ja\n"
 "Report-Msgid-Bugs-To: http://www.sysbird.jp/wptips\n"
 "POT-Creation-Date: 2013-08-02 00:00+0300\n"
 "PO-Revision-Date: 2015-06-28 00:00+0900\n"
+>>>>>>> 71ef27025b09414a62853628977cde938d0dda93
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Poedit 1.8.1\n"
+"X-Generator: Poedit 1.5.7\n"
 "Last-Translator: TORIYAMA Yuko <sysbirdj@gmail.com>\n"
 "Language-Team: sysbird <sysbird@gmail.com>\n"
 "Language: ja\n"
@@ -18,7 +25,9 @@ msgid "Error 404 - Not Found"
 msgstr "エラー404 - ページが見つかりませんでした"
 
 #: 404.php:18
-msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help."
+msgid ""
+"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
+"searching can help."
 msgstr "お探しのページが見つかりませんでした。検索してみてください。"
 
 #: archive.php:16
@@ -62,8 +71,10 @@ msgid "Sorry, no posts matched your criteria."
 msgstr "投稿が見つかりません。"
 
 #: comments.php:12
-msgid "This post is password protected. Enter the password to view any comments."
-msgstr "パスワード保護されています。コメントを見るにはパスワードを入力してください。"
+msgid ""
+"This post is password protected. Enter the password to view any comments."
+msgstr ""
+"パスワード保護されています。コメントを見るにはパスワードを入力してください。"
 
 #: comments.php:21
 msgid "One Comment"
@@ -154,18 +165,6 @@ msgstr "ウィジェットエリアフッター(中央)"
 msgid "Widget Area for footer right"
 msgstr "ウィジェットエリアフッター(右)"
 
-#: functions.php:71
-msgid "Pingback"
-msgstr "ピンバック"
-
-#: function.php:71
-msgid "(Edit)"
-msgstr "(編集)"
-
-#: functions.php:81
-msgid "Your comment is awaiting moderation."
-msgstr "あなたのコメントは管理者の承認待ちです。"
-
 #: functions.php:116
 msgid "Previous"
 msgstr "前へ"
@@ -197,6 +196,30 @@ msgstr "ヘッダライン、フッター背景色"
 #: functions.php:423
 msgid "Navigation Text Color"
 msgstr "ナビゲーション文字色"
+
+#: functions.php:430
+msgid "Home"
+msgstr "ホーム"
+
+#: functions.php:430
+msgid "Display Postate"
+msgstr "公開日を表示"
+
+#: functions.php:430
+msgid "Display Author"
+msgstr "投稿者を表示"
+
+#: functions.php:430
+msgid "Display Category"
+msgstr "カテゴリーを表示"
+
+#: functions.php:430
+msgid "Display Tags"
+msgstr "タグを表示"
+
+#: functions.php:430
+msgid "Display Comment Number"
+msgstr "コメント数を表示"
 
 #: functions.php:430
 msgid "Footer"
@@ -231,5 +254,14 @@ msgid "Search..."
 msgstr "検索..."
 
 #. Description of the plugin/theme
-msgid "BirdSITE is a photoblogging theme. The theme has grid layout and uses CSS3 media queries for its responsive layout and is therefore optimized for tablet pcs and smart phones. Features include the Theme Customize. You can choose the text color, link color, header line and footer background color and navigation color."
-msgstr "BirdSITEはフォトログのためのテーマです。レスポンシブWebデザインですので、PCのほかタブレット、スマートフォンで見ることができます。テーマカスタマイズではテキストの色、リンクの色、ヘッダーライン色とフッター背景色、ナビゲ－ション色を選択することができます。"
+msgid ""
+"BirdSITE is a photoblogging theme. The theme has grid layout and uses CSS3 "
+"media queries for its responsive layout and is therefore optimized for "
+"tablet pcs and smart phones. Features include the Theme Customize. You can "
+"choose the text color, link color, header line and footer background color "
+"and navigation color."
+msgstr ""
+"BirdSITEはフォトログのためのテーマです。レスポンシブWebデザインですので、PCの"
+"ほかタブレット、スマートフォンで見ることができます。テーマカスタマイズではテ"
+"キストの色、リンクの色、ヘッダーライン色とフッター背景色、ナビゲ－ション色を"
+"選択することができます。"

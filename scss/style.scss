@@ -4,8 +4,13 @@ Theme Name: BirdSITE
 Theme URI: http://www.sysbird.jp/birdsite/theme/
 Description: BirdSITE is a photoblogging theme. The theme has grid layout and uses CSS3 media queries for its responsive layout and is therefore optimized for tablet pcs and smart phones. Features include the Theme Customize. You can choose the text color, link color, header line and footer background color and navigation color.
 Author: Sysbird
+<<<<<<< HEAD
+Author URI: http://www.sysbird.jp
+Version: 1.08
+=======
 Author URI: http://www.sysbird.jp/
 Version: 1.07
+>>>>>>> 71ef27025b09414a62853628977cde938d0dda93
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: white, two-columns, left-sidebar, responsive-layout, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-image-header, featured-images, full-width-template, sticky-post, theme-options, threaded-comments, translation-ready, photoblogging
@@ -152,10 +157,10 @@ body {
 		padding-left: 1.4em;
 		color: $accent_color;
 		margin-bottom: 20px;
+		text-align: right;
 
 		.site-title {
 			font-size: 2.4rem;
-			font-size: 2.4em\9;  /* IE8 and below */
 			font-weight: bold;
 			line-height: 1;
 			margin: 0;
@@ -301,7 +306,7 @@ body {
 			li {
 				padding: 0;
 				width: $menu-width;
-				list-style: none;
+				text-align: right;
 				position: relative;
 
 				&:hover > ul {
@@ -309,8 +314,8 @@ body {
 				}
 
 				a {
-					border-top: dotted 1px $navigation_color;
-					padding: 0.6em 1em;
+					border-top: solid 1px $navigation_color;
+					padding: 0.6em;
 					display: block;
 					width: $menu-width - 2;
 					color: $navigation_color;
@@ -354,6 +359,7 @@ body {
 						float: none;
 						margin: 0;
 						padding: 0;
+						text-align: left;
 
 						a {
 							white-space: normal;
@@ -376,7 +382,7 @@ body {
 
 /* Posts
 --------------------------------------------- */
-#content{
+#content {
 
 	padding: 40px 0;
 
@@ -407,13 +413,13 @@ body {
 		color: $meta-color;
 	}
 
-	cite:before {
-		content: "-";
-	}
-
 	cite {
 		color: $meta-color;
 		display: block;
+
+		&:before {
+			content: "-";
+		}
 	}
 
 	table {
@@ -449,6 +455,10 @@ body {
 		padding: 0.8em;
 		margin-bottom: 1.6em;
 		line-height: 1.4;
+	}
+
+	code {
+		background: $background_color;
 	}
 
 	code, kbd, pre, samp {
@@ -759,8 +769,6 @@ body {
 				height: 250px;
 
 				a {
-					z-index: 9\9; /* IE8 and below */
-					background: url("images/null.gif") repeat left top\9; /* IE8 and below */
 					display: block;
 					width: 250px;
 					height: 250px;
@@ -794,7 +802,6 @@ body {
 				position: absolute;
 				color: #FFF;
 				background-color: rgba(0, 0, 0, 0.5);
-				background-color: #000\9;  /* IE8 and below */
 				top: 0;
 				left: 0;
 				width: 250px;
@@ -852,10 +859,21 @@ body {
 				.caption {
 					@include opacity( 0 );
 				}
+
+				&:hover {
+					.caption {
+						@include opacity( 1 );
+						@include transition-duration( .7s );
+					}
+				}
 			}
 
 			&.sticky {
 				position: relative;
+
+				.caption {
+					@include opacity( 1 );
+				}
 
 				i {
 					position: absolute;
@@ -1064,35 +1082,27 @@ video {
 /* Comments
 -------------------------------------------------------------- */
 #content #comments {
-	margin-top: 1.6em;
+	margin-top: 20px;
+	display: block;
 
 	.navigation {
 		position: relative;
 		height: 1em;
-		margin-bottom: 0.8em;
-
-		&.bottom {
-			margin-bottom: 1.6em;
-		}
+		padding-bottom: 10px;
+		margin-bottom: 1em;
 
 		.nav-previous a {
 			position: absolute;
 			top: 0;
 			right: 0;
-
-			&:after {
-				@include font-awesome( "\f054", 0.4em );
-			}
+			padding-left: 1em;
 		}
 
 		.nav-next a {
 			position: absolute;
 			top: 0;
 			left: 0;
-
-			&:before {
-				@include font-awesome( "\f053", 0, 0.4em );
-			}
+			padding-right: 1em;
 		}
 	}
 
@@ -1101,138 +1111,67 @@ video {
 		margin: 0;
 		padding-left: 0;
 
-		li.trackback,
 		li.pingback,
 		li.comment {
 			border-left: 2px solid $border-color;
 			clear: both;
-			margin-bottom: 0.8em;
-			padding: 0 0 0 0.8em;
+			margin-bottom: 1.6em;
+			padding: 0 0 0 10px;
 			position: relative;
 			list-style: none;
-			@include clearfix;
-		}
-	}
 
-	li {
-		&.trackback,
-		&.pingback {
-			.posted {
-				a.web:after {
-					@include font-awesome("\f08e", 0.2em, 0.2em );
+			&:after {
+				@include clearfix;
+			}
+
+			.comment-author {
+				.fn {
+					display: inline;
+					font-weight: bold;
+					color: #000;
+
+					&:before {
+						content: none;
+					}
+				}
+
+				img {
+					border: none;
+					margin: 0 10px 10px 0;
+					float: left;
 				}
 			}
-		}
 
-		.comment_meta {
-			.author {
-				font-weight: bold;
+			.comment-meta {
+				font-size: 0.96em;
+				line-height: 1.6;
+				margin-bottom: 1.6em;
+
+				a {
+					border-bottom: none;
+					color: $meta-color;
+				}
 			}
 
-			.postdate {
+			.comment-awaiting-moderation {
+				font-size: 0.96em;
 				color: $meta-color;
-				font-size: 0.85rem;
-
-				&:before {
-					@include font-awesome( "\f017", 0.2em, 0.2em );
-				}
 			}
 
-			.comment-reply-link {
-				&:before {
-					@include font-awesome( "\f112", 0.4em, 0.4em );
-				}
+			&.bypostauthor .comment-author .fn {
+				color: $accent_color;
 			}
 
-			img {
-				border: none;
-				margin: 0 10px 5px 0;
-				float: left;
-			}
-		}
+			.reply {
+				margin-bottom: 1.6em;
 
-		.comment_text {
-			clear: both;
-			margin: 0 0 0.7em 55px;
-
-			p {
-				line-height: 1.4;
-
-				&.web {
-					a:after {
-						@include font-awesome( "\f08e", 0.4em, 0 );
+				a.comment-reply-link {
+					&:before {
+						@include font-awesome( "\f112", 0, 0.2em );
 					}
 				}
 			}
 		}
-
-		&.bypostauthor .comment_meta .author {
-			color: $accent_color;
-		}
-
-		&.awaiting  {
-			.author,
-			.comment_text,
-			.comment_text a {
-				color: $meta_color;
-			}
-
-			.attention {
-				display: block;
-				color: #C00;
-			}
-		}
-	}
-}
-
-/* Forms
--------------------------------------------------------------- */
-#comments #commentform {
-	border: dashed 1px $border-color;
-	padding: 10px 5%;
-	margin: 15px 0;
-	width: 100%;
-
-	em {
-		display: block;
-		padding: 1em 0 0.4em;
-		font-style: normal;
-	}
-
-	label input {
-		width: 300px;
-	  	padding: 5px;
-		background: #FFF;
-		border: solid 1px $border-color;
-	}
-
-	textarea {
-		width: 100%;
-		height: 100px;
-	  	padding:5px;
-		background: #FFF;
-		border: solid 1px $border-color;
-	}
-
-	input#submit {
-		padding: 5px 10px;
-	}
-
-	.form-allowed-tags {
-		font-size: 0.9rem;
-		color: $meta-color;
-	}
-
-	.form-allowed-tags code {
-		display: block;
-	}
-}
-
-form {
-	input,
-	select,
-	textarea {
-		max-width: 95%;
 	}
 }
 
@@ -1421,6 +1360,69 @@ form {
 				padding: 8px 0;
 			}
 		}
+	}
+}
+
+/* Forms
+-------------------------------------------------------------- */
+form {
+	input {
+		font-size: 100%;
+	}
+}
+
+#commentform {
+	border: 1px dotted $border-color;
+	padding: 10px 15px 0;
+	margin-bottom: 1.6em;
+
+	p {
+		margin-bottom: 0.8em;
+	}
+
+	label {
+		padding: 0 0 5px 0;
+		display: block;
+	}
+
+	input:not([id="submit"]) {
+		width: 100%;
+		max-width: 300px;
+		padding: 5px;
+		background: #FFF;
+		border: solid 1px $border-color;
+	}
+
+	textarea {
+		width: 100%;
+		height: 100px;
+		padding:5px;
+		background: #FFF;
+		border: solid 1px $border-color;
+	}
+
+	input#submit {
+		padding: 5px 10px;
+	}
+
+	#email-notes	 {
+		display: block;
+	}
+
+	.form-allowed-tags {
+		line-height: 1.2;
+
+		code {
+			display: block;
+		}
+	}
+}
+
+.post-password-form {
+	input:not([type="submit"]) {
+		padding: 5px;
+		background: #FFF;
+		border: solid 1px $border-color;
 	}
 }
 
@@ -1703,6 +1705,7 @@ form {
 					width: 100%;
 					margin-top: -1px;
 					background: none;
+					text-align: left;
 
 					a {
 						border-top: dotted 1px #FFF;
