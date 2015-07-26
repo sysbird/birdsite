@@ -37,10 +37,6 @@ html5shiv.js
 License: MIT/GPL2 Licensed
 Source:  https://github.com/aFarkas/html5shiv
 
-respond.js
-License:  MIT Lic.
-Source:  https://github.com/scottjehl/Respond
-
 Font Awesome
 License: SIL Open Font License, 1.1/MIT License
 Source:  http://fortawesome.github.io/Font-Awesome/
