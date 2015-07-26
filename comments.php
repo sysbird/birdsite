@@ -22,15 +22,15 @@ if ( post_password_required() ) {
 
 	<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : ?>
 		<div class="navigation top">
-			<div class="nav-previous"><?php previous_comments_link( __( 'Older Comments &raquo;', 'birdsite' ) ); ?></div>
-			<div class="nav-next"><?php next_comments_link( __( '&laquo; Newer Comments', 'birdsite' ) ); ?></div>
+			<div class="nav-previous"><?php previous_comments_link( __( 'Older Comments', 'birdsite' ) ); ?></div>
+			<div class="nav-next"><?php next_comments_link( __( 'Newer Comments', 'birdsite' ) ); ?></div>
 		</div>
 	<?php endif;  ?>
 
 		<ol class="commentlist">
 		<?php
 			wp_list_comments( array(
-				'style'			=> 'ol',
+				'style'		=> 'ol',
 				'avatar_size'	=> 40,
 			) );
 		?>
@@ -38,8 +38,8 @@ if ( post_password_required() ) {
 
 	<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : ?>
 		<div class="navigation bottom">
-			<div class="nav-previous"><?php previous_comments_link( __( 'Older Comments &raquo;', 'birdsite' ) ); ?></div>
-			<div class="nav-next"><?php next_comments_link( __( '&laquo; Newer Comments', 'birdsite' ) ); ?></div>
+			<div class="nav-previous"><?php previous_comments_link( __( 'Older Comments', 'birdsite' ) ); ?></div>
+			<div class="nav-next"><?php next_comments_link( __( 'Newer Comments', 'birdsite' ) ); ?></div>
 		</div>
 	<?php endif; ?>
 

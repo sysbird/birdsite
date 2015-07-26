@@ -1,16 +1,9 @@
 msgid ""
 msgstr ""
-<<<<<<< HEAD
 "Project-Id-Version: BirdSITE 1.08 ja\n"
 "Report-Msgid-Bugs-To: http://www.sysbird.jp/wptips\n"
 "POT-Creation-Date: 2013-08-02 00:00+0300\n"
-"PO-Revision-Date: 2015-07-08 16:01+0900\n"
-=======
-"Project-Id-Version: BirdSITE 1.07 ja\n"
-"Report-Msgid-Bugs-To: http://www.sysbird.jp/wptips\n"
-"POT-Creation-Date: 2013-08-02 00:00+0300\n"
-"PO-Revision-Date: 2015-06-28 00:00+0900\n"
->>>>>>> 71ef27025b09414a62853628977cde938d0dda93
+"PO-Revision-Date: 2015-07-26 11:00+0900\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -25,9 +18,7 @@ msgid "Error 404 - Not Found"
 msgstr "エラー404 - ページが見つかりませんでした"
 
 #: 404.php:18
-msgid ""
-"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
-"searching can help."
+msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help."
 msgstr "お探しのページが見つかりませんでした。検索してみてください。"
 
 #: archive.php:16
@@ -70,70 +61,44 @@ msgstr "アーカイブ"
 msgid "Sorry, no posts matched your criteria."
 msgstr "投稿が見つかりません。"
 
-#: comments.php:12
-msgid ""
-"This post is password protected. Enter the password to view any comments."
-msgstr ""
-"パスワード保護されています。コメントを見るにはパスワードを入力してください。"
-
-#: comments.php:21
+#: comments.php:18
 msgid "One Comment"
 msgid_plural "%1$s Comments"
 msgstr[0] "%1$s件のコメント"
 
-#: comments.php:28 comments.php:39
+#: comments.php:25 comments.php:41
 msgid "Older Comments"
 msgstr "古いコメント"
 
-#: comments.php:29 comments.php:40
+#: comments.php:26 comments.php:42
 msgid "Newer Comments"
 msgstr "新しいコメント"
 
-#: comments.php:47
-msgid "Name"
-msgstr "お名前"
-
-#: comments.php:47 comments.php:48 comments.php:54
-msgid "(*required)"
-msgstr "(*必須)"
-
-#: comments.php:48
-msgid "Email (will not be published)"
-msgstr "メールアドレス (公開されません)"
-
-#: comments.php:48
-msgid "Website"
-msgstr "ウェブサイト"
-
-#: comments.php:53
-msgid "Comment"
-msgstr "コメント"
-
-#: content.php:19 content.php:37
+#: content.php:19 content.php:50
 msgid "more"
 msgstr "続きを見る"
 
-#: content.php:25 content.php:29
+#: content.php:25 content.php:30
 msgid "Permalink to %s"
 msgstr "%sへのリンク"
 
-#: content.php:34
+#: content.php:46
 msgid "No Comments"
 msgstr "コメントをどうぞ"
 
-#: content.php:34
+#: content.php:46
 msgid "1 Comment"
 msgstr "1件のコメント"
 
-#: content.php:34
+#: content.php:46
 msgid "% Comments"
 msgstr "%件のコメント"
 
-#: content.php:34
+#: content.php:46
 msgid "Comments Closed"
 msgstr "コメントは受け付けていません"
 
-#: content.php:52 image.php:72
+#: content.php:60 image.php:72
 msgid "Pages:"
 msgstr "ページ:"
 
@@ -165,71 +130,71 @@ msgstr "ウィジェットエリアフッター(中央)"
 msgid "Widget Area for footer right"
 msgstr "ウィジェットエリアフッター(右)"
 
-#: functions.php:116
+#: functions.php:71
 msgid "Previous"
 msgstr "前へ"
 
-#: functions.php:117
+#: functions.php:72
 msgid "Next"
 msgstr "次へ"
 
-#: functions.php:283
+#: functions.php:238
 msgid "Navigation Menu"
 msgstr "ナビゲーションメニュー"
 
-#: functions.php:347
+#: functions.php:302
 msgid "Page %s"
 msgstr "%sページ目"
 
-#: functions.php:387
+#: functions.php:342
 msgid "Text Color"
 msgstr "文字色"
 
-#: functions.php:399
+#: functions.php:354
 msgid "Link Color"
 msgstr "リンク色"
 
-#: functions.php:411
+#: functions.php:366
 msgid "Header, Footer Color"
 msgstr "ヘッダライン、フッター背景色"
 
-#: functions.php:423
+#: functions.php:375
 msgid "Navigation Text Color"
 msgstr "ナビゲーション文字色"
 
-#: functions.php:430
+#: functions.php:385
 msgid "Home"
 msgstr "ホーム"
 
-#: functions.php:430
+#: functions.php:396
 msgid "Display Postate"
 msgstr "公開日を表示"
 
-#: functions.php:430
+#: functions.php:409
 msgid "Display Author"
 msgstr "投稿者を表示"
 
-#: functions.php:430
+#: functions.php:422
 msgid "Display Category"
 msgstr "カテゴリーを表示"
 
-#: functions.php:430
+#: functions.php:435
 msgid "Display Tags"
 msgstr "タグを表示"
 
-#: functions.php:430
+#: functions.php:448
 msgid "Display Comment Number"
 msgstr "コメント数を表示"
 
-#: functions.php:430
+#: functions.php:456
 msgid "Footer"
 msgstr "フッター"
 
-#: functions.php:441
+#: functions.php:467
 msgid "Display Copyright"
 msgstr "コピーライトを表示"
 
-#: functions.php:454
+#: functions.php:480
 msgid "Display Credit"
 msgstr "クレジットを表示"
 
@@ -254,14 +219,5 @@ msgid "Search..."
 msgstr "検索..."
 
 #. Description of the plugin/theme
-msgid ""
-"BirdSITE is a photoblogging theme. The theme has grid layout and uses CSS3 "
-"media queries for its responsive layout and is therefore optimized for "
-"tablet pcs and smart phones. Features include the Theme Customize. You can "
-"choose the text color, link color, header line and footer background color "
-"and navigation color."
-msgstr ""
-"BirdSITEはフォトログのためのテーマです。レスポンシブWebデザインですので、PCの"
-"ほかタブレット、スマートフォンで見ることができます。テーマカスタマイズではテ"
-"キストの色、リンクの色、ヘッダーライン色とフッター背景色、ナビゲ－ション色を"
-"選択することができます。"
+msgid "BirdSITE is a photoblogging theme. The theme has grid layout and uses CSS3 media queries for its responsive layout and is therefore optimized for tablet pcs and smart phones. Features include the Theme Customize. You can choose the text color, link color, header line and footer background color and navigation color."
+msgstr "BirdSITEはフォトブログのためのテーマです。レスポンシブWebデザインですので、PCのほかタブレット、スマートフォンで見ることができます。テーマカスタマイズではテキストの色、リンクの色、ヘッダーライン色とフッター背景色、ナビゲ－ション色を選択することができます。"

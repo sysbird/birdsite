@@ -1,4 +1,4 @@
-== Description ==
+c== Description ==
 BirdSITE is a photoblogging theme. The theme has grid layout and uses CSS3 media queries for its responsive layout and is therefore optimized for tablet pcs and smart phones. Features include the Theme Customize. You can choose the text color, link color, header line and footer background color and navigation color.
 
 
@@ -48,7 +48,6 @@ Source:  http://fortawesome.github.io/Font-Awesome/
 
 == Author ==
 The theme built by TORIYAMA Yuko at Sysbird.
-<<<<<<< HEAD
 http://www.sysbird.jp
 
 

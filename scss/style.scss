@@ -4,13 +4,8 @@ Theme Name: BirdSITE
 Theme URI: http://www.sysbird.jp/birdsite/theme/
 Description: BirdSITE is a photoblogging theme. The theme has grid layout and uses CSS3 media queries for its responsive layout and is therefore optimized for tablet pcs and smart phones. Features include the Theme Customize. You can choose the text color, link color, header line and footer background color and navigation color.
 Author: Sysbird
-<<<<<<< HEAD
 Author URI: http://www.sysbird.jp
 Version: 1.08
-=======
-Author URI: http://www.sysbird.jp/
-Version: 1.07
->>>>>>> 71ef27025b09414a62853628977cde938d0dda93
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: white, two-columns, left-sidebar, responsive-layout, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-image-header, featured-images, full-width-template, sticky-post, theme-options, threaded-comments, translation-ready, photoblogging
@@ -314,7 +309,7 @@ body {
 				}
 
 				a {
-					border-top: solid 1px $navigation_color;
+					border-top: dotted 1px $navigation_color;
 					padding: 0.6em;
 					display: block;
 					width: $menu-width - 2;
@@ -724,18 +719,18 @@ body {
 		}
 
 		a.next {
-		    padding-right: 0;
+			padding-right: 0;
 
 			&:after {
-			    @include font-awesome( "\f054", 0.4em );
+				@include font-awesome( "\f054", 0.4em );
 			}
 		}
 
 		a.prev {
-		    padding-left: 0;
+			padding-left: 0;
 
 			&:before {
-			    @include font-awesome( "\f053", 0, 0.4em );
+				@include font-awesome( "\f053", 0, 0.4em );
 			}
 		}
 	}
@@ -1096,6 +1091,10 @@ video {
 			top: 0;
 			right: 0;
 			padding-left: 1em;
+
+			&:after {
+				@include font-awesome( "\f054", 0.4em );
+			}
 		}
 
 		.nav-next a {
@@ -1103,6 +1102,10 @@ video {
 			top: 0;
 			left: 0;
 			padding-right: 1em;
+
+			&:before {
+				@include font-awesome( "\f053", 0, 0.4em );
+			}
 		}
 	}
 
@@ -1434,10 +1437,10 @@ form {
 	position: relative;
 
 	label {
-	    display: block;
-	    font-size: 0;
-	    overflow: hidden;
-	    text-indent: -9999px;
+		display: block;
+		font-size: 0;
+		overflow: hidden;
+		text-indent: -9999px;
 	}
 
 	#s {
@@ -1447,6 +1450,7 @@ form {
 		line-height: 1;
 		border-radius: 4px 0 0 4px;
 		border: none;
+		border: solid 1px $border-color;
 	}
 
 	#searchsubmit {
@@ -1464,6 +1468,14 @@ form {
 		-webkit-appearance: button;
 		@include font-awesome( "\f005" );
 		font-size: 1.2em;
+	}
+}
+
+#footer {
+	#searchform {
+		#s {
+			border: none;
+		}
 	}
 }
 
@@ -1678,12 +1690,12 @@ form {
 				top: 0;
 				left: $menu-width;
 				width: 2.8em;
-				height: 2.8em;
+				height: 2.4em;
 				background-color: $navigation_color;
 				color: #FFF;
 				text-align: center;
 				border-bottom-right-radius : 8px;
-				padding: 0.4em;
+				padding: 0.2em;
 
 				&:after {
 					@include font-awesome( "\f0c9" );
@@ -1708,7 +1720,7 @@ form {
 					text-align: left;
 
 					a {
-						border-top: dotted 1px #FFF;
+						border-color: #FFF;
 						color: #FFF;
 						white-space: normal;
 						padding: 0.4em;

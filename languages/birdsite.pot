@@ -1,19 +1,11 @@
-<<<<<<< HEAD
 # Translation of the WordPress theme BirdSITE 1.08 by Sysbird
-=======
-# Translation of the WordPress theme BirdSITE 1.07 by Sysbird
->>>>>>> 71ef27025b09414a62853628977cde938d0dda93
 # Copyright (C) Sysbird
 # This file is distributed under the same license as the BirdSITE package.
 # FIRST AUTHOR <sysbird@gmail.com>, 2012.
 #
 msgid ""
 msgstr ""
-<<<<<<< HEAD
 "Project-Id-Version: BirdSITE 1.08\n"
-=======
-"Project-Id-Version: BirdSITE 1.07\n"
->>>>>>> 71ef27025b09414a62853628977cde938d0dda93
 "Report-Msgid-Bugs-To: http://www.sysbird.jp/wptips/\n"
 "POT-Creation-Date: 2012-08-02 00:00+0200\n"
 "PO-Revision-Date: 2015-MO-DA HO:MI+ZONE\n"
@@ -71,68 +63,44 @@ msgstr ""
 msgid "Sorry, no posts matched your criteria."
 msgstr ""
 
-#: comments.php:12
-msgid "This post is password protected. Enter the password to view any comments."
-msgstr ""
-
-#: comments.php:21
+#: comments.php:18
 msgid "One Comment"
-msgid_plural ""
+msgid_plural "%1$s Comments"
 msgstr[0] ""
 
-#: comments.php:28 comments.php:39
+#: comments.php:25 comments.php:41
 msgid "Older Comments"
 msgstr ""
 
-#: comments.php:29 comments.php:40
+#: comments.php:26 comments.php:42
 msgid "Newer Comments"
 msgstr ""
 
-#: comments.php:47
-msgid "Name"
-msgstr ""
-
-#: comments.php:47 comments.php:48 comments.php:54
-msgid "(*required)"
-msgstr ""
-
-#: comments.php:48
-msgid "Email (will not be published)"
-msgstr ""
-
-#: comments.php:48
-msgid "Website"
-msgstr ""
-
-#: comments.php:53
-msgid "Comment"
-msgstr ""
-
-#: content.php:19 content.php:37
+#: content.php:19 content.php:50
 msgid "more"
 msgstr ""
 
-#: content.php:25 content.php:29
+#: content.php:25 content.php:30
 msgid "Permalink to %s"
 msgstr ""
 
-#: content.php:34
+#: content.php:46
 msgid "No Comments"
 msgstr ""
 
-#: content.php:34
+#: content.php:46
 msgid "1 Comment"
 msgstr ""
 
-#: content.php:34
+#: content.php:46
 msgid "% Comments"
 msgstr ""
 
-#: content.php:34
+#: content.php:46
 msgid "Comments Closed"
 msgstr ""
 
-#: content.php:52 image.php:72
+#: content.php:60 image.php:72
 msgid "Pages:"
 msgstr ""
 
@@ -165,58 +133,70 @@ msgid "Widget Area for footer right"
 msgstr ""
 
 #: functions.php:71
-msgid "Pingback"
-msgstr ""
-
-#: function.php:71
-msgid "(Edit)"
-msgstr ""
-
-#: functions.php:81
-msgid "Your comment is awaiting moderation."
-msgstr ""
-
-#: functions.php:116
 msgid "Previous"
 msgstr ""
 
-#: functions.php:117
+#: functions.php:72
 msgid "Next"
 msgstr ""
 
-#: functions.php:283
+#: functions.php:238
 msgid "Navigation Menu"
 msgstr ""
 
-#: functions.php:347
+#: functions.php:302
 msgid "Page %s"
 msgstr ""
 
-#: functions.php:387
+#: functions.php:342
 msgid "Text Color"
 msgstr ""
 
-#: functions.php:399
+#: functions.php:354
 msgid "Link Color"
 msgstr ""
 
-#: functions.php:411
+#: functions.php:366
 msgid "Header, Footer Color"
 msgstr ""
 
-#: functions.php:423
+#: functions.php:375
 msgid "Navigation Text Color"
 msgstr ""
 
-#: functions.php:430
+#: functions.php:385
+msgid "Home"
+msgstr ""
+
+#: functions.php:396
+msgid "Display Postate"
+msgstr ""
+
+#: functions.php:409
+msgid "Display Author"
+msgstr ""
+
+#: functions.php:422
+msgid "Display Category"
+msgstr ""
+
+#: functions.php:435
+msgid "Display Tags"
+msgstr ""
+
+#: functions.php:448
+msgid "Display Comment Number"
+msgstr ""
+
+#: functions.php:456
 msgid "Footer"
 msgstr ""
 
-#: functions.php:441
+#: functions.php:467
 msgid "Display Copyright"
 msgstr ""
 
-#: functions.php:454
+#: functions.php:480
 msgid "Display Credit"
 msgstr ""
 
