@@ -1,4 +1,4 @@
-c== Description ==
+== Description ==
 BirdSITE is a photoblogging theme. The theme has grid layout and uses CSS3 media queries for its responsive layout and is therefore optimized for tablet pcs and smart phones. Features include the Theme Customize. You can choose the text color, link color, header line and footer background color and navigation color.
 
 
@@ -48,6 +48,9 @@ http://www.sysbird.jp
 
 
 == Changelog ==
+v1.09
+* Change from JavaScript to content.php display the Featured Image set center position at home.
+
 v1.08
 * stop the correspondence for IE8 and below.
 * delete wp_list_comments callback.
@@ -55,21 +58,10 @@ v1.08
 * change style for sticky post.
 * add theme option choose display item at home.
 
-== Changelog ==
 v1.07
 * change Author URI
 * fix a parameter at add_theme_support( 'custom-header' )
 * fix a bug at wp_title filter.
-=======
-http://www.sysbird.jp/
-
-
-== Changelog ==
-v1.07
-* change Author URI
-* fix a parameter at add_theme_support( 'custom-header' )
-* fix  a bug at wp_title filter.
->>>>>>> 71ef27025b09414a62853628977cde938d0dda93
 
 v1.06
 * fix WordPress Version 4.2

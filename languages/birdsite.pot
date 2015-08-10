@@ -1,12 +1,12 @@
-# Translation of the WordPress theme BirdSITE 1.08 by Sysbird
+# Translation of the WordPress theme BirdSITE 1.09 by Sysbird
 # Copyright (C) Sysbird
 # This file is distributed under the same license as the BirdSITE package.
 # FIRST AUTHOR <sysbird@gmail.com>, 2012.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: BirdSITE 1.08\n"
-"Report-Msgid-Bugs-To: http://www.sysbird.jp/wptips/\n"
+"Project-Id-Version: BirdSITE 1.09\n"
+"Report-Msgid-Bugs-To: http://www.sysbird.jp\n"
 "POT-Creation-Date: 2012-08-02 00:00+0200\n"
 "PO-Revision-Date: 2015-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Sysbird <sysbird@gmail.com>\n"

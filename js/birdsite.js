@@ -38,7 +38,6 @@ jQuery( function() {
 		jQuery( '#small-menu' ).click();
  	});
 
-
 	// back to pagetop
 	var totop = jQuery( '#back-top' );
 	totop.hide();
@@ -48,38 +47,4 @@ jQuery( function() {
 	totop.click( function () {
 		jQuery( 'body, html' ).animate( { scrollTop: 0 }, 500 ); return false;
 	});
-
-	// Center Thumbnail Position
-	jQuery(window).load(function() {
-		centerThumbnail();
-	});
 });
-
-////////////////////////////////////////
-// Center Thumbnail Position
-function centerThumbnail() {
-
-	jQuery( '.home .thumbnail img' ).each(function( i ){
-		var wrapperHeight = jQuery( this ).parent().height();
-		var wrapperWidth = jQuery( this ).parent().width();
-		var imageHeight = jQuery( this ).height();
-		var imageWidth = jQuery( this ).width();
-
-		if( imageWidth > imageHeight ){
-			// Horizontal Thumbnail
-			var h = wrapperHeight;
-			var w = ( imageWidth/imageHeight ) * h;
-		}
-		else{
-			// Vertical Thumbnail
-			var w = wrapperWidth;
-			var h = ( imageHeight/imageWidth ) * w;
-		}
-
-		// Set Center
-		var y = ( wrapperHeight - h ) / 2;
-		var x = ( wrapperWidth - w ) / 2;
-
-		jQuery( this ).css( { 'height': h + 'px', 'width': w + 'px', 'top': y + 'px', 'left': x + 'px' } );
-	});
-}

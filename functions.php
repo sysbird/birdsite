@@ -319,7 +319,7 @@ function birdsite_scripts() {
 		wp_enqueue_script( 'comment-reply' );
 	}
 
-	wp_enqueue_script( 'birdsite', get_template_directory_uri() .'/js/birdsite.js', array( 'jquery' ), '1.08' );
+	wp_enqueue_script( 'birdsite', get_template_directory_uri() .'/js/birdsite.js', array( 'jquery' ), '1.09' );
 	wp_enqueue_style( 'birdsite', get_stylesheet_uri() );
 
 	if ( strtoupper( get_locale() ) == 'JA' ) {
@@ -507,3 +507,32 @@ function birdsite_gallery_atts( $out, $pairs, $atts ) {
 }
 add_filter( 'shortcode_atts_gallery', 'birdsite_gallery_atts', 10, 3 );
 add_filter( 'use_default_gallery_style', '__return_false' );
+
+//////////////////////////////////////////////////////
+// Display the Featured Image at home
+function birdsite_the_post_thumbnail() {
+
+	$birdsite_thumbnail_size = 240;
+	$birdsite_thumbnail_width = $birdsite_thumbnail_size;
+	$birdsite_thumbnail_height = $birdsite_thumbnail_size;
+
+	$birdsite_thumbnail_id = get_post_thumbnail_id();
+	$birdsite_thumbnail_attr = wp_get_attachment_metadata( $birdsite_thumbnail_id );
+	if( $birdsite_thumbnail_attr['width'] > $birdsite_thumbnail_attr['height'] ){
+		// Horizontal Thumbnail
+		$birdsite_thumbnail_width = intval( ( $birdsite_thumbnail_attr['width'] / $birdsite_thumbnail_attr['height'] ) * $birdsite_thumbnail_height );
+	}
+	else{
+		// Vertical Thumbnail
+		$birdsite_thumbnail_height = intval( ( $birdsite_thumbnail_attr['height'] / $birdsite_thumbnail_attr['width'] ) * $birdsite_thumbnail_width );
+	}
+
+	$birdsite_thumbnail_top = intval( ( $birdsite_thumbnail_size - $birdsite_thumbnail_height ) /2 );
+	$birdsite_thumbnail_left = intval( ( $birdsite_thumbnail_size - $birdsite_thumbnail_width ) /2 );
+
+	$birdsite_attr = array(
+		'style'   => 'width: ' .$birdsite_thumbnail_width .'px; height: ' .$birdsite_thumbnail_height .'px; left: ' .$birdsite_thumbnail_left .'px; top: ' .$birdsite_thumbnail_top .'px;'
+	);
+
+	the_post_thumbnail( 'large', $birdsite_attr );
+}

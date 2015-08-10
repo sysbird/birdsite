@@ -15,7 +15,7 @@
 	<li id="post-<?php the_ID(); ?>" <?php post_class( $birdsite_image_tag ); ?>>
 		<?php if(has_post_thumbnail()): ?>
 			<div class="thumbnail">
-				<?php the_post_thumbnail( 'large' ); ?>
+				<?php birdsite_the_post_thumbnail(); ?>
 				<div class="more-link"><a href="<?php the_permalink(); ?>"><?php _e( 'more', 'birdsite' ); ?></a></div>
 			</div>
 		<?php endif; ?>
