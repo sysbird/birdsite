@@ -1,11 +1,11 @@
-# Translation of the WordPress theme BirdSITE 1.09 by Sysbird
+# Translation of the WordPress theme BirdSITE 1.10 by Sysbird
 # Copyright (C) Sysbird
 # This file is distributed under the same license as the BirdSITE package.
 # FIRST AUTHOR <sysbird@gmail.com>, 2012.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: BirdSITE 1.09\n"
+"Project-Id-Version: BirdSITE 1.10\n"
 "Report-Msgid-Bugs-To: http://www.sysbird.jp\n"
 "POT-Creation-Date: 2012-08-02 00:00+0200\n"
 "PO-Revision-Date: 2015-MO-DA HO:MI+ZONE\n"
@@ -76,31 +76,31 @@ msgstr ""
 msgid "Newer Comments"
 msgstr ""
 
-#: content.php:19 content.php:50
-msgid "more"
-msgstr ""
-
-#: content.php:25 content.php:30
+#: content.php:19 content.php:24
 msgid "Permalink to %s"
 msgstr ""
 
-#: content.php:46
+#: content.php:40
 msgid "No Comments"
 msgstr ""
 
-#: content.php:46
+#: content.php:40
 msgid "1 Comment"
 msgstr ""
 
-#: content.php:46
+#: content.php:40
 msgid "% Comments"
 msgstr ""
 
-#: content.php:46
+#: content.php:40
 msgid "Comments Closed"
 msgstr ""
 
-#: content.php:60 image.php:72
+#: content.php:44 functions.php:538
+msgid "more"
+msgstr ""
+
+#: content.php:59 image.php:72
 msgid "Pages:"
 msgstr ""
 
