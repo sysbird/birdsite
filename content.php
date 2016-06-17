@@ -10,9 +10,7 @@
 
 <?php if ( is_home() ) : /* Display Excerpts for Home */ ?>
 
-	<?php has_post_thumbnail()? $birdsite_image_tag = 'has-image' : $birdsite_image_tag = ''; ?>
-
-	<li id="post-<?php the_ID(); ?>" <?php post_class( $birdsite_image_tag ); ?>>
+	<li id="post-<?php the_ID(); ?>" <?php post_class( ); ?>>
 		<?php the_post_thumbnail( 'birdsite' ); ?>
 		<div class="caption">
 			<header class="entry-header">

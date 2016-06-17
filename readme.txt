@@ -50,6 +50,10 @@ http://www.sysbird.jp
 == Changelog ==
 v1.10
 * use the filter post_thumbnail_html when display the Featured Image.
+* add add_theme_support for html5.
+* use the_posts_pagination at archive page.
+* suport for screen readers class.
+* update theme tag.
 
 v1.09
 * Change from JavaScript to content.php display the Featured Image set center position at home.

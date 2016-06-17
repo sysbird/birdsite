@@ -51,31 +51,6 @@ function birdsite_widgets_init() {
 add_action( 'widgets_init', 'birdsite_widgets_init' );
 
 //////////////////////////////////////////////////////
-// Pagenation
-function birdsite_the_pagenation() {
-
-	global $wp_query, $paged;
-	$birdsite_big = 999999999;
-
-	$birdsite_pages = $wp_query -> max_num_pages;
-	if ( empty( $paged ) ) $paged = 1;
-
-	if ( 1 < $birdsite_pages ) {
-		echo '	<div class="tablenav">' ."\n";
-		echo paginate_links( array(
-			'base'		=> str_replace( $birdsite_big, '%#%', get_pagenum_link( $birdsite_big ) ),
-			'format'		=> '?paged=%#%',
-			'current'	=> max( 1, get_query_var( 'paged' ) ),
-			'total'		=> $wp_query -> max_num_pages,
-			'mid_size'	=> 3,
-			'prev_text'	=> __( 'Previous', 'birdsite' ),
-			'next_text'	=> __( 'Next', 'birdsite' )
-			) );
-		echo '</div>' ."\n";;
-	}
-}
-
-//////////////////////////////////////////////////////
 // Copyright Year
 function birdsite_get_copyright_year() {
 
@@ -141,21 +116,20 @@ function birdsite_header_style() {
 	}
 
 	a,
-	#content .tablenav,
-	#content .tablenav a.page-numbers,
-	#content .hentry .page-link,
-	#content .hentry .page-link a span {
+	.pagination,
+	.pagination a.page-numbers,
+	.page-link a span {
 		color: <?php echo $link_color; ?>;
 	}
 
-	#content .tablenav a.page-numbers,
-	#content .tablenav span.current,
-	#content .hentry .page-link span {
+	.pagination a.page-numbers,
+	.pagination span.current,
+	.page-link span {
 		border-color: <?php echo $link_color; ?>;
 	}
 
-	#content .tablenav span.current,
-	#content .hentry .page-link span {
+	.pagination span.current,
+	#content .hentry .page-link > span {
 		background: <?php echo $link_color; ?>;
 	}
 
@@ -216,6 +190,18 @@ function birdsite_setup() {
 
 	// This theme uses post thumbnails
 	add_theme_support( 'post-thumbnails' );
+
+	/*
+	 * Switch default core markup for search form, comment form, and comments
+	 * to output valid HTML5.
+	 */
+	add_theme_support( 'html5', array(
+		'search-form',
+		'comment-form',
+		'comment-list',
+		'gallery',
+		'caption',
+	) );
 
 	/*
 	 * This theme supports all available post formats by default.
@@ -314,6 +300,9 @@ function birdsite_slug_render_title() {
 //////////////////////////////////////////////////////
 // Enqueue Acripts
 function birdsite_scripts() {
+
+	wp_enqueue_script( 'birdsite-html5', get_template_directory_uri() . '/js/html5shiv.js', array(), '3.7.2' );
+	wp_script_add_data( 'birdsite-html5', 'conditional', 'lt IE 9' );
 
 	if ( is_singular() && comments_open() && get_option('thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );

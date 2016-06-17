@@ -15,10 +15,7 @@ get_header(); ?>
 		<?php get_template_part( 'content', get_post_format() ); ?>
 		<?php comments_template( '', true ); ?>
 
-		<nav id="nav-below">
-			<span class="nav-next"><?php next_post_link( '%link', '%title' ); ?></span>
-			<span class="nav-previous"><?php previous_post_link( '%link', '%title' ); ?></span>
-		</nav>
+		<?php the_post_navigation(); ?>
 
 	</article>
 

@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: BirdSITE 1.10 ja\n"
 "Report-Msgid-Bugs-To: http://www.sysbird.jp\n"
 "POT-Creation-Date: 2013-08-02 00:00+0300\n"
-"PO-Revision-Date: 2015-08-28 13:55+0900\n"
+"PO-Revision-Date: 2016-06-17 18:03+0900\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -59,7 +59,7 @@ msgstr "%s による投稿"
 msgid "Blog Archives"
 msgstr "アーカイブ"
 
-#: archive.php:49
+#: archive.php:51
 msgid "Sorry, no posts matched your criteria."
 msgstr "投稿が見つかりません。"
 
@@ -76,31 +76,31 @@ msgstr "古いコメント"
 msgid "Newer Comments"
 msgstr "新しいコメント"
 
-#: content.php:19 content.php:24
+#: content.php:17 content.php:22
 msgid "Permalink to %s"
 msgstr "%sへのリンク"
 
-#: content.php:40
+#: content.php:38
 msgid "No Comments"
 msgstr "コメントをどうぞ"
 
-#: content.php:40
+#: content.php:38
 msgid "1 Comment"
 msgstr "1件のコメント"
 
-#: content.php:40
+#: content.php:38
 msgid "% Comments"
 msgstr "%件のコメント"
 
-#: content.php:40
+#: content.php:38
 msgid "Comments Closed"
 msgstr "コメントは受け付けていません"
 
-#: content.php:44 functions.php:538
+#: content.php:42 functions.php:527
 msgid "more"
 msgstr "続きを見る"
 
-#: content.php:59 image.php:72
+#: content.php:57 image.php:72
 msgid "Pages:"
 msgstr "ページ:"
 
@@ -132,71 +132,63 @@ msgstr "ウィジェットエリアフッター(中央)"
 msgid "Widget Area for footer right"
 msgstr "ウィジェットエリアフッター(右)"
 
-#: functions.php:71
-msgid "Previous"
-msgstr "前へ"
-
-#: functions.php:72
-msgid "Next"
-msgstr "次へ"
-
-#: functions.php:238
+#: functions.php:224
 msgid "Navigation Menu"
 msgstr "ナビゲーションメニュー"
 
-#: functions.php:302
+#: functions.php:289
 msgid "Page %s"
 msgstr "%sページ目"
 
-#: functions.php:342
+#: functions.php:331
 msgid "Text Color"
 msgstr "文字色"
 
-#: functions.php:354
+#: functions.php:343
 msgid "Link Color"
 msgstr "リンク色"
 
-#: functions.php:366
+#: functions.php:355
 msgid "Header, Footer Color"
 msgstr "ヘッダライン、フッター背景色"
 
-#: functions.php:375
+#: functions.php:367
 msgid "Navigation Text Color"
 msgstr "ナビゲーション文字色"
 
-#: functions.php:385
+#: functions.php:374
 msgid "Home"
 msgstr "ホーム"
 
-#: functions.php:396
-msgid "Display Postate"
+#: functions.php:385
+msgid "Display Postdate"
 msgstr "公開日を表示"
 
-#: functions.php:409
+#: functions.php:398
 msgid "Display Author"
 msgstr "投稿者を表示"
 
-#: functions.php:422
+#: functions.php:411
 msgid "Display Category"
 msgstr "カテゴリーを表示"
 
-#: functions.php:435
+#: functions.php:424
 msgid "Display Tags"
 msgstr "タグを表示"
 
-#: functions.php:448
+#: functions.php:437
 msgid "Display Comment Number"
 msgstr "コメント数を表示"
 
-#: functions.php:456
+#: functions.php:445
 msgid "Footer"
 msgstr "フッター"
 
-#: functions.php:467
+#: functions.php:456
 msgid "Display Copyright"
 msgstr "コピーライトを表示"
 
-#: functions.php:480
+#: functions.php:469
 msgid "Display Credit"
 msgstr "クレジットを表示"
 
@@ -212,7 +204,7 @@ msgstr "前の画像へ"
 msgid "Search Results: %s"
 msgstr "「%s」 の検索結果"
 
-#: search.php:27
+#: search.php:28
 msgid "Sorry, no posts matched &#8216;%s&#8217;"
 msgstr "「%s」 は見つかりませんでした。"
 
@@ -222,13 +214,14 @@ msgstr "検索..."
 
 #. Description of the plugin/theme
 msgid ""
-"BirdSITE is a photoblogging theme. The theme has grid layout and uses CSS3 "
-"media queries for its responsive layout and is therefore optimized for "
-"tablet pcs and smart phones. Features include the Theme Customize. You can "
-"choose the text color, link color, header line and footer background color "
-"and navigation color."
+"BirdSITE built for photobloggers and photographers. The grid layout displays "
+"good appearance for your photograpy. and uses CSS3 media queries for its "
+"responsive layout and is therefore optimized for tablet pcs and smart "
+"phones. Features include the Theme Customize. You can choose the text color, "
+"link color, header line and footer background color and navigation color."
 msgstr ""
-"BirdSITEはフォトブログのためのテーマです。レスポンシブWebデザインですので、PC"
-"のほかタブレット、スマートフォンで見ることができます。テーマカスタマイズでは"
-"テキストの色、リンクの色、ヘッダーライン色とフッター背景色、ナビゲ－ション色"
-"を選択することができます。"
+"BirdSITEは写真ブロガーや写真家のために構築されたテーマです。グリッドレイアウ"
+"トによりあなたの写真を魅力的に伝えます。レスポンシブWebデザインですので、PCの"
+"ほかタブレット、スマートフォンで見ることができます。テーマカスタマイズではテ"
+"キストの色、リンクの色、ヘッダーライン色とフッター背景色、ナビゲ－ション色を"
+"選択することができます。"

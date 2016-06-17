@@ -44,7 +44,8 @@ get_header(); ?>
 		<?php endwhile; ?>
 		</ul>
 
-		<?php birdsite_the_pagenation(); ?>
+		<?php the_posts_pagination( array( 'mid_size' => 3, ) ); ?>
+
 	<?php else: ?>
 		<p><?php _e( 'Sorry, no posts matched your criteria.', 'birdsite' ); ?></p>
 	<?php endif; ?>

@@ -2,13 +2,13 @@
 /*
 Theme Name: BirdSITE
 Theme URI: http://www.sysbird.jp/birdsite/theme/
-Description: BirdSITE is a photoblogging theme. The theme has grid layout and uses CSS3 media queries for its responsive layout and is therefore optimized for tablet pcs and smart phones. Features include the Theme Customize. You can choose the text color, link color, header line and footer background color and navigation color.
+Description: BirdSITE built for photobloggers and photographers. The grid layout displays good appearance for your photograpy. and uses CSS3 media queries for its responsive layout and is therefore optimized for tablet pcs and smart phones. Features include the Theme Customize. You can choose the text color, link color, header line and footer background color and navigation color.
 Author: Sysbird
 Author URI: http://www.sysbird.jp
 Version: 1.10
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Tags: white, two-columns, left-sidebar, responsive-layout, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-image-header, featured-images, full-width-template, sticky-post, theme-options, threaded-comments, translation-ready, photoblogging
+Tags: two-columns, left-sidebar, grid-layout, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-image-header, featured-images, footer-widgets, sticky-post, theme-options, threaded-comments, translation-ready, photography
 Text Domain: birdsite
 
 This theme, like WordPress, is licensed under the GPL.
@@ -450,6 +450,11 @@ body {
 		padding: 0.8em;
 		margin-bottom: 1.6em;
 		line-height: 1.4;
+		max-width: 100%;
+		overflow: auto;
+		white-space: pre;
+		white-space: pre-wrap;
+		word-wrap: break-word;
 	}
 
 	code {
@@ -457,7 +462,7 @@ body {
 	}
 
 	code, kbd, pre, samp {
-	    font-family: monospace,serif;
+		font-family: monospace,serif;
 	}
 
 	hr {
@@ -646,93 +651,6 @@ body {
 				}
 			}
 		}
-
-		.page-link {
-			clear: both;
-			margin: 1.6em 0;
-			color: $link-color;
-
-			span {
-				background: $link-color;
-				color: #FFF;
-				padding: 0.4em 0.6em;
-				margin: 0.1em 0 0.1em 0;
-				text-decoration:none;
-				font-weight: normal;
-				text-align: center;
-				border: solid 1px $link-color;
-				display: inline-block;
-				line-height: 1;
-			}
-
-			a {
-				span {
-					color: $link-color;
-					background: #FFF;
-
-					&:hover {
-						background: $background-color;
-					}
-				}
-			}
-		}
-	}
-
-	.tablenav {
-		clear: both;
-		color: $link-color;
-		padding: 20px 0 0;
-		@include clearfix;
-
-		a.page-numbers,
-		.current {
-			display: inline-block;
-			background: #FFF;
-			color: $link-color;
-			border:solid 1px $link-color;
-			text-decoration:none;
-			text-align: center;
-			padding: 0.4em 0.6em;
-			margin: 0.1em 0.1em 0.1em 0;
-
-			&.prev,
-			&.next {
-				background: none;
-				border: none;
-			}
-		}
-
-		a.page-numbers:hover {
-			background: $background-color;
-
-			&.prev,
-			&.next {
-				background: none;
-				text-decoration: underline;
-			}
-		}
-
-		.current {
-			color: #FFF;
-			background: $link-color;
-			border:solid 1px $link-color;
-		}
-
-		a.next {
-			padding-right: 0;
-
-			&:after {
-				@include font-awesome( "\f054", 0.4em );
-			}
-		}
-
-		a.prev {
-			padding-left: 0;
-
-			&:before {
-				@include font-awesome( "\f053", 0, 0.4em );
-			}
-		}
 	}
 }
 
@@ -743,13 +661,15 @@ body {
 		padding: 0;
 		margin: 0;
 		list-style: none outside none;
+		margin-top: -20px;
+		overflow: hidden;
 		@include clearfix;
 
 		li {
 			float: left;
 			position: relative;
 			min-height: 1px;
-			margin: 0 0 20px 20px;
+			margin: 20px 0 0 20px;
 			padding: 0;
 			width: 250px;
 			height: 250px;
@@ -850,7 +770,7 @@ body {
 				}
 			}
 
-			&.has-image {
+			&.has-post-thumbnail {
 				.caption {
 					@include opacity( 0 );
 				}
@@ -890,41 +810,12 @@ body {
 		}
 	}
 
-	.tablenav {
+	.pagination {
 		padding-left: 20px;
 	}
 }
 
-/* Single
--------------------------------------------------------------------- */
-.single {
-	#content #nav-below {
-		margin-top: 1.6em;
-		line-height: 1.2;
-		@include clearfix;
-
-		.nav-next {
-			a {
-				&:before {
-				    @include font-awesome( "\f053", 0, 0.4em );
-				}
-			}
-		}
-
-		.nav-previous {
-			display: block;
-			float: right;
-
-			a {
-				&:after {
-				    @include font-awesome( "\f054", 0.4em );
-				}
-			}
-		}
-	}
-}
-
-/* Archive
+/* Attachment
 -------------------------------------------------------------------- */
 .attachment {
 
@@ -982,82 +873,82 @@ a:hover img {
 	@include opacity( 0.9 );
 }
 
-#content .hentry {
-	.wp-caption,
-	.gallery-caption {
-		font-size: 0.9em;
-		line-height: 1;
-		color: $meta-color;
-		max-width: 100%;
+.wp-caption,
+.gallery-caption {
+	font-size: 0.9em;
+	line-height: 1;
+	color: $meta-color;
+	max-width: 100%;
+	text-align: center;
+}
+
+.wp-caption {
+	max-width: 100%;
+	background-color: $background-color;
+	padding: 5px;
+
+	p {
 		text-align: center;
-	}
-
-	.wp-caption {
-		max-width: 100%;
-		background-color: $background-color;
-		padding: 5px;
-
-		p {
-			text-align: center;
-			margin: 5px 0 0 0;
-			line-height: 1;
-		}
-	}
-
-	.gallery-caption {
 		margin: 5px 0 0 0;
+		line-height: 1;
+	}
+}
+
+/* Gallery
+-------------------------------------------------------------- */
+.gallery-caption {
+	margin: 5px 0 0 0;
+}
+
+.gallery {
+	margin: 0 auto;
+	@include clearfix;
+
+	.gallery-item {
+		float: left;
+		padding: 0 5px;
+		margin-bottom: 10px;
+		text-align: center;
+		width: 33%;
+
+		a {
+			display: block;
+		}
+
+		img {
+			vertical-align:bottom;
+		}
 	}
 
-	.gallery {
-		margin: 0 auto;
-		clear: both;
+	&.gallery-columns-2 .gallery-item {
+		max-width: 50%;
+	}
 
-		.gallery-item {
-			float: left;
-			padding: 0 5px;
-			margin-bottom: 10px;
-			text-align: center;
-			width: 33%;
+	&.gallery-columns-3 .gallery-item {
+		max-width: 33.33%;
+	}
+	&.gallery-columns-4 .gallery-item {
+		max-width: 25%;
+	}
 
-			a {
-				display: block;
-			}
+	&.gallery-columns-5 .gallery-item {
+		max-width: 20%;
+	}
 
-			img {
-				vertical-align:bottom;
-			}
-		}
+	&.gallery-columns-6 .gallery-item {
+		max-width: 16.66%;
+	}
 
-		&.gallery-columns-2 .gallery-item {
-			max-width: 50%;
-		}
+	&.gallery-columns-7 .gallery-item {
+		max-width: 14.28%;
+	}
 
-		&.gallery-columns-3 .gallery-item {
-			max-width: 33.33%;
-		}
-		&.gallery-columns-4 .gallery-item {
-			max-width: 25%;
-		}
+	&.gallery-columns-8 .gallery-item {
+		max-width: 12.5%;
+	}
 
-		&.gallery-columns-5 .gallery-item {
-			max-width: 20%;
-		}
-
-		&.gallery-columns-6 .gallery-item {
-			max-width: 16.66%;
-		}
-
-		&.gallery-columns-7 .gallery-item {
-			max-width: 14.28%;
-		}
-
-		&.gallery-columns-8 .gallery-item {
-			max-width: 12.5%;
-		}
-
-		&.gallery-columns-9 .gallery-item {
-			max-width: 11.11%;
-		}
+	&.gallery-columns-9 .gallery-item {
+		max-width: 11.11%;
 	}
 }
 
@@ -1074,9 +965,157 @@ video {
 	max-width: 100% !important; /* Override the Twitter embed fixed width */
 }
 
+/* Text meant only for screen readers.
+-------------------------------------------------------------- */
+.screen-reader-text {
+	clip: rect(1px, 1px, 1px, 1px);
+	position: absolute !important;
+	height: 1px;
+	width: 1px;
+	overflow: hidden;
+}
+
+.screen-reader-text:focus {
+	background-color: #f1f1f1;
+	border-radius: 3px;
+	box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+	clip: auto !important;
+	color: #21759b;
+	display: block;
+	font-size: 14px;
+	font-size: 0.875rem;
+	font-weight: bold;
+	height: auto;
+	left: 5px;
+	line-height: normal;
+	padding: 15px 23px 14px;
+	text-decoration: none;
+	top: 5px;
+	width: auto;
+	z-index: 100000; /* Above WP toolbar. */
+}
+
+/* Pagination at archive
+-------------------------------------------------------------------- */
+.pagination {
+	clear: both;
+	color: $link-color;
+	padding: 0;
+	@include clearfix;
+
+	a.page-numbers,
+	.current {
+		display: inline-block;
+		background: #FFF;
+		color: $link-color;
+		border:solid 1px $link-color;
+		text-decoration:none;
+		text-align: center;
+		padding: 0.4em 0.6em;
+		margin: 0.1em 0.1em 0.1em 0;
+
+		&.prev,
+		&.next {
+			background: none;
+			border: none;
+		}
+	}
+
+	a.page-numbers:hover {
+		background: $background-color;
+
+		&.prev,
+		&.next {
+			background: none;
+			text-decoration: underline;
+		}
+	}
+
+	.current {
+		color: #FFF;
+		background: $link-color;
+		border:solid 1px $link-color;
+	}
+
+	a.next {
+		padding-right: 0;
+
+		&:after {
+			@include font-awesome( "\f054", 0.4em );
+		}
+	}
+
+	a.prev {
+		padding-left: 0;
+
+		&:before {
+			@include font-awesome( "\f053", 0, 0.4em );
+		}
+	}
+}
+
+/* Page link at singular
+-------------------------------------------------------------------- */
+.page-link {
+	clear: both;
+	margin: 1.6em 0;
+	color: $link-color;
+
+	span {
+		background: $link-color;
+		color: #FFF;
+		padding: 0.4em 0.6em;
+		margin: 0.1em 0 0.1em 0;
+		text-decoration:none;
+		font-weight: normal;
+		text-align: center;
+		border: solid 1px $link-color;
+		display: inline-block;
+		line-height: 1;
+	}
+
+	a {
+		span {
+			color: $link-color;
+			background: #FFF;
+
+			&:hover {
+				background: $background-color;
+			}
+		}
+	}
+}
+
+/* Post Navigation at Single page
+-------------------------------------------------------------------- */
+.nav-links {
+	margin-top: 40px;
+	line-height: 1.2;
+	@include clearfix;
+
+	.nav-next {
+		a {
+			&:before {
+				@include font-awesome( "\f053", 0, 0.4em );
+			}
+		}
+	}
+
+	.nav-previous {
+		display: block;
+		float: right;
+
+		a {
+			&:after {
+				@include font-awesome( "\f054", 0.4em );
+			}
+		}
+	}
+}
+
 /* Comments
 -------------------------------------------------------------- */
-#content #comments {
+#comments {
 	margin-top: 20px;
 	display: block;
 
@@ -1192,7 +1231,7 @@ video {
 
 		ul {
 			margin: 0;
-			padding: 0 0 20px 0;
+			padding: 0;
 			list-style: none;
 
 			li {
@@ -1338,7 +1377,7 @@ video {
 						text-decoration: none;
 					}
 				}
-		    }
+			}
 		}
 
 		thead {
@@ -1435,13 +1474,6 @@ form {
 	width: 100%;
 	height: 30px;
 	position: relative;
-
-	label {
-		display: block;
-		font-size: 0;
-		overflow: hidden;
-		text-indent: -9999px;
-	}
 
 	#s {
 		width: 80%;
@@ -1555,25 +1587,23 @@ form {
 		}
 	}
 
-	#content .hentry {
-		.gallery {
-			margin: 0 10%;
+	.gallery {
+		margin: 0 10%;
 
-			.gallery-item {
-				width: 31%;
-				padding-right: 2%;
-				margin: 0;
+		.gallery-item {
+			width: 31%;
+			padding-right: 2%;
+			margin: 0;
 
-				img {
-					width: 100%;
-					height: auto;
-				}
+			img {
+				width: 100%;
+				height: auto;
 			}
+		}
 
-			.wp-caption,
-			.gallery-caption {
-				display: none;
-			}
+		.wp-caption,
+		.gallery-caption {
+			display: none;
 		}
 	}
 }
@@ -1626,7 +1656,7 @@ form {
 
 		.hentry {
 			margin-left: 0;
-			padding: 10px;
+			padding: 2%;
 
 			.entry-header {
 				 margin-bottom: 10px;
@@ -1637,10 +1667,11 @@ form {
 			}
 		}
 
-		.tablenav {
-			padding: 0 10px 10px;
-			text-align: center;
-		}
+	}
+
+	.pagination {
+		padding: 0 10px 10px;
+		text-align: center;
 	}
 
 	.home {
@@ -1655,11 +1686,11 @@ form {
 		#content {
 			ul.row {
 				li {
-					margin: 0 auto 20px;
+					margin: 20px auto 0;
 				}
 			}
 
-			.tablenav {
+			.pagination {
 				padding-left:  10px;
 				padding-bottom: 20px
 			}
@@ -1672,6 +1703,9 @@ form {
 		}
 	}
 
+	.nav-links {
+		margin-top: 20px;
+	}
 
 	/* small menu */
 	#menu-wrapper {

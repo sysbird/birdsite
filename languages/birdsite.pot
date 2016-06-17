@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: BirdSITE 1.10\n"
 "Report-Msgid-Bugs-To: http://www.sysbird.jp\n"
 "POT-Creation-Date: 2012-08-02 00:00+0200\n"
-"PO-Revision-Date: 2015-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: 2016-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Sysbird <sysbird@gmail.com>\n"
 "Language-Team: sysbird <sysbird@gmail.com>\n"
 "MIME-Version: 1.0\n"
@@ -20,7 +20,9 @@ msgid "Error 404 - Not Found"
 msgstr ""
 
 #: 404.php:18
-msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help."
+msgid ""
+"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
+"searching can help."
 msgstr ""
 
 #: archive.php:16
@@ -59,7 +61,7 @@ msgstr ""
 msgid "Blog Archives"
 msgstr ""
 
-#: archive.php:49
+#: archive.php:51
 msgid "Sorry, no posts matched your criteria."
 msgstr ""
 
@@ -76,31 +78,31 @@ msgstr ""
 msgid "Newer Comments"
 msgstr ""
 
-#: content.php:19 content.php:24
+#: content.php:17 content.php:22
 msgid "Permalink to %s"
 msgstr ""
 
-#: content.php:40
+#: content.php:38
 msgid "No Comments"
 msgstr ""
 
-#: content.php:40
+#: content.php:38
 msgid "1 Comment"
 msgstr ""
 
-#: content.php:40
+#: content.php:38
 msgid "% Comments"
 msgstr ""
 
-#: content.php:40
+#: content.php:38
 msgid "Comments Closed"
 msgstr ""
 
-#: content.php:44 functions.php:538
+#: content.php:42 functions.php:527
 msgid "more"
 msgstr ""
 
-#: content.php:59 image.php:72
+#: content.php:57 image.php:72
 msgid "Pages:"
 msgstr ""
 
@@ -132,71 +134,63 @@ msgstr ""
 msgid "Widget Area for footer right"
 msgstr ""
 
-#: functions.php:71
-msgid "Previous"
-msgstr ""
-
-#: functions.php:72
-msgid "Next"
-msgstr ""
-
-#: functions.php:238
+#: functions.php:224
 msgid "Navigation Menu"
 msgstr ""
 
-#: functions.php:302
+#: functions.php:289
 msgid "Page %s"
 msgstr ""
 
-#: functions.php:342
+#: functions.php:331
 msgid "Text Color"
 msgstr ""
 
-#: functions.php:354
+#: functions.php:343
 msgid "Link Color"
 msgstr ""
 
-#: functions.php:366
+#: functions.php:355
 msgid "Header, Footer Color"
 msgstr ""
 
-#: functions.php:375
+#: functions.php:367
 msgid "Navigation Text Color"
 msgstr ""
 
-#: functions.php:385
+#: functions.php:374
 msgid "Home"
 msgstr ""
 
-#: functions.php:396
-msgid "Display Postate"
+#: functions.php:385
+msgid "Display Postdate"
 msgstr ""
 
-#: functions.php:409
+#: functions.php:398
 msgid "Display Author"
 msgstr ""
 
-#: functions.php:422
+#: functions.php:411
 msgid "Display Category"
 msgstr ""
 
-#: functions.php:435
+#: functions.php:424
 msgid "Display Tags"
 msgstr ""
 
-#: functions.php:448
+#: functions.php:437
 msgid "Display Comment Number"
 msgstr ""
 
-#: functions.php:456
+#: functions.php:445
 msgid "Footer"
 msgstr ""
 
-#: functions.php:467
+#: functions.php:456
 msgid "Display Copyright"
 msgstr ""
 
-#: functions.php:480
+#: functions.php:469
 msgid "Display Credit"
 msgstr ""
 
@@ -212,7 +206,7 @@ msgstr ""
 msgid "Search Results: %s"
 msgstr ""
 
-#: search.php:27
+#: search.php:28
 msgid "Sorry, no posts matched &#8216;%s&#8217;"
 msgstr ""
 
@@ -221,5 +215,10 @@ msgid "Search..."
 msgstr ""
 
 #. Description of the plugin/theme
-msgid "BirdSITE is a photoblogging theme. The theme has grid layout and uses CSS3 media queries for its responsive layout and is therefore optimized for tablet pcs and smart phones. Features include the Theme Customize. You can choose the text color, link color, header line and footer background color and navigation color."
+msgid ""
+"BirdSITE built for photobloggers and photographers. The grid layout displays "
+"good appearance for your photograpy. and uses CSS3 media queries for its "
+"responsive layout and is therefore optimized for tablet pcs and smart "
+"phones. Features include the Theme Customize. You can choose the text color, "
+"link color, header line and footer background color and navigation color."
 msgstr ""
