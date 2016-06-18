@@ -3,7 +3,7 @@ BirdSITE is a photoblogging theme. The theme has grid layout and uses CSS3 media
 
 
 === Tags ===
-two-columns, left-sidebar, flexible-width, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-image-header, featured-images, full-width-template, sticky-post, theme-options, threaded-comments, translation-ready, photoblogging
+two-columns, left-sidebar, grid-layout, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-image-header, featured-images, footer-widgets, sticky-post, theme-options, threaded-comments, translation-ready, photography
 
 
 === Features ===

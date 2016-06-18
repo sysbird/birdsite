@@ -499,9 +499,9 @@ add_filter( 'use_default_gallery_style', '__return_false' );
 
 //////////////////////////////////////////////////////
 // Display the Featured Image at home
-function birdsite_post_image_html( $html, $post_id, $post_image_id ) {
+function birdsite_post_image_html( $html, $post_id, $post_image_id, $size, $attr ) {
 
-	if( !( false === strpos( $html, 'birdsite' ) ) ){
+	if( !( false === strpos( $size, 'birdsite' ) ) ){
 
 		$birdsite_thumbnail_size = 240;
 		$birdsite_thumbnail_width = $birdsite_thumbnail_size;
@@ -523,10 +523,10 @@ function birdsite_post_image_html( $html, $post_id, $post_image_id ) {
 		$birdsite_thumbnail_style = 'width: ' .$birdsite_thumbnail_width .'px; height: ' .$birdsite_thumbnail_height .'px; left: ' .$birdsite_thumbnail_left .'px; top: ' .$birdsite_thumbnail_top .'px;';
 
 		$html = preg_replace( '/(width|height)="\d*"\s/', '', $html );
-		$html = preg_replace('/img/', 'img style="'. $birdsite_thumbnail_style .'"', $html );
+		$html = preg_replace('/<img/', '<img style="'. $birdsite_thumbnail_style .'"', $html );
 		$html = '<div class="thumbnail">' .$html .'<div class="more-link"><a href="' .get_permalink() .'">' .__( 'more', 'birdsite' ) .'</a></div></div>';
 	}
 
 	return $html;
 }
-add_filter( 'post_thumbnail_html', 'birdsite_post_image_html', 10, 3 );
+add_filter( 'post_thumbnail_html', 'birdsite_post_image_html', 10, 5 );
