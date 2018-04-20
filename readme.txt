@@ -33,10 +33,6 @@ The headers and icon images are created by theme author and are released under G
 
 
 == Third-party Resources ==
-html5shiv.js
-License: MIT/GPL2 Licensed
-Source:  https://github.com/aFarkas/html5shiv
-
 Font Awesome
 License: SIL Open Font License, 1.1/MIT License
 Source:  http://fortawesome.github.io/Font-Awesome/
@@ -48,6 +44,10 @@ http://www.sysbird.jp
 
 
 == Changelog ==
+v1.11(working 2018/04/19-)
+* remove /css/ja.css.
+* remove html5shiv.js.
+
 v1.10
 * use the filter post_thumbnail_html when display the Featured Image.
 * add add_theme_support for html5.
