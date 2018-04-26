@@ -1,13 +1,13 @@
 /*
 Theme Name: BirdSITE
 Theme URI: http://www.sysbird.jp/birdsite-theme/
-Description: BirdSITE built for photobloggers and photographers. It has good appearance for photos by grid layout. and uses CSS3 media queries for its responsive layout and is therefore optimized for tablet pcs and smart phones. Features include the Theme Customize. You can choose the text color, link color, header line and footer background color and navigation color.
+Description: BirdSITE built for photobloggers and photographers. It has good appearance for photos by grid layout. and uses CSS3 media queries for its responsive layout and is therefore optimized for tablet pcs and smart phones. Features include the Theme Customize. You can choose the main color, text color and link color.
 Author: Sysbird
 Author URI: http://www.sysbird.jp
 Version: 1.11
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Tags: two-columns, left-sidebar, grid-layout, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-image-header, featured-images, footer-widgets, sticky-post, theme-options, threaded-comments, translation-ready, photography
+Tags: two-columns, left-sidebar, grid-layout, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-image-header, featured-images, footer-widgets, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready, photography
 Text Domain: birdsite
 
 This theme, like WordPress, is licensed under the GPL.
@@ -146,9 +146,9 @@ body {
 #header {
   width: 240px;
   position: -webkit-sticky;
-  /* Safari */
   position: sticky;
   top: 7px;
+  z-index: 1;
 }
 
 .main {
@@ -282,6 +282,9 @@ body {
   line-height: 1;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  content: "\f19a";
+  padding-left: 0.4em;
+  padding-right: 0.4em;
 }
 
 #footer #back-top {
@@ -324,6 +327,7 @@ body {
   line-height: 1;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  content: "\f077";
   font-size: 30px;
   display: block;
   text-align: center;
@@ -367,11 +371,11 @@ body {
 }
 
 #menu-wrapper .menu ul li a {
-  border-top: dotted 1px #555;
+  border-top: dotted 1px #000;
   padding: 0.6em;
   display: block;
   width: 238px;
-  color: #555;
+  color: #000;
   text-decoration: none;
   line-height: 1.2;
 }
@@ -397,11 +401,12 @@ body {
   line-height: 1;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  content: "\f0da";
 }
 
 #menu-wrapper .menu ul li ul {
-  background: #F5F5F5;
-  border: dotted 1px #555;
+  background: #FFF;
+  border: dotted 1px #000;
   display: none;
   /* hide dropdown */
   width: 240px;
@@ -420,6 +425,10 @@ body {
 
 #menu-wrapper .menu ul li ul li a {
   white-space: normal;
+}
+
+#menu-wrapper .menu ul li ul li a:hover {
+  font-weight: bold;
 }
 
 #menu-wrapper .menu ul li ul li ul {
@@ -691,6 +700,8 @@ body {
   line-height: 1;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  content: "\f017";
+  padding-right: 0.4em;
 }
 
 #content .hentry .entry-meta .author:before {
@@ -701,6 +712,8 @@ body {
   line-height: 1;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  content: "\f007";
+  padding-right: 0.4em;
 }
 
 #content .hentry .entry-meta .category:before {
@@ -711,6 +724,8 @@ body {
   line-height: 1;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  content: "\f07b";
+  padding-right: 0.4em;
 }
 
 #content .hentry .entry-meta .tag:before {
@@ -721,6 +736,8 @@ body {
   line-height: 1;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  content: "\f02b";
+  padding-right: 0.4em;
 }
 
 #content .hentry .entry-meta .comment:before {
@@ -731,6 +748,8 @@ body {
   line-height: 1;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  content: "\f075";
+  padding-right: 0.4em;
 }
 
 #content .hentry .entry-meta .parent-post-link:before {
@@ -741,6 +760,8 @@ body {
   line-height: 1;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  content: "\f1c5";
+  padding-right: 0.4em;
 }
 
 /*  Home Thumbnails */
@@ -863,6 +884,8 @@ body {
   line-height: 1;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  content: "\f054";
+  padding-right: 0.4em;
   font-size: 3em;
   text-indent: 0;
 }
@@ -915,6 +938,7 @@ body {
   line-height: 1;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  content: "\f005";
 }
 
 .home #content .pagination {
@@ -1154,6 +1178,8 @@ video {
   line-height: 1;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  content: "\f054";
+  padding-left: 0.4em;
 }
 
 .pagination a.prev {
@@ -1168,6 +1194,8 @@ video {
   line-height: 1;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  content: "\f053";
+  padding-right: 0.4em;
 }
 
 /* Page link at singular
@@ -1217,6 +1245,8 @@ video {
   line-height: 1;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  content: "\f053";
+  padding-right: 0.4em;
 }
 
 .nav-links .nav-previous {
@@ -1232,6 +1262,8 @@ video {
   line-height: 1;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  content: "\f054";
+  padding-left: 0.4em;
 }
 
 /* Comments
@@ -1263,6 +1295,8 @@ video {
   line-height: 1;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  content: "\f054";
+  padding-left: 0.4em;
 }
 
 #comments .navigation .nav-next a {
@@ -1280,6 +1314,8 @@ video {
   line-height: 1;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  content: "\f053";
+  padding-right: 0.4em;
 }
 
 #comments ol.commentlist {
@@ -1361,6 +1397,8 @@ video {
   line-height: 1;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  content: "\f112";
+  padding-right: 0.2em;
 }
 
 /* Archive
@@ -1440,6 +1478,8 @@ video {
   line-height: 1;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  content: "\f017";
+  padding-right: 0.4em;
 }
 
 /* Widget
@@ -1493,6 +1533,8 @@ video {
   line-height: 1;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  content: "\f0da";
+  padding-right: 0.2em;
 }
 
 .widget ul li a {
@@ -1662,13 +1704,7 @@ form input {
   background: #CCC;
   color: #FFF;
   -webkit-appearance: button;
-  display: inline-block;
-  font-family: FontAwesome;
-  font-style: normal;
-  font-weight: normal;
-  line-height: 1;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  content: "\f005";
   font-size: 1.2em;
 }
 
@@ -1700,6 +1736,8 @@ form input {
     line-height: 1;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    content: "\f054";
+    padding-right: 0.4em;
     font-size: 3em;
     text-indent: 0;
   }
@@ -1837,11 +1875,10 @@ form input {
     cursor: pointer;
     display: block;
     position: absolute;
-    top: 0;
     left: 240px;
     width: 2.8em;
     height: 2.4em;
-    background-color: #555;
+    background-color: #000;
     color: #FFF;
     text-align: center;
     border-bottom-right-radius: 8px;
@@ -1855,12 +1892,13 @@ form input {
     line-height: 1;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    content: "\f0c9";
     font-size: 2em;
   }
   #menu-wrapper .menu ul#menu-primary-items {
     clear: both;
     width: 240px;
-    background: #555;
+    background: #000;
     border-bottom-right-radius: 8px;
     padding: 0 5px 5px;
     z-index: 3;
@@ -1882,7 +1920,6 @@ form input {
   }
   #menu-wrapper .menu ul#menu-primary-items li a:hover {
     background: none;
-    color: #CCC;
   }
   #menu-wrapper .menu ul#menu-primary-items li.menu-item-has-children > a:after {
     display: inline-block;
@@ -1892,6 +1929,7 @@ form input {
     line-height: 1;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    content: "";
   }
   #menu-wrapper .menu ul#menu-primary-items li ul {
     width: auto;
@@ -1907,10 +1945,6 @@ form input {
     background: none;
     margin-left: 2em;
     width: auto;
-  }
-  #menu-wrapper .menu ul#menu-primary-items .current-menu-item > a,
-  #menu-wrapper .menu ul#menu-primary-items .current-menu-ancestor > a {
-    color: #CCC;
   }
   body {
     position: relative;
@@ -1934,6 +1968,7 @@ form input {
     line-height: 1;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    content: "\f00d";
   }
 }
 
@@ -1941,5 +1976,13 @@ form input {
   /* ensure .menu is visible on desktop version */
   ul#menu-primary-items {
     display: block !important;
+  }
+}
+
+/* admin-bar
+--------------------------------------------- */
+@media screen and (max-width: 600px) {
+  html #wpadminbar {
+    position: fixed;
   }
 }

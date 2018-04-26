@@ -7,7 +7,7 @@
  * @since BirdSITE 1.0
  */
 ?>
-		</div> <!-- /content -->
+			</div> <!-- /content -->
 		</div><!-- /main -->
 	</div> <!-- /container -->
 

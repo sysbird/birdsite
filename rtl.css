@@ -1,0 +1,169 @@
+/*
+Theme Name: BirdSIE
+
+Description: Adds support for languages written in a Right To Left (RTL) direction.
+It's easy, just a matter of overwriting all the horizontal positioning attributes
+of your CSS stylesheet in a separate stylesheet file named rtl.css.
+
+See: https://codex.wordpress.org/Right_to_Left_Language_Support
+*/
+
+caption, th, td {
+  text-align: right; }
+
+/* Elements
+--------------------------------------------- */
+body {
+  direction: rtl;
+  unicode-bidi: embed; }
+
+blockquote {
+border-left: none;
+  border-right: 4px solid #DDDDDD;
+  padding-left: 0;
+  padding-right: 1.263157895em; }
+
+/* Search Forms
+-------------------------------------------------------------- */
+#searchform #s {
+  padding-left: 10px;
+  padding-right: 5px;
+  border-radius: 0 4px 4px 0; }
+#searchform #searchsubmit {
+  right: auto;
+  left: 1px;
+  border-radius: 4px 0 0 4px; }
+
+/* Post Navigation at Single page
+-------------------------------------------------------------------- */
+.single .nav-links .nav-next {
+  text-align: right; }
+
+.single .nav-links .nav-next a:before {
+  content: "\f054";
+  padding-left: 0.4em;
+  padding-right: 0; }
+
+.single .nav-links .nav-previous {
+  text-align: left; }
+
+.single .nav-links .nav-previous a:after {
+  content: "\f053";
+  padding-left: 0;
+  padding-right: 0.4em; }
+
+/* Pagination at archive
+-------------------------------------------------------------------- */
+.pagination a.page-numbers.prev:before {
+  content: "\f054";
+  padding-left: 0.4em;
+  padding-right: 0; }
+
+.pagination a.page-numbers.next:after {
+  content: "\f053";
+  padding-left: 0;
+  padding-right: 0.4em; }
+
+/* Menu
+-------------------------------------------------------------- */
+#menu-wrapper .menu ul li {
+	text-align: left; }
+
+#menu-wrapper .menu ul li.menu-item-has-children > a::after {
+	right: auto;
+	left: 0; }
+
+
+#menu-wrapper .menu ul li ul {
+	right: auto;
+	left: -240px; }
+
+/* Posts
+--------------------------------------------- */
+.entry-header .postdate,
+.page-header .postdate {
+  border-left: none;
+  border-right: solid 4px #333333;
+  padding-left: 0;
+  padding-right: 0.85em; }
+
+.more-link:after {
+  content: "\f053";
+  padding-left: 0;
+  padding-right: 0.4em; }
+
+.entry-meta .author:before {
+}
+
+/* Comments
+-------------------------------------------------------------- */
+#comments ol.commentlist li.pingback .comment-author img,
+#comments ol.commentlist li.comment .comment-author img {
+  margin-right: 0;
+  margin-left: 10px;
+  float: right; }
+
+#comments ol.commentlist li.pingback .reply a.comment-reply-link:before,
+#comments ol.commentlist li.comment .reply a.comment-reply-link:before {
+  content: '\f0d9';
+  padding-left: 0.2em;
+  padding-right: 0; }
+
+/* Header
+-------------------------------------------------------------- */
+#header .branding {
+	text-align: left;
+	padding-left: 0;
+	padding-right: 1.4em; }
+
+/* Footer
+--------------------------------------------- */
+#footer ul.row > li {
+	float: right;
+	margin: 0 3% 0 0; }
+
+#footer #back-top {
+  right: auto;
+  left: 10px; }
+  #footer #back-top a span {
+  text-indent: 119988px; }
+
+#footer .site-title {
+	padding: 40px 20px 0 0;
+}
+
+/* Widget
+-------------------------------------------------------------- */
+.widget ul li {
+	padding: 0.4em 0.8em 0.4em 0; }
+
+/* home
+--------------------------------------------- */
+.home #content ul.row li {
+	float: right;
+	margin: 20px 20px 0 0; }
+
+
+.home #content .pagination {
+	padding-left: 0;
+	padding-right: 20px; }
+
+.home #content ul.row li .more-link a {
+	text-align: right; }
+
+.home #content ul.row li .caption .more-link a:after {
+	text-align: right;
+	right: auto;
+	left: 0;
+	padding-right: 0;
+	padding-left: 0.4em; }
+
+
+.home #content ul.row li.sticky i {
+	right: auto;
+	left: -15px;
+	-webkit-transform: rotate(135deg);
+	-moz-transform: rotate(135deg);
+	-ms-transform: rotate(135deg);
+	-o-transform: rotate(135deg);
+	transform: rotate(135deg);}

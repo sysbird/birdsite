@@ -1,5 +1,5 @@
 == Description ==
-BirdSITE is a photoblogging theme. The theme has grid layout and uses CSS3 media queries for its responsive layout and is therefore optimized for tablet pcs and smart phones. Features include the Theme Customize. You can choose the text color, link color, header line and footer background color and navigation color.
+BirdSITE is a photoblogging theme. The theme has grid layout and uses CSS3 media queries for its responsive layout and is therefore optimized for tablet pcs and smart phones. Features include the Theme Customize. You can choose the main color, text color and link color.
 
 
 === Tags ===
@@ -15,9 +15,7 @@ The Theme has customizable footer.
 
 
 == Theme Customize ==
-Text Color: set at Colors section.
-Link Color: set at Colors section.
-Header, Footer Background Color: set at Colors section.
+Main Color, Text Color, Link Color: set at Colors section.
 Display Copyright and Credit: set at Footer section.
 Display Postdate and Author, Category, Tags, Comment Number: set at Home section.
 Recommend Blog pages show at most 9 posts at Reading Settings.
@@ -45,6 +43,12 @@ http://www.sysbird.jp
 
 == Changelog ==
 v1.11(working 2018/04/19-)
+* fix the WordPress 4.9.
+* support the theme tag rtl-language-support.
+* add hook 'birdsite_content_header' for example bread crumb.
+* add hook 'birdsite_content_footer' for example ad.
+* change header line and footer background color to main color in theme customize.
+* remove languages files. and theme translation migrated to GlotPress.
 * remove /css/ja.css.
 * remove html5shiv.js.
 
