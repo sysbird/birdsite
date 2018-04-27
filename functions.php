@@ -154,19 +154,19 @@ function birdsite_custom_style() {
 			.widget #wp-calendar tbody th a,
 			.widget #wp-calendar tbody td a,
 			#menu-wrapper .menu,
-			#menu-wrapper .menu ul li a {
+			#menu-wrapper .menu ul li a,
+			#searchform #searchsubmit {
 				color: {$birdsite_main_color};
 			}
 
 			.wrapper,
-			.widget #wp-calendar th,
-			.widget #wp-calendar td,
 			#content h2,
 			#content h3,
 			#menu-wrapper .menu ul li ul,
 			#menu-wrapper .menu ul li,
 			#menu-wrapper .menu ul li a,
-			#menu-wrapper .menu #small-menu {
+			#menu-wrapper .menu #small-menu,
+			#searchform {
 				border-color: {$birdsite_main_color};
 			}
 

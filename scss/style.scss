@@ -101,7 +101,6 @@ body {
 }
 
 .main {
-	min-height: 300px;
 	@include flex(1);
 }
 
@@ -429,7 +428,6 @@ body {
 			border: 1px solid $border-color;
 			line-height: 1.4;
 			padding: 0.4em;
-			text-align: left;
 			vertical-align: top;
 		}
 
@@ -460,25 +458,18 @@ body {
 	}
 
 	hr {
-	    background-color: $border-color;
-	    border: 0 none;
-	    height: 1px;
-	    margin-bottom: 1.6m;
-	}
-
-	hr {
-	    background-color: $border-color;
-	    border: 0 none;
-	    height: 1px;
-	    margin-bottom: 1.6m;
+		background-color: $border-color;
+		border: 0 none;
+		height: 1px;
+		margin-bottom: 1.6m;
 	}
 
 	sup, sub {
-	    font-size: 80%;
-	    height: 0;
-	    line-height: 0;
-	    position: relative;
-	    vertical-align: baseline;
+		font-size: 80%;
+		height: 0;
+		line-height: 0;
+		position: relative;
+		vertical-align: baseline;
 	}
 
 	sub {
@@ -602,58 +593,48 @@ body {
 				color: $text-color;
 			}
 
-			div {
+			.icon {
 				margin-bottom: 0.4em;
 				&:before {
 					color: $border-color;
+					@include font-awesome();
+					padding-right: 0.4em;
 				}
 			}
 
 			.postdate {
 				&:before {
-					@include font-awesome();
 					content: "\f017";
-					padding-right: 0.4em;
 				}
 			}
 
 			.author {
 				&:before {
-					@include font-awesome();
 					content: "\f007";
-					padding-right: 0.4em;
 				}
 			}
 
 			.category {
 				&:before {
-					@include font-awesome();
 					content: "\f07b";
-					padding-right: 0.4em;
 				}
 			}
 
 			.tag {
 				&:before {
-					@include font-awesome();
 					content: "\f02b";
-					padding-right: 0.4em;
 				}
 			}
 
 			.comment {
 				&:before {
-					@include font-awesome();
 					content: "\f075";
-					padding-right: 0.4em;
 				}
 			}
 
 			.parent-post-link {
 				&:before {
-					@include font-awesome();
 					content: "\f1c5";
-					padding-right: 0.4em;
 				}
 			}
 		}
@@ -1346,8 +1327,7 @@ video {
 
 			&:before {
 				@include font-awesome();
-				content: "\f0da";
-				padding-right: 0.2em;
+				content: "\f0d9";
 			}
 
 			a {
@@ -1499,41 +1479,36 @@ form {
 --------------------------------------------- */
 #searchform {
 	width: 100%;
-	height: 30px;
 	position: relative;
+	border: solid 1px $main-color;
+	padding: 1%;
+	border-radius: 4px;
+	background: #FFF;
+	max-width: 500px;
+	@include display-flex();
 
 	#s {
-		width: 80%;
 		padding: 5px 10px 5px 5px;
-		height: 30px;
 		line-height: 1;
-		border-radius: 4px 0 0 4px;
 		border: none;
-		border: solid 1px $border-color;
+		@include flex(1);
 	}
 
 	#searchsubmit {
-		position: absolute;
-		top: 0;
-		right: 1px;
-		border: 0 none;
+		border: none;
 		cursor: pointer;
 		width: 20%;
-		height: 30px;
-		border-radius: 0 4px 4px 0;
 		margin: 0;
-		background: $border-color;
-		color: #FFF;
+		background: #FFF;
+		color: $main-color;
 		-webkit-appearance: button;
-		content: "\f005";
 		font-size: 1.2em;
-	}
-}
+		text-align: right;
 
-#footer {
-	#searchform {
-		#s {
-			border: none;
+		&:before {
+			font-size: 1.4rem;
+			@include font-awesome();
+			content: "\f002";
 		}
 	}
 }
