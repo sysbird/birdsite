@@ -42,7 +42,7 @@ http://www.sysbird.jp
 
 
 == Changelog ==
-v1.11(working 2018/04/19-)
+v1.11
 * fix the WordPress 4.9.
 * support the theme tag rtl-language-support.
 * add hook 'birdsite_content_header' for example bread crumb.
