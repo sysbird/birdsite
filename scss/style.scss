@@ -104,6 +104,19 @@ body {
 	@include flex(1);
 }
 
+/* Fixed Footer
+--------------------------------------------- */
+body,
+.wrapper {
+	@include display-flex();
+	flex-direction: column;
+	min-height: 100vh;
+}
+
+#footer {
+  margin-top: auto;
+}
+
 /* Body
 -------------------------------------------------------------- */
 body {
@@ -116,8 +129,19 @@ body {
 	font-family: 'Avenir', 'Helvetica Neue', 'Helvetica', 'Arial','Hiragino Sans', YuGothic, 'Yu Gothic', Meiryo, 'MS PGothic';
 	font-size: 0.92em;
 	color: $text-color;
-	border-top: solid 7px $main_color;
+	padding-top: 7px;
 	word-wrap:break-word;
+
+	&:before {
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 7px;
+		border-top: solid 7px $main_color;
+		content: '';
+		z-index: 2;
+	}
 
 	* {
 		-webkit-box-sizing: border-box;
@@ -1609,8 +1633,10 @@ form {
 
 /* --- Smartphones and small Tablet PCs --- */
 @media screen and (max-width: 600px) {
+
 	.wrapper {
-	 	font-size: 1em;
+		font-size: 1em;
+		min-height: auto;
 	}
 
 	.wrapper > .container,
@@ -1647,6 +1673,10 @@ form {
 				padding: 0;
 			}
 		}
+	}
+
+	#footer {
+		margin-top: 0;
 	}
 
 	#content {
