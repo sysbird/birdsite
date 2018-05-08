@@ -159,7 +159,7 @@ function birdsite_custom_style() {
 				color: {$birdsite_main_color};
 			}
 
-			.wrapper,
+			.wrapper:before,
 			#content h2,
 			#content h3,
 			#menu-wrapper .menu ul li ul,
