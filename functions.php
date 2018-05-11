@@ -159,27 +159,22 @@ function birdsite_custom_style() {
 				color: {$birdsite_main_color};
 			}
 
-			.wrapper:before,
+			.wrapper,
 			#content h2,
 			#content h3,
 			#menu-wrapper .menu ul li ul,
 			#menu-wrapper .menu ul li,
 			#menu-wrapper .menu ul li a,
-			#menu-wrapper .menu #small-menu,
 			#searchform {
 				border-color: {$birdsite_main_color};
 			}
 
+			.drawer-hamburger-icon,
+			.drawer-hamburger-icon::after,
+			.drawer-hamburger-icon::before,
 			#footer,
 			.home #content ul.row li.sticky i {
 				background-color: {$birdsite_main_color};
-			}
-
-			@media screen and (max-width: 600px) {
-				#menu-wrapper .menu #small-menu,
-				#menu-wrapper .menu ul#menu-primary-items {
-					background-color: {$birdsite_main_color};
-				}
 			}
 		";
 
@@ -301,7 +296,11 @@ function birdsite_scripts() {
 		wp_enqueue_script( 'comment-reply' );
 	}
 
-	wp_enqueue_script( 'birdsite', get_template_directory_uri() .'/js/birdsite.js', array( 'jquery' ), '1.11' );
+	wp_enqueue_style( 'drawer', get_template_directory_uri().'/js/drawer/css/drawer.min.css' );
+	wp_enqueue_script( 'iscroll', get_template_directory_uri() .'/js/drawer/js/iscroll.js', array( 'jquery' ), 'v5.2.0' );
+	wp_enqueue_script( 'drawer', get_template_directory_uri() .'/js/drawer/js/drawer.min.js', array( 'jquery', 'iscroll' ), 'v3.2.2' );
+
+	wp_enqueue_script( 'birdsite', get_template_directory_uri() .'/js/birdsite.js', array( 'jquery', 'drawer' ), '1.11' );
 	wp_enqueue_style( 'birdsite', get_stylesheet_uri() );
 }
 add_action( 'wp_enqueue_scripts', 'birdsite_scripts' );
@@ -527,25 +526,3 @@ function birdsite_content_footer() {
 	$birdsite_html = apply_filters( 'birdsite_content_footer', '' );
 	echo $birdsite_html;
 }
-
-//////////////////////////////////////////////////////
-//////////////////////////////////////////////////////
-//////////////////////////////////////////////////////
-//////////////////////////////////////////////////////
-//////////////////////////////////////////////////////
-//////////////////////////////////////////////////////
-// bread crumb
-function test_content_header( $arg ){
-
-	$html = 'test_content_header';
-	return $html;
-
-}
-add_action( 'birdsite_content_header', 'test_content_header' );
-function test_content_footer( $arg ){
-
-	$html = 'test_content_footer';
-	return $html;
-
-}
-add_action( 'birdsite_content_footer', 'test_content_footer' );

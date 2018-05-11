@@ -9,6 +9,7 @@
 get_header(); ?>
 
 <article class="hentry">
+	<?php birdsite_content_header(); ?>
 
 	<header class="entry-header">
 		<h1 class="entry-title"><?php
@@ -49,6 +50,8 @@ get_header(); ?>
 	<?php else: ?>
 		<p><?php _e( 'Sorry, no posts matched your criteria.', 'birdsite' ); ?></p>
 	<?php endif; ?>
+
+	<?php birdsite_content_footer(); ?>
 </article>
 
 <?php get_footer(); ?>

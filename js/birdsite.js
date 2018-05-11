@@ -2,41 +2,41 @@
 // init
 jQuery( function() {
 
-	// slide Navigation
-	var birdsite_menu_width = jQuery( '#menu-wrapper' ).width();
-	jQuery( '#small-menu' ).click(function(){
-		var left = 0;
-		if( jQuery( 'body' ).hasClass( 'open-menu' ) ){
-			// colse Navigation
-			left = '-' +  birdsite_menu_width + 'px';
-		}
-		else{
-			// open Navigation
-			jQuery( 'body' ).addClass( 'open-menu' );
-		}
+	jQuery( window ).load(function() {
 
-		jQuery('#menu-wrapper').animate(
-			{ 'left' : left },
-			300, function() {
-				if(0 != left){
-					// close Navigation
-					jQuery( 'body' ).removeClass( 'open-menu' );
+		// set drawer navigation
+		if ( window.matchMedia ) {
+			// MediaQueryList
+			var mq = window.matchMedia( '( max-width: 600px )' );
+			var birdsiteNavigation = function ( mq ) {
+				if ( mq.matches ) {
+					jQuery( ".menu" ).addClass( 'drawer-nav' );
+					jQuery('.drawer').drawer({
+						class: {
+							nav: 'drawer-nav',
+							toggle: 'drawer-toggle',
+							background: '#000'
+						},
+						scroll: {
+							mouseWheel: true,
+							preventDefault: false
+						},
+						showOverlay: true
+					});
 				}
-		});
-	});
+				else {
+					// cancel drawer navigation
+					if( jQuery( '.drawer-nav' ).length ) {
+						jQuery('.drawer').drawer('destroy');
+						jQuery( ".menu" ).removeClass( 'drawer-nav' );
+					}
+				}
+			};
 
- 	jQuery(window).resize(function() {
-		// close Navigation
-		if( jQuery( 'body' ).hasClass( 'open-menu' ) ){
-			jQuery( 'body' ).removeClass( 'open-menu' );
-			jQuery('#menu-wrapper').css( { 'left': '-' +  birdsite_menu_width + 'px' } );
+			mq.addListener( birdsiteNavigation );
+			birdsiteNavigation( mq );
 		}
- 	});
-
-	jQuery( '.overlay' ).click(function(){
-		// close Navigation
-		jQuery( '#small-menu' ).click();
- 	});
+	});
 
 	// back to pagetop
 	var totop = jQuery( '#back-top' );

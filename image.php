@@ -11,6 +11,8 @@ get_header(); ?>
 <?php while ( have_posts() ) : the_post(); ?>
 
 	<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+		<?php birdsite_content_header(); ?>
+
 		<header class="entry-header">
 			<h1 class="entry-title"><?php the_title(); ?></h1>
 		</header>
@@ -90,6 +92,8 @@ get_header(); ?>
 			<span class="nav-previous"><?php next_image_link( false, __( 'Next Image' , 'birdsite' )); ?></span>
 			<span class="nav-next"><?php previous_image_link( false, __( 'Previous Image' , 'birdsite' ) ); ?></span>
 		</nav>
+
+		<?php birdsite_content_footer(); ?>
 	</article>
 <?php endwhile; // end of the loop. ?>
 

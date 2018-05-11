@@ -9,6 +9,7 @@
 get_header(); ?>
 
 <article class="hentry">
+	<?php birdsite_content_header(); ?>
 
 	<header class="entry-header">
 		<h1 class="entry-title"><?php _e(' Error 404 - Not Found', 'birdsite' ); ?></h1>
@@ -21,6 +22,7 @@ get_header(); ?>
 		</div>
 	</div>
 
+	<?php birdsite_content_footer(); ?>
 </article>
 
 <?php get_footer(); ?>

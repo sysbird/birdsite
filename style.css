@@ -125,6 +125,14 @@ a:hover {
 
 /* Structure
 --------------------------------------------- */
+html * {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -182,27 +190,8 @@ body {
   font-family: 'Avenir', 'Helvetica Neue', 'Helvetica', 'Arial','Hiragino Sans', YuGothic, 'Yu Gothic', Meiryo, 'MS PGothic';
   font-size: 0.92em;
   color: #555;
-  padding-top: 7px;
   word-wrap: break-word;
-}
-
-.wrapper:before {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 7px;
   border-top: solid 7px #000;
-  content: '';
-  z-index: 2;
-}
-
-.wrapper * {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  -o-box-sizing: border-box;
-  -ms-box-sizing: border-box;
-  box-sizing: border-box;
 }
 
 /* Header
@@ -361,13 +350,13 @@ body {
 
 /* Menu
 -------------------------------------------------------------- */
-#menu-wrapper .menu {
-  width: 240px;
-}
-
-#menu-wrapper .menu #small-menu {
+#menu-wrapper #small-menu {
   display: none;
   /* hide small menu initially */
+}
+
+#menu-wrapper .menu:not(.drawer-nav) ul#menu-primary-items {
+  transform: translate(0, 0) translateZ(0px) !important;
 }
 
 #menu-wrapper .menu ul {
@@ -409,7 +398,7 @@ body {
 }
 
 #menu-wrapper .menu ul li:first-child > a {
-  border: none;
+  border-top-width: 0px;
 }
 
 #menu-wrapper .menu ul li.menu-item-has-children > a:after {
@@ -1773,7 +1762,6 @@ form input {
 @media screen and (max-width: 600px) {
   .wrapper {
     font-size: 1em;
-    min-height: auto;
   }
   .wrapper > .container,
   .main {
@@ -1801,9 +1789,6 @@ form input {
   }
   #header.no-title .branding {
     padding: 0;
-  }
-  #footer {
-    margin-top: 0;
   }
   #content {
     margin: 0 auto;
@@ -1846,43 +1831,45 @@ form input {
   #menu-wrapper {
     position: absolute;
     top: 0;
-    left: -240px;
     z-index: 3;
+    /*height: 100%;
+transition-property: left;
+transition-duration:.3s;
+*/
+  }
+  #menu-wrapper #small-menu {
+    display: block;
   }
   #menu-wrapper .menu {
     margin-top: 0;
-  }
-  #menu-wrapper .menu #small-menu {
-    cursor: pointer;
-    display: block;
-    position: absolute;
-    left: 240px;
-    width: 2.8em;
-    height: 2.4em;
-    background-color: #000;
-    color: #FFF;
-    text-align: center;
-    border-bottom-right-radius: 8px;
-    padding: 0.2em;
-  }
-  #menu-wrapper .menu #small-menu:after {
-    display: inline-block;
-    font-family: FontAwesome;
-    font-style: normal;
-    font-weight: normal;
-    line-height: 1;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    content: "\f0c9";
-    font-size: 2em;
+    /*height: 100%;
+overflow-y: scroll;
+*/
+    /*			#small-menu {
+				cursor: pointer;
+				display: block;
+				position: absolute;
+top: 0;
+				left: $menu-width;
+				width: 2.8em;
+				height: 2.4em;
+				background-color: $main_color;
+				color: #FFF;
+				text-align: center;
+				border-bottom-right-radius : 8px;
+				padding: 0.2em;
+
+				&:after {
+					@include font-awesome();
+					content: "\f0c9";
+					font-size: 2em;
+				}
+			}
+*/
   }
   #menu-wrapper .menu ul#menu-primary-items {
     clear: both;
-    width: 240px;
-    background: #000;
-    border-bottom-right-radius: 8px;
     padding: 0 5px 5px;
-    z-index: 3;
   }
   #menu-wrapper .menu ul#menu-primary-items li {
     clear: both;
@@ -1893,14 +1880,15 @@ form input {
     text-align: left;
   }
   #menu-wrapper .menu ul#menu-primary-items li a {
-    border-color: #FFF;
-    color: #FFF;
     white-space: normal;
     padding: 0.4em;
     width: auto;
   }
   #menu-wrapper .menu ul#menu-primary-items li a:hover {
     background: none;
+  }
+  #menu-wrapper .menu ul#menu-primary-items li:first-child > a {
+    border-top-width: 1px;
   }
   #menu-wrapper .menu ul#menu-primary-items li.menu-item-has-children > a:after {
     display: inline-block;
@@ -1940,6 +1928,9 @@ form input {
     background: #000;
     filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=70);
     opacity: 0.7;
+  }
+  body.open-menu #menu-wrapper {
+    left: 0;
   }
   body.open-menu #menu-wrapper .menu #small-menu:after {
     display: inline-block;

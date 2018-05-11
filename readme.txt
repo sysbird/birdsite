@@ -35,6 +35,10 @@ Font Awesome
 License: SIL Open Font License, 1.1/MIT License
 Source:  http://fortawesome.github.io/Font-Awesome/
 
+Flexible drawer menu using jQuery, iScroll and CSS.
+License: MIT License
+Source:  http://git.blivesta.com/drawer
+
 
 == Author ==
 The theme built by TORIYAMA Yuko at Sysbird.
@@ -48,6 +52,8 @@ v1.11
 * add hook 'birdsite_content_header' for example bread crumb.
 * add hook 'birdsite_content_footer' for example ad.
 * change header line and footer background color to main color in theme customize.
+* change navigation to Flexible drawer menu using jQuery, iScroll and CSS.
+* change translation to GlotPress.
 * remove languages files. and theme translation migrated to GlotPress.
 * remove /css/ja.css.
 * remove html5shiv.js.

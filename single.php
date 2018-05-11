@@ -12,11 +12,14 @@ get_header(); ?>
 
 	<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
+		<?php birdsite_content_header(); ?>
+
 		<?php get_template_part( 'content', get_post_format() ); ?>
 		<?php comments_template( '', true ); ?>
 
 		<?php the_post_navigation(); ?>
 
+		<?php birdsite_content_footer(); ?>
 	</article>
 
 <?php endwhile; ?>
