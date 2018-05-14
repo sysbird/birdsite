@@ -594,6 +594,10 @@ body {
 					color: $text-color;
 				}
 			}
+
+			.taxonomy-description {
+				margin-top: 1.6em;
+			}
 		}
 
 		.entry-content {
@@ -1633,10 +1637,17 @@ form {
 		font-size: 1em;
 	}
 
-	.wrapper > .container,
+	.wrapper > .container {
+		display: block;
+		align-items: stretch;
+	}
+
 	.main {
 		display: block;
+		flex: none;
+		width: 100%;
 	}
+
 
 	#header {
 		width: 100%;
@@ -1730,12 +1741,7 @@ form {
 	#menu-wrapper {
 		position: absolute;
 		top: 0;
-//		left: -($menu-width);
 		z-index: 3;
-/*height: 100%;
-transition-property: left;
-transition-duration:.3s;
-*/
 
 		#small-menu {
 			display: block;
@@ -1743,34 +1749,9 @@ transition-duration:.3s;
 
 		.menu {
 			margin-top: 0;
-/*height: 100%;
-overflow-y: scroll;
-*/
-/*			#small-menu {
-				cursor: pointer;
-				display: block;
-				position: absolute;
-top: 0;
-				left: $menu-width;
-				width: 2.8em;
-				height: 2.4em;
-				background-color: $main_color;
-				color: #FFF;
-				text-align: center;
-				border-bottom-right-radius : 8px;
-				padding: 0.2em;
 
-				&:after {
-					@include font-awesome();
-					content: "\f0c9";
-					font-size: 2em;
-				}
-			}
-*/
 			ul#menu-primary-items {
 				clear: both;
-//				width: $menu-width;
-//				background: $main_color;
 				padding: 0 5px 5px;
 
 				li {
@@ -1782,8 +1763,6 @@ top: 0;
 					text-align: left;
 
 					a {
-//						border-color: #FFF;
-//						color: #FFF;
 						white-space: normal;
 						padding: 0.4em;
 						width: auto;

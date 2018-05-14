@@ -671,6 +671,10 @@ body {
   color: #555;
 }
 
+#content .hentry .entry-header .taxonomy-description {
+  margin-top: 1.6em;
+}
+
 #content .hentry .entry-content {
   margin-bottom: 1.6em;
   overflow: hidden;
@@ -1763,9 +1767,14 @@ form input {
   .wrapper {
     font-size: 1em;
   }
-  .wrapper > .container,
+  .wrapper > .container {
+    display: block;
+    align-items: stretch;
+  }
   .main {
     display: block;
+    flex: none;
+    width: 100%;
   }
   #header {
     width: 100%;
@@ -1832,40 +1841,12 @@ form input {
     position: absolute;
     top: 0;
     z-index: 3;
-    /*height: 100%;
-transition-property: left;
-transition-duration:.3s;
-*/
   }
   #menu-wrapper #small-menu {
     display: block;
   }
   #menu-wrapper .menu {
     margin-top: 0;
-    /*height: 100%;
-overflow-y: scroll;
-*/
-    /*			#small-menu {
-				cursor: pointer;
-				display: block;
-				position: absolute;
-top: 0;
-				left: $menu-width;
-				width: 2.8em;
-				height: 2.4em;
-				background-color: $main_color;
-				color: #FFF;
-				text-align: center;
-				border-bottom-right-radius : 8px;
-				padding: 0.2em;
-
-				&:after {
-					@include font-awesome();
-					content: "\f0c9";
-					font-size: 2em;
-				}
-			}
-*/
   }
   #menu-wrapper .menu ul#menu-primary-items {
     clear: both;

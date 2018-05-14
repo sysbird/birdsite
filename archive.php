@@ -12,29 +12,10 @@ get_header(); ?>
 	<?php birdsite_content_header(); ?>
 
 	<header class="entry-header">
-		<h1 class="entry-title"><?php
-			if( is_category() ) {
-				printf( __( 'Category Archives: %s', 'birdsite' ), single_cat_title(' ', false ) );
-			}
-			elseif( is_tag() ) {
-				printf( __( 'Tag Archives: %s', 'birdsite' ), single_tag_title(' ', false ) );
-			}
-			elseif ( is_day() ) {
-				printf( __( 'Daily Archives: %s', 'birdsite' ), get_post_time( get_option( 'date_format' ) ) );
-			}
-			elseif ( is_month() ) {
-				printf( __( 'Monthly Archives: %s', 'birdsite' ), get_post_time( __('F, Y', 'birdsite' ) ) );
-			}
-			elseif ( is_year() ) {
-				printf( __( 'Yearly Archives: %s', 'birdsite' ), get_post_time( __( 'Y', 'birdsite' ) ) );
-			}
-			elseif ( is_author() ) {
-				printf( __( 'Author Archives: %s', 'birdsite' ), get_the_author_meta( 'display_name', get_query_var( 'author' ) ) );
-			}
-			elseif ( isset( $_GET['paged'] ) && !empty( $_GET['paged'] ) ) {
-				_e( 'Blog Archives', 'birdsite' );
-			}
-		?></h1>
+		<?php
+			the_archive_title( '<h1 class="entry-title">', '</h1>' );
+			the_archive_description( '<div class="taxonomy-description">', '</div>' );
+		?>
 	</header>
 
 	<?php if ( have_posts() ) : ?>
