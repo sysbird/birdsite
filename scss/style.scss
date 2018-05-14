@@ -124,7 +124,7 @@ body,
 }
 
 #footer {
-  margin-top: auto;
+	margin-top: auto;
 }
 
 /* Body
@@ -290,8 +290,6 @@ body {
 	}
 
 	.menu {
-//		width: $menu-width;
-
 		&:not(.drawer-nav) ul#menu-primary-items {
 			transform: translate(0, 0) translateZ(0px) !important;
 		}
@@ -1633,6 +1631,15 @@ form {
 /* --- Smartphones and small Tablet PCs --- */
 @media screen and (max-width: 600px) {
 
+	body,
+	.wrapper {
+		display: block;
+	}
+
+	#footer {
+		margin-top: 0;
+	}
+
 	.wrapper {
 		font-size: 1em;
 	}
@@ -1737,19 +1744,12 @@ form {
 		margin-top: 20px;
 	}
 
-	/* small menu */
 	#menu-wrapper {
-		position: absolute;
-		top: 0;
-		z-index: 3;
-
 		#small-menu {
 			display: block;
 		}
 
 		.menu {
-			margin-top: 0;
-
 			ul#menu-primary-items {
 				clear: both;
 				padding: 0 5px 5px;
