@@ -43,6 +43,7 @@ Source:  http://git.blivesta.com/drawer
 == Author ==
 The theme built by TORIYAMA Yuko at Sysbird.
 http://www.sysbird.jp
+https://profiles.wordpress.org/sysbird/
 
 
 == Changelog ==
