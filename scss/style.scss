@@ -1630,6 +1630,15 @@ form {
 /* --- Smartphones and small Tablet PCs --- */
 @media screen and (max-width: 600px) {
 
+	body,
+	.wrapper {
+		display: block;
+	}
+
+	#footer {
+		margin-top: 0;
+	}
+
 	.wrapper {
 		font-size: 1em;
 	}
@@ -1644,7 +1653,6 @@ form {
 		flex: none;
 		width: 100%;
 	}
-
 
 	#header {
 		width: 100%;
@@ -1736,10 +1744,6 @@ form {
 
 	/* small menu */
 	#menu-wrapper {
-		position: absolute;
-		top: 0;
-		z-index: 3;
-
 		#small-menu {
 			display: block;
 		}
@@ -1802,36 +1806,6 @@ form {
 			}
 		}
 	}
-
-	body {
-		position: relative;
-
-		&.open-menu {
-			.overlay {
-				position: absolute;
-				z-index: 2;
-				top: 0;
-				left: 0;
-				width:100%;
-				height: 100%;
-				background: #000;
-				@include opacity( 0.7 );
-			}
-
-			#menu-wrapper {
-				left: 0;
-
-				.menu {
-					#small-menu {
-						&:after {
-							@include font-awesome();
-							content: "\f00d";
-						}
-					}
-				}
-			}
-		}
-	}
 }
 
 @media screen and (min-width: 600px) {
@@ -1839,13 +1813,5 @@ form {
 	/* ensure .menu is visible on desktop version */
 	ul#menu-primary-items {
 		display: block !important;
-	}
-}
-
-/* admin-bar
---------------------------------------------- */
-@media screen and (max-width:600px){
-	html #wpadminbar {
-		position: fixed;
 	}
 }
