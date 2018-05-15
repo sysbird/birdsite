@@ -69,6 +69,21 @@ body {
 	left: -240px;
 }
 
+#menu-wrapper .menu ul#menu-primary-items li {
+	text-align: right;
+}
+
+#menu-wrapper .menu ul li ul li ul {
+	margin: -1px 0 0 2px;
+}
+
+@media screen and (max-width: 600px) {
+	#menu-wrapper .menu ul#menu-primary-items li ul li {
+		margin-left: 0;
+		margin-right: 2em;
+	}
+}
+
 /* Posts
 --------------------------------------------- */
 #content h3 {

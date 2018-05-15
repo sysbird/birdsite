@@ -296,10 +296,12 @@ function birdsite_scripts() {
 		wp_enqueue_script( 'comment-reply' );
 	}
 
+	// Flexible drawer menu using jQuery, iScroll and CSS.
 	wp_enqueue_style( 'drawer', get_template_directory_uri().'/js/drawer/css/drawer.min.css' );
 	wp_enqueue_script( 'iscroll', get_template_directory_uri() .'/js/drawer/js/iscroll.js', array( 'jquery' ), 'v5.2.0' );
 	wp_enqueue_script( 'drawer', get_template_directory_uri() .'/js/drawer/js/drawer.min.js', array( 'jquery', 'iscroll' ), 'v3.2.2' );
 
+	// this theme
 	wp_enqueue_script( 'birdsite', get_template_directory_uri() .'/js/birdsite.js', array( 'jquery', 'drawer' ), '1.11' );
 	wp_enqueue_style( 'birdsite', get_stylesheet_uri() );
 }

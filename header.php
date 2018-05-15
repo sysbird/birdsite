@@ -18,7 +18,8 @@
 <body <?php body_class(); ?>>
 
 <div class="wrapper">
-	<div class="container drawer drawer--left">
+	<?php $birdsite_drawer_option = is_rtl()?'drawer--right': 'drawer--left' ?>
+	<div class="container drawer <?php echo $birdsite_drawer_option; ?>">
 
 <?php
 	// The header image
