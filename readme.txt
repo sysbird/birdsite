@@ -1,9 +1,9 @@
 == Description ==
-BirdSITE is a photoblogging theme. The theme has grid layout and uses CSS3 media queries for its responsive layout and is therefore optimized for tablet pcs and smart phones. Features include the Theme Customize. You can choose the main color, text color and link color.
+BirdSITE built for photobloggers and photographers. It has good appearance for photos by grid layout. and uses CSS3 media queries for its responsive layout and is therefore optimized for tablet pcs and smart phones. Features include the Theme Customize. You can choose the main color, text color and link color.
 
 
 === Tags ===
-two-columns, left-sidebar, grid-layout, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-image-header, featured-images, footer-widgets, sticky-post, theme-options, threaded-comments, translation-ready, photography
+two-columns, left-sidebar, grid-layout, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-image-header, featured-images, footer-widgets, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready, photography
 
 
 === Features ===
