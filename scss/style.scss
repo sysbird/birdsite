@@ -1749,8 +1749,6 @@ form {
 		}
 
 		.menu {
-			margin-top: 0;
-
 			ul#menu-primary-items {
 				clear: both;
 				padding: 0 5px 5px;
@@ -1813,5 +1811,16 @@ form {
 	/* ensure .menu is visible on desktop version */
 	ul#menu-primary-items {
 		display: block !important;
+	}
+}
+
+/* admin-bar
+--------------------------------------------- */
+@media screen and (max-width: 600px) {
+	.admin-bar {
+		.drawer-hamburger,
+		.drawer-nav {
+			top: 46px;
+		}
 	}
 }
