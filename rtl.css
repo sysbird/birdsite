@@ -249,3 +249,14 @@ body {
 		margin: 20px 20px 0 0;
 	}
 }
+
+/* --- Smartphones and small Tablet PCs --- */
+@media screen and (max-width: 810px) {
+	.home #content ul.row li .more-link a::after {
+		right: auto;
+		left: 0;
+		content: "\f053";
+		padding-left: 0.4em;
+		padding-right: 0;
+	}
+}
