@@ -302,7 +302,7 @@ function birdsite_scripts() {
 	wp_enqueue_script( 'drawer', get_template_directory_uri() .'/js/drawer/js/drawer.min.js', array( 'jquery', 'iscroll' ), 'v3.2.2' );
 
 	// this theme
-	wp_enqueue_script( 'birdsite', get_template_directory_uri() .'/js/birdsite.js', array( 'jquery', 'drawer' ), '1.11' );
+	wp_enqueue_script( 'birdsite', get_template_directory_uri() .'/js/birdsite.js', array( 'jquery', 'drawer' ), '1.12' );
 	wp_enqueue_style( 'birdsite', get_stylesheet_uri() );
 }
 add_action( 'wp_enqueue_scripts', 'birdsite_scripts' );

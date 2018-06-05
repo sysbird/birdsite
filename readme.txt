@@ -47,6 +47,9 @@ https://profiles.wordpress.org/sysbird/
 
 
 == Changelog ==
+v1.12
+* bugfix flexbox.
+
 v1.11
 * fix the WordPress 4.9.
 * support the theme tag rtl-language-support.
