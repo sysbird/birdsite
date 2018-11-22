@@ -571,8 +571,7 @@ body {
   font-weight: bold;
 }
 
-#content abbr, #content acronym {
-  border-bottom: 1px dotted #666;
+#content abbr {
   cursor: help;
 }
 
