@@ -18,8 +18,7 @@
 <body <?php body_class(); ?>>
 
 <div class="wrapper">
-	<?php $birdsite_drawer_option = is_rtl()?'drawer--right': 'drawer--left' ?>
-	<div class="container drawer <?php echo $birdsite_drawer_option; ?>">
+	<div class="container">
 
 <?php
 	// The header image
@@ -51,20 +50,16 @@
 				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="header-image"><img src="<?php header_image(); ?>" alt="<?php bloginfo( 'name' ); ?>" ></a>
 			<?php endif; ?>
 
-			<nav id="menu-wrapper">
-				<button type="button" id="small-menu" class="drawer-toggle drawer-hamburger">
-					<span class="sr-only">toggle navigation</span>
-					<span class="drawer-hamburger-icon"></span>
-				</button>
+			<?php if( has_nav_menu( 'primary' )): ?>
+			<button id="small-menu" type="button"><span class="icon"></span></button>
+			<?php wp_nav_menu( array( 'theme_location'	=> 'primary',
+					'container'			=> 'nav',
+					'container_id'		=> 'menu-wrapper',
+					'menu_id'			=> 'menu-primary-items',
+					'items_wrap'		=> '<ul id="%1$s" class="%2$s">%3$s</ul><div class="close"><a href="#">' .__( 'Close', 'birdsite' ) .'</a>' )); ?>
+			<?php endif; ?>
 
-				<?php wp_nav_menu( array( 'theme_location'	=> 'primary',
-								'container_class'	=> 'menu',
-								'menu_class'		=> '',
-								'menu_id'			=> 'menu-primary-items',
-								'items_wrap'		=> '<ul id="%1$s" class="%2$s">%3$s</ul>',
-								'fallback_cb'		=> '' ) ); ?>
-			</nav>
 		</header>
-
+		
 		<div class="main">
 			<div id="content">

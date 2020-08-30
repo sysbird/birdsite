@@ -9,8 +9,6 @@
 get_header(); ?>
 
 <article class="hentry">
-	<?php birdsite_content_header(); ?>
-
 	<header class="entry-header">
 		<?php
 			the_archive_title( '<h1 class="entry-title">', '</h1>' );

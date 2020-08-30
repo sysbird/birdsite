@@ -4,38 +4,34 @@ jQuery( function() {
 
 	jQuery( window ).load(function() {
 
-		// set drawer navigation
-		if ( window.matchMedia ) {
-			// MediaQueryList
-			var mq = window.matchMedia( '( max-width: 600px )' );
-			var birdsiteNavigation = function ( mq ) {
-				if ( mq.matches ) {
-					jQuery( ".menu" ).addClass( 'drawer-nav' );
-					jQuery('.drawer').drawer({
-						class: {
-							nav: 'drawer-nav',
-							toggle: 'drawer-toggle',
-							background: '#000'
-						},
-						scroll: {
-							mouseWheel: true,
-							preventDefault: false
-						},
-						showOverlay: true
-					});
-				}
-				else {
-					// cancel drawer navigation
-					if( jQuery( '.drawer-nav' ).length ) {
-						jQuery('.drawer').drawer('destroy');
-						jQuery( ".menu" ).removeClass( 'drawer-nav' );
-					}
-				}
-			};
+		console.log("open");
+	});
 
-			mq.addListener( birdsiteNavigation );
-			birdsiteNavigation( mq );
+	// Browser supports matchMedia
+	if (window.matchMedia) {
+		if (window.matchMedia("(min-width:600px)").matches) {
+			// PC
+			jQuery('body').removeClass('drawer-open');
 		}
+		else {
+			// mobile
+		}
+		function matchFunc() {
+			if (window.matchMedia("(min-width:600px)").matches) {
+				// PC
+				jQuery('body').removeClass('drawer-open');
+			}
+			else {
+				// mobile
+			}
+		}
+		window.matchMedia("(min-width:1000px)").addListener(matchFunc);
+	};
+	
+	// close small menu
+	jQuery("#menu-wrapper .close, .drawer-overlay").click(function () {
+		jQuery("#small-menu").click();
+		return false;
 	});
 
 	// back to pagetop
@@ -46,5 +42,20 @@ jQuery( function() {
 	});
 	totop.click( function () {
 		jQuery( 'body, html' ).animate( { scrollTop: 0 }, 500 ); return false;
+	});
+});
+
+////////////////////////////////////////
+// Navigation for mobile
+window.addEventListener('DOMContentLoaded', function (e) {
+
+	var $toggle = document.getElementById('small-menu');
+
+	$toggle.addEventListener('click', function (e) {
+		jQuery("body").toggleClass("drawer-open");
+
+		if (jQuery("body").hasClass('drawer-open')) {
+			jQuery('#menu-wrapper').scrollTop(0);
+		}
 	});
 });

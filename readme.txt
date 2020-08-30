@@ -3,7 +3,7 @@ BirdSITE built for photobloggers and photographers. It has good appearance for p
 
 
 === Tags ===
-two-columns, left-sidebar, grid-layout, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-image-header, featured-images, footer-widgets, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready, photography
+two-columns, left-sidebar, grid-layout, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-image-header, featured-images, footer-widgets, rtl-language-support, post-formats, sticky-post, theme-options, threaded-comments, translation-ready, photography, block-styles
 
 
 === Features ===
@@ -47,7 +47,8 @@ https://profiles.wordpress.org/sysbird/
 
 
 == Changelog ==
-v1.12
+v1.2
+* Updated for WordPress 5.4.2 and Block Editor.
 * bugfix flexbox.
 
 v1.11

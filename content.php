@@ -76,5 +76,8 @@
 
 <?php else: // Display Excerpts for Archive/Search ?>
 
-	<li><a href="<?php the_permalink() ?>" rel="bookmark"><?php the_post_thumbnail( 'thumbnail' ); ?><p><span><?php the_title(); ?></span><span class="postdate"><time datetime="<?php echo get_the_time( 'Y-m-d' ) ?>" pubdate><?php echo get_post_time( get_option( 'date_format' ) ); ?></time></span></p></a></li>
+	<li id="post-<?php the_ID(); ?>" <?php post_class( ); ?>>
+		<?php the_post_thumbnail( 'thumbnail' ); ?>
+		<a href="<?php the_permalink() ?>" rel="bookmark"><div class="entry-title"><?php the_title(); ?></div><div class="postdate"><time datetime="<?php echo get_the_time( 'Y-m-d' ) ?>" pubdate><?php echo get_post_time( get_option( 'date_format' ) ); ?></time></div></a>
+	</li>
 <?php endif; ?>

@@ -39,6 +39,7 @@
 
 </div><!-- wrapper -->
 
+<div class="drawer-overlay"></div>
 <?php wp_footer(); ?>
 
 </body>
