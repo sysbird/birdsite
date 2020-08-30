@@ -299,7 +299,7 @@ function birdsite_scripts() {
 	wp_enqueue_style( 'setos-google-font', '//fonts.googleapis.com/css?family=Open+Sans', false, null, 'all' );
 	
 	// this theme
-	wp_enqueue_script( 'birdsite', get_template_directory_uri() .'/js/birdsite.js', array( 'jquery' ), '1.2' );
+	wp_enqueue_script( 'birdsite', get_template_directory_uri() .'/js/birdsite.js', array( 'jquery' ), '1.12' );
 	wp_enqueue_style( 'birdsite', get_stylesheet_uri() );
 }
 add_action( 'wp_enqueue_scripts', 'birdsite_scripts' );

@@ -43,7 +43,7 @@ https://profiles.wordpress.org/sysbird/
 
 
 == Changelog ==
-v1.2
+v1.12
 * Updated for WordPress 5.4.2 and Block Editor.
 * bugfix flexbox.
 
