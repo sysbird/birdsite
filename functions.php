@@ -268,14 +268,6 @@ function birdsite_setup() {
 		'random-default'		=> true,
 	) );
 
-	register_default_headers( array(
-			'blue'			=> array(
-			'url'			=> '%s/images/headers/blue.jpg',
-			'thumbnail_url'	=> '%s/images/headers/blue-thumbnail.jpg',
-			'description'	=> 'blue'
-		),
-	));
-
     // Add support for full and wide align images.
     add_theme_support( 'align-wide' );
 

@@ -5,6 +5,9 @@ Description: BirdSITE built for photobloggers and photographers. It has good app
 Author: Sysbird
 Author URI: https://profiles.wordpress.org/sysbird/
 Version: 1.12
+Requires at least: 4.7
+Requires PHP: 5.2.4
+Tested up to: 5.4.2
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: two-columns, left-sidebar, grid-layout, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-image-header, featured-images, footer-widgets, rtl-language-support, post-formats, sticky-post, theme-options, threaded-comments, translation-ready, photography, block-styles

@@ -27,7 +27,7 @@ BirdSITE WordPress theme is licensed under the GPL.
 License: GNU General Public License v2.0
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 The exceptions to this license are as follows:
-The headers and icon images are created by theme author and are released under GPL license.
+The sample custom header images are created by Sysbird and are released under GPL license.
 
 
 == Third-party Resources ==
