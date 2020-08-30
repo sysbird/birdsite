@@ -35,10 +35,6 @@ Font Awesome
 License: SIL Open Font License, 1.1/MIT License
 Source:  http://fortawesome.github.io/Font-Awesome/
 
-Flexible drawer menu using jQuery, iScroll and CSS.
-License: MIT License
-Source:  http://git.blivesta.com/drawer
-
 
 == Author ==
 The theme built by TORIYAMA Yuko at Sysbird.
