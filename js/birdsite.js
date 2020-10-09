@@ -2,11 +2,6 @@
 // init
 jQuery( function() {
 
-	jQuery( window ).load(function() {
-
-		console.log("open");
-	});
-
 	// Browser supports matchMedia
 	if (window.matchMedia) {
 		if (window.matchMedia("(min-width:600px)").matches) {
