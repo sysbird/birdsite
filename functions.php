@@ -2,8 +2,7 @@
 /**
  * The template functions and definitions
  *
- * @package WordPress
- * @subpackage BirdSITE
+ * @package BirdSITE
  * @since BirdSITE 1.0
  */
 //////////////////////////////////////////
@@ -62,13 +61,16 @@ function birdsite_get_copyright_year() {
 	$birdsite_first_year = $birdsite_copyright_year;
 	$args = array(
 		'numberposts'	=> 1,
+		'post_status'	=> 'publish',
 		'orderby'		=> 'post_date',
 		'order'			=> 'ASC',
 	);
 	$posts = get_posts( $args );
-
-	foreach ( $posts as $post ) {
-		$birdsite_first_year = mysql2date( 'Y', $post->post_date, true );
+	if ( $posts ) {
+		foreach ( $posts as $post ) {
+			$birdsite_first_year = mysql2date( 'Y', $post->post_date, true );
+		}
+		wp_reset_postdata();
 	}
 
 	if( $birdsite_copyright_year <> $birdsite_first_year ){
@@ -95,7 +97,7 @@ function birdsite_custom_style() {
 	$birdsite_default_colors = birdsite_get_default_colors();
 
 	// Custom Text Color
-	$birdsite_text_color = get_theme_mod( 'birdsite_text_color', $birdsite_default_colors[ 'text_color' ] );
+	$birdsite_text_color =  esc_attr( get_theme_mod( 'birdsite_text_color', $birdsite_default_colors[ 'text_color' ] ));
 	if( strcasecmp( $birdsite_text_color, $birdsite_default_colors[ 'text_color' ] )) {
 		$birdsite_css = "
 			/* Custom Text Color */
@@ -118,7 +120,7 @@ function birdsite_custom_style() {
 	}
 
 	// Custom Link Color
-	$birdsite_link_color = get_theme_mod( 'birdsite_link_color', $birdsite_default_colors[ 'link_color' ] );
+	$birdsite_link_color =  esc_attr( get_theme_mod( 'birdsite_link_color', $birdsite_default_colors[ 'link_color' ] ));
 	if( strcasecmp( $birdsite_link_color, $birdsite_default_colors[ 'link_color' ] )) {
 		$birdsite_css = "
 			/* Custom Link Color */
@@ -147,7 +149,7 @@ function birdsite_custom_style() {
 	}
 
 	// Custom Main Color
-	$birdsite_main_color = get_theme_mod( 'birdsite_footer_color', $birdsite_default_colors[ 'main_color' ] );
+	$birdsite_main_color = esc_attr( get_theme_mod( 'birdsite_footer_color', $birdsite_default_colors[ 'main_color' ] ));
 	if( strcasecmp( $birdsite_main_color, $birdsite_default_colors[ 'main_color' ] )) {
 		$birdsite_css = "
 			/* Custom Main Color */
@@ -291,7 +293,7 @@ function birdsite_scripts() {
 	wp_enqueue_style( 'setos-google-font', '//fonts.googleapis.com/css?family=Open+Sans', false, null, 'all' );
 	
 	// this theme
-	wp_enqueue_script( 'birdsite', get_template_directory_uri() .'/js/birdsite.js', array( 'jquery' ), '1.12' );
+	wp_enqueue_script( 'birdsite', get_template_directory_uri() .'/js/birdsite.js', array( 'jquery' ), '1.13' );
 	wp_enqueue_style( 'birdsite', get_stylesheet_uri() );
 }
 add_action( 'wp_enqueue_scripts', 'birdsite_scripts' );

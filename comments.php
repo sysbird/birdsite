@@ -2,8 +2,7 @@
 /**
  * The template for displaying comments
  *
- * @package WordPress
- * @subpackage BirdSITE
+ * @package birdSITE
  * @since BirdSITE 1.0
  */
 if ( post_password_required() ) {

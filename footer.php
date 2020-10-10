@@ -2,8 +2,7 @@
 /**
  * The template for displaying the footer
  *
- * @package WordPress
- * @subpackage BirdSITE
+ * @package BirdSITE
  * @since BirdSITE 1.0
  */
 ?>
@@ -28,7 +27,7 @@
 
 				<?php if( get_theme_mod( 'birdsite_credit', true ) ): ?>
 					<br>
-					<span class="generator"><a href="<?php echo esc_url('http://wordpress.org/'); ?>" target="_blank"><?php _e( 'Proudly powered by WordPress', 'birdsite' ); ?></a></span>
+					<span class="generator"><a href="<?php echo esc_url(__( 'https://wordpress.org/', 'birdsite' )); ?>" target="_blank"><?php _e( 'Proudly powered by WordPress', 'birdsite' ); ?></a></span>
 				<?php printf(__( 'BirdSITE theme by %sSysbird%s', 'birdsite' ), '<a href="' .esc_url('https://profiles.wordpress.org/sysbird/') .'" target="_blank">', '</a>' ); ?>
 				<?php endif; ?>
 			</div>

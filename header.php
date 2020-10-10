@@ -2,8 +2,7 @@
 /**
  * The template for displaying the header
  *
- * @package WordPress
- * @subpackage BirdSITE
+ * @package BirdSITE
  * @since BirdSITE 1.0
  */
 ?><!DOCTYPE html>
@@ -12,6 +11,9 @@
 <meta charset="<?php bloginfo( 'charset' ); ?>" >
 <meta name="viewport" content="width=device-width" >
 <link rel="profile" href="http://gmpg.org/xfn/11" >
+<?php if ( is_singular() && pings_open( get_queried_object() ) ) : ?>
+	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
+<?php endif; ?>
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" >
 <?php wp_head(); ?>
 </head>
@@ -54,12 +56,12 @@ if ( function_exists( 'wp_body_open' ) ) {
 			</div>
 
 			<?php if ( has_header_image()) : ?>
-				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="header-image"><img src="<?php header_image(); ?>" alt="<?php bloginfo( 'name' ); ?>" ></a>
+				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="header-image"><img src="<?php echo esc_url( get_header_image()); ?>" alt="<?php bloginfo( 'name' ); ?>" ></a>
 			<?php endif; ?>
 
 			<?php if( has_nav_menu( 'primary' )): ?>
-			<button id="small-menu" type="button"><span class="icon"></span></button>
-			<?php wp_nav_menu( array( 'theme_location'	=> 'primary',
+				<button id="small-menu" type="button"><span class="icon"></span></button>
+				<?php wp_nav_menu( array( 'theme_location'	=> 'primary',
 					'container'			=> 'nav',
 					'container_id'		=> 'menu-wrapper',
 					'menu_id'			=> 'menu-primary-items',

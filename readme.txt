@@ -1,18 +1,21 @@
+=== birdSITE ===
+Contributors: Sysbird
+Tags: two-columns, left-sidebar, grid-layout, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-image-header, featured-images, footer-widgets, rtl-language-support, post-formats, sticky-post, theme-options, threaded-comments, translation-ready, photography, block-styles
+Requires at least: 4.7
+Requires PHP: 5.6
+Tested up to: 5.4.2
+Stable tag: 1.12
+License: GPLv2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+
 == Description ==
 BirdSITE built for photobloggers and photographers. It has good appearance for photos by grid layout. and uses CSS3 media queries for its responsive layout and is therefore optimized for tablet pcs and smart phones. Features include the Theme Customize. You can choose the main color, text color and link color.
-
-
-=== Tags ===
-two-columns, left-sidebar, grid-layout, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-image-header, featured-images, footer-widgets, rtl-language-support, post-formats, sticky-post, theme-options, threaded-comments, translation-ready, photography, block-styles
-
 
 === Features ===
 Responsive Layout, Theme Customize, Page Navigation
 
-
 === Widgets Areas ===
 The Theme has customizable footer.
-
 
 == Theme Customize ==
 Main Color, Text Color, Link Color: set at Colors section.
@@ -20,29 +23,32 @@ Display Copyright and Credit: set at Footer section.
 Display Postdate and Author, Category, Tags, Comment Number: set at Home section.
 Recommend Blog pages show at most 9 posts at Reading Settings.
 
-
 == License ==
 BirdSITE WordPress theme, Copyright (C) 2010 Sysbird
 BirdSITE WordPress theme is licensed under the GPL.
 License: GNU General Public License v2.0
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-The exceptions to this license are as follows:
-The sample custom header images are created by Sysbird and are released under GPL license.
 
+== Screenshots ==
+Photos in screenshot.png by theme author.
+License: GNU General Public License v2.0
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Screenshot resources: https://birdsite.jp/
 
 == Third-party Resources ==
-Font Awesome
-License: SIL Open Font License, 1.1/MIT License
-Source:  http://fortawesome.github.io/Font-Awesome/
-
+Font Awesome Free
+License: Font Awesome Free is free, open source, and GPL friendly.
+Source:  https://fontawesome.com/?from=io
 
 == Author ==
 The theme built by TORIYAMA Yuko at Sysbird.
-http://www.sysbird.jp
+https://sysbird.jp
 https://profiles.wordpress.org/sysbird/
 
-
 == Changelog ==
+v1.13
+* fix Theme review.
+
 v1.12
 * Updated for WordPress 5.4.2 and Block Editor.
 * bugfix flexbox.

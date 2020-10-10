@@ -2,8 +2,7 @@
 /**
  * The main template file
  *
- * @package WordPress
- * @subpackage BirdSITE
+ * @package BirdSITE
  * @since BirdSITE 1.0
  */
 get_header(); ?>

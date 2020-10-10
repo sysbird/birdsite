@@ -2,8 +2,7 @@
 /**
  * The template for displaying 404 pages (Not Found).
  *
- * @package WordPress
- * @subpackage birdSITE
+ * @package birdSITE
  * @since birdSITE 1.0
  */
 get_header(); ?>

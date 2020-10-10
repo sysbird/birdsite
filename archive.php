@@ -2,8 +2,7 @@
 /**
  * The template for displaying archive pages
  *
- * @package WordPress
- * @subpackage birdSITE
+ * @package birdSITE
  * @since birdSITE 1.0
  */
 get_header(); ?>

@@ -2,8 +2,7 @@
 /**
  * The default template for displaying content
  *
- * @package WordPress
- * @subpackage BirdSITE
+ * @package birdSITE
  * @since BirdSITE 1.0
  */
 ?>
