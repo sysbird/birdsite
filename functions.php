@@ -86,7 +86,8 @@ function birdsite_get_default_colors() {
 	return array(
 			'main_color'		=> '#000000',
 			'text_color'		=> '#555555',
-			'link_color'		=> '#0066AA' );
+			'link_color'		=> '#0066AA',
+			'header_color'		=> '#F5F5F5' );
 }
 
 //////////////////////////////////////////////////////
@@ -104,7 +105,6 @@ function birdsite_custom_style() {
 			.wrapper,
 			#content .hentry .entry-header .entry-title,
 			#content .hentry .entry-header .entry-title a,
-			#content .hentry .entry-meta a,
 			.archive #content ul li a,
 			.search #content ul li a,
 			.error404 #content ul li a {
@@ -148,6 +148,21 @@ function birdsite_custom_style() {
 		wp_add_inline_style( 'birdsite', $birdsite_css );
 	}
 
+	// Custom Header Color
+	$birdsite_header_color = esc_attr( get_theme_mod( 'birdsite_header_color', $birdsite_default_colors[ 'header_color' ] ));
+	if( strcasecmp( $birdsite_header_color, $birdsite_default_colors[ 'header_color' ] )) {
+		$birdsite_css = "
+			/* Custom Header Color */
+			#header,
+			#menu-wrapper,
+			#menu-wrapper ul#menu-primary-items li ul,
+			#content .hentry .entry-meta {
+				background: {$birdsite_header_color};
+			}
+		";
+				wp_add_inline_style( 'birdsite', $birdsite_css );
+	}
+
 	// Custom Main Color
 	$birdsite_main_color = esc_attr( get_theme_mod( 'birdsite_footer_color', $birdsite_default_colors[ 'main_color' ] ));
 	if( strcasecmp( $birdsite_main_color, $birdsite_default_colors[ 'main_color' ] )) {
@@ -164,11 +179,16 @@ function birdsite_custom_style() {
 			#menu-wrapper ul#menu-primary-items li a,
 			#menu-wrapper .close a,
 			#searchform #searchsubmit,
+			#content .hentry .entry-meta,
+			#content .hentry .entry-meta a,
+			#content .hentry .entry-meta .icon:before,
 			#content .wp-block-separator.is-style-dots,
 			#content .wp-block-pullquote.is-style-dots,
 			#content .wp-block-button.is-style-outline .wp-block-button__link:not(.has-text-color),
 			#content .wp-block-button.is-style-outline .wp-block-button__link:focus:not(.has-text-color),
-			#content .wp-block-button.is-style-outline .wp-block-button__link:active:not(.has-text-color) {
+			#content .wp-block-button.is-style-outline .wp-block-button__link:active:not(.has-text-color),
+			.wp-block-calendar table caption,
+			.wp-block-calendar table tbody {
 				color: {$birdsite_main_color};
 			}
 
@@ -176,6 +196,8 @@ function birdsite_custom_style() {
 			#content h3,
 			#content .wp-block-separator,
 			#content .wp-block-pullquote,
+			blockquote,
+			.wp-block-quote,
 			#menu-wrapper ul#menu-primary-items li ul,
 			#menu-wrapper ul#menu-primary-items li a,
 			#searchform,
@@ -188,6 +210,7 @@ function birdsite_custom_style() {
 			#small-menu .icon:after,
 			#footer,
 			#content .wp-block-button a.wp-block-button__link:not(.has-background),
+			#content .wp-block-file .wp-block-file__button,
 			input[type='submit'],
 			button[type='submit'] {
 				background-color: {$birdsite_main_color};
@@ -251,6 +274,10 @@ function birdsite_setup() {
 	 * This theme supports custom background color and image, and here
 	 * we also set up the default background color.
 	 */
+	add_theme_support( 'custom-background', array(
+		'default-image'		=> '',
+		'default-color'		=> 'FFF',
+	) );
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
@@ -293,7 +320,7 @@ function birdsite_scripts() {
 	wp_enqueue_style( 'setos-google-font', '//fonts.googleapis.com/css?family=Open+Sans', false, null, 'all' );
 	
 	// this theme
-	wp_enqueue_script( 'birdsite', get_template_directory_uri() .'/js/birdsite.js', array( 'jquery' ), '1.13' );
+	wp_enqueue_script( 'birdsite', get_template_directory_uri() .'/js/birdsite.js', array( 'jquery' ), '1.14' );
 	wp_enqueue_style( 'birdsite', get_stylesheet_uri() );
 }
 add_action( 'wp_enqueue_scripts', 'birdsite_scripts' );
@@ -339,21 +366,35 @@ function birdsite_customize( $wp_customize ) {
 		'settings'	=> 'birdsite_link_color',
 	) ) );
 
-	// Main Color ( Site Border Top, Site Title, Footer background )
+	// header background Color
+	$wp_customize->add_setting( 'birdsite_header_color', array(
+		'default'		=> $birdsite_default_colors[ 'header_color' ],
+		'sanitize_callback'	=> 'maybe_hash_hex_color',
+	) );
+
+	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'birdsite_header_color', array(
+		'label'			=> __( 'Header Color', 'birdsite' ),
+		'section'		=> 'colors',
+		'settings'		=> 'birdsite_header_color',
+	) ) );
+
+	// Main Color ( site title, menu color, heading text in single page and footer background color )
 	$wp_customize->add_setting( 'birdsite_footer_color', array(
 		'default'		=> $birdsite_default_colors[ 'main_color' ],
 		'sanitize_callback'	=> 'maybe_hash_hex_color',
 	) );
 
 	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'birdsite_footer_color', array(
-		'label'		=> __( 'Main Color', 'birdsite' ),
-		'section'	=> 'colors',
-		'settings'	=> 'birdsite_footer_color',
+		'label'			=> __( 'Accent Color', 'birdsite' ),
+		'description'	=> __( 'Used for site title, menu color, heading text in single page and footer background color.', 'birdsite' ),
+		'section'		=> 'colors',
+		'settings'		=> 'birdsite_footer_color',
 	) ) );
 
 	// Home Section
 	$wp_customize->add_section( 'birdsite_home', array(
 		'title'		=> __( 'Home', 'birdsite' ),
+		'description'	=> __( 'Items to display with mouse hover in homepage thumbnails.', 'birdsite' ),
 		'priority'	=> 999,
 	) );
 
@@ -425,6 +466,7 @@ function birdsite_customize( $wp_customize ) {
 	// Footer Section
 	$wp_customize->add_section( 'birdsite_footer', array(
 		'title'		=> __( 'Footer', 'birdsite' ),
+		'description'	=> __( 'Items to display in footer.', 'birdsite' ),
 		'priority'	=> 999,
 	) );
 

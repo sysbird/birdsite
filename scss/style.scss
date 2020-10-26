@@ -5,7 +5,7 @@ Theme URI: https://birdsite.jp/theme/
 Description: BirdSITE built for photobloggers and photographers. It has good appearance for photos by grid layout. and uses CSS3 media queries for its responsive layout and is therefore optimized for tablet pcs and smart phones. Features include the Theme Customize. You can choose the main color, text color and link color. also supports the block editor.
 Author: Sysbird
 Author URI: https://profiles.wordpress.org/sysbird/
-Version: 1.13
+Version: 1.14
 Requires at least: 4.7
 Requires PHP: 5.6
 Tested up to: 5.4.2
@@ -19,10 +19,11 @@ This theme, like WordPress, is licensed under the GPL.
 
 
 // variable
-$background-color: #F5F5F5;
+$background-color: #FFF;
+$header-background-color: #F5F5F5;
 $text-color: #555;
 $link-color: #06A;
-$main_color: #000;
+$accent_color: #000;
 $border-color: #CCC;
 $meta-color: #999;
 $line-height: 1.8;
@@ -256,7 +257,7 @@ h1, h2, h3, h4, h5, h6 {
 	margin: #{$line-height}em 0;
 	line-height:1.2;
 	font-weight: normal;
-	color: $main-color;
+	color: $accent-color;
 }
 
 h1 {font-size:2.8rem;}
@@ -279,7 +280,7 @@ blockquote,
 .wp-block-quote {
     margin: #{$line-height}rem 0;
     padding-left: 1em;
-    border-left: 7px solid $border-color;
+    border-left-color: $accent-color;
  
 	small {
 		display: block;
@@ -382,10 +383,6 @@ pre {
 	margin: #{$line-height}rem 0;
     line-height: 1.4;
     overflow: auto;
-}
-
-code {
-	background: $background-color;
 }
 
 code, kbd, pre, samp, var, tt {
@@ -495,6 +492,7 @@ dl {
 
 ins {
 	background: #ffc;
+	color: $text-color;
 	text-decoration: none;
 }
 
@@ -529,15 +527,12 @@ body {
 
 #header {
 	width: #{$menu-width}px;
-	position: -webkit-sticky;
-	position: sticky;
-	top: 0;
+	position: relative;
 	z-index: 1;
 }
 
 .main {
 	width: calc(100% - #{$menu-width}px);
-	background-color: #FFF;
 }
 
 /* Fixed Footer
@@ -572,10 +567,12 @@ body {
 /* Header
 -------------------------------------------------------------- */
 #header {
+	background-color: $header-background-color;
+
 	.branding {
 		padding: 40px 40px 0 20px;
 		margin-bottom: 40px;
-		color: $main_color;
+		color: $accent_color;
 		text-align: right;
 
 		.site-title {
@@ -585,12 +582,12 @@ body {
 			margin: 0;
 
 			a {
-				color: $main_color;
+				color: $accent_color;
 			}
 		}
 
 		.site-description {
-			margin-top: 1rem;
+			margin: 1rem 0 0 0;
 		}
 	}
 
@@ -620,7 +617,7 @@ body {
 /* Footer
 -------------------------------------------------------------- */
 #footer {
-	background: $main_color;
+	background: $accent_color;
 	color: #FFF;
 
 	.container {
@@ -723,10 +720,10 @@ body {
 			}
 
 			a {
-				border-bottom: dotted 1px $main_color;
+				border-bottom: dotted 1px $accent_color;
 				padding: #{$line-height /2}em 0 #{$line-height /2}em #{$line-height /2}em;
 				display: block;
-				color: $main_color;
+				color: $accent_color;
 				text-decoration: none;
 				line-height: 1.2;
 
@@ -746,8 +743,8 @@ body {
 
 			ul {
 				list-style: none;
-				background: #FFF;
-				border: dotted 1px $main_color;
+				background: $header-background-color;
+				border: dotted 1px $accent_color;
 				border-bottom: none;
 				width: #{$menu-width}px;
 				margin: 0;
@@ -792,12 +789,12 @@ body {
 	max-width: #{$max-content}px;
 
 	h2 {
-		border-bottom: dotted 1px $main-color;
+		border-bottom: dotted 1px $accent_color;
 		padding-bottom: 0.4em;
 	}
 
 	h3 {
-		border-left: solid 5px $main-color;
+		border-left: solid 5px $accent_color;
 		padding: 5px 0 5px 10px;
 	}
 
@@ -831,7 +828,8 @@ body {
 
 		.entry-meta {
 			clear: both;
-			background: $background-color;
+			background: $header-background-color;
+			color: $accent-color;
 			line-height: 1.4;
 			padding: #{$line-height /2}em;
 			margin-bottom: #{$line-height}em;
@@ -938,11 +936,6 @@ body {
 					left: 0;
 					display: block;
 					max-width: none;
-				}
-
-				.more-link {
-					top: -5px;
-					left: -5px;
 				}
 			}
 
@@ -1448,7 +1441,7 @@ video {
 			}
 
 			&.bypostauthor .comment-author .fn {
-				color: $main_color;
+				color: $accent_color;
 			}
 
 			.reply {
@@ -1615,7 +1608,7 @@ video {
 
 		a {
 			background-color: #FFF;
-			color: $main_color;
+			color: $accent_color;
 		}
 	}
 
@@ -1667,7 +1660,7 @@ input[type="submit"],
 button[type="submit"] {
 	font-size: 1.2em;
 	color: #FFF;		
-	background-color: $main_color;
+	background-color: $accent_color;
 	border: none;
 	border-radius: 4px;
 	box-shadow: none;
@@ -1727,7 +1720,7 @@ button[type="submit"] {
 #searchform {
 	width: 100%;
 	position: relative;
-	border: solid 1px $main-color;
+	border: solid 1px $accent_color;
 	padding: 1%;
 	border-radius: 4px;
 	background: #FFF;
@@ -1748,7 +1741,7 @@ button[type="submit"] {
 		padding: 0 5px 0 0;
 		margin: 0;
 		background: #FFF;
-		color: $main-color;
+		color: $accent_color;
 		-webkit-appearance: button;
 		font-size: 1.2em;
 		text-align: right;
@@ -1779,7 +1772,7 @@ button[type="submit"] {
         margin-bottom: #{$line-height}rem;
 
         a.wp-block-button__link:not(.has-background) {
-            background-color: $main_color;
+            background-color: $accent_color;
     
             &:hover {
 				@include opacity(.8);
@@ -1789,7 +1782,7 @@ button[type="submit"] {
         &.is-style-outline .wp-block-button__link:not(.has-text-color),
         &.is-style-outline .wp-block-button__link:focus:not(.has-text-color),
         &.is-style-outline .wp-block-button__link:active:not(.has-text-color) {
-            color: $main-color;
+            color: $accent_color;
             background: none;
 
             &:hover {
@@ -1802,7 +1795,7 @@ button[type="submit"] {
         display: table;
         border-radius: 4px;       
         line-height: 1.4;
-        background-color: $main-color;
+        background-color: $accent_color;
         margin: #{$line-height}rem 0;
 
         &:hover {
@@ -1841,10 +1834,10 @@ button[type="submit"] {
 
     .wp-block-separator,
     .wp-block-pullquote {
-        border-color: $main-color;
+        border-color: $accent_color;
 
 		&.is-style-dots {
-        	color: $main-color;
+        	color: $accent_color;
 		}
 
         blockquote {
@@ -2064,7 +2057,8 @@ button[type="submit"] {
 
 		.branding {
 			text-align: center;
-			padding: 40px 4% 0 4%;
+			padding: 40px 4% 40px 4%;
+			margin-bottom: 0;
 		}
 
 		.header-image {
@@ -2264,8 +2258,8 @@ button[type="submit"] {
 			margin: 20px auto 40px;
 			cursor: pointer;
 			width: 50%;
-			border: solid 2px $main-color;
-			color: $main-color;
+			border: solid 2px $accent_color;
+			color: $accent_color;
 			border-radius: 4px;
 			text-align: center;
 

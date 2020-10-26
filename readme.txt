@@ -28,17 +28,12 @@ BirdSITE WordPress theme, Copyright (C) 2010 Sysbird
 BirdSITE WordPress theme is licensed under the GPL.
 License: GNU General Public License v2.0
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-
-== Screenshots ==
-Photos in screenshot.png by theme author.
-License: GNU General Public License v2.0
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Screenshot resources: https://birdsite.jp/
+Photos in screenshot.png are created by theme author and are released under GPL license.
 
 == Third-party Resources ==
-Font Awesome Free
-License: Font Awesome Free is free, open source, and GPL friendly.
-Source:  https://fontawesome.com/?from=io
+Font Awesome icon font, Copyright 2012 Dave Gandy
+its fonts are licensed under the terms of the SIL OFL License 1.1, and its code is licensed under the terms of the MIT license
+Source: https://fontawesome.com/
 
 == Author ==
 The theme built by TORIYAMA Yuko at Sysbird.
@@ -46,6 +41,11 @@ https://sysbird.jp
 https://profiles.wordpress.org/sysbird/
 
 == Changelog ==
+v1.14
+* add theme support custom-background.
+* Modified image license.
+* Migrated to Font Awesome 5
+
 v1.13
 * fix Theme review.
 
